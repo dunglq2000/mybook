@@ -1,0 +1,42 @@
+\section*{Permutation Groups}
+
+\subsection*{Tóm tắt lý thuyết}
+
+Đặt $S_n$ là nhóm hoán vị trên tập $n$ phần tử. Như vậy $S_n$ có $n!$ phần tử.
+
+Mỗi phần tử trong $S_n$ có thể biểu diễn dưới dạng các chu trình (cycle) độc lập (disjoint).
+
+\subsection*{Bài tập}
+
+13. Đặt $\sigma = \sigma_1 \cdots \sigma_m \in S_n$ là tích của các cycle độc lập. Chứng minh rằng order của $\sigma$ là LCM của độ dài các cycle $\sigma_1, \cdots, \sigma_m$.
+
+\begin{proof}
+    Đặt $l_i$ là độ dài cycle $\sigma_i$ ($i = 1, \cdots m$). Khi đó $\sigma_i^{k_i l_i}$ sẽ ở dạng các cycle độ dài 1 ($k_i \in \ZZ$).
+
+    Từ đó, $\sigma^l = \sigma_1^l \cdots \sigma_m^l = (1)\cdots(n)$ nếu $l = k_1 l_1 = \cdots k_m l_m$. Số $l$ nhỏ nhất thỏa mãn điều kiện này là $\lcm(l_1, \cdots, l_m)$ (đpcm)
+
+\end{proof}
+
+23. Nếu $\sigma$ là chu trình với độ dài lẻ, chứng minh rằng $\sigma^2$ cũng là chu trình
+\begin{proof}
+    Giả sử $\sigma = (g_1, g_2, \cdots, g_{n-1}, g_n)$ với $n$ lẻ. Khi đó $\sigma^2 = (g_1, g_3, \cdots, g_n, g_2, g_4, \cdots, g_{n-1})$ cũng là chu trình.
+\end{proof}
+
+30. Cho $\tau = (a_1, a_2, \cdots, a_k)$ là chu trình độ dài $k$.
+
+\begin{enumerate}
+    \item[(a)] Chứng minh rằng với mọi hoán vị $\sigma$ thì $$\sigma \tau \sigma^{-1} = (\sigma(a_1), \sigma(a_2), \cdots, \sigma(a_k))$$ là chu trình độ dài $k$.
+    \item[(b)] Gọi $\mu$ là chu trình độ dài $k$. Chứng minh rằng tồn tại hoán vị $\sigma$ sao cho $\sigma \tau \sigma^{-1} = \mu$
+\end{enumerate}
+
+\begin{proof}
+    \begin{enumerate}
+        \item [(a)] Ta thấy rằng bất kì phần tử nào khác $a_1, a_2, \cdots, a_k$ thì khi qua $\tau$ không đổi, do đó khi đi qua $\sigma \tau \sigma^{-1}$ thì chỉ đi qua $\sigma \sigma^{-1}$ và cũng không đổi. Nói cách khác các phần tử $a_1, a_2, \cdots, a_k$ vẫn nằm trong chu trình nên ta có đpcm.
+        \item [(b)] Từ câu (a), với $\mu = (b_1, b_2, \cdots, b_k)$ thì ta chọn $\sigma$ sao cho $b_i = \sigma(a_i)$.
+    \end{enumerate}    
+\end{proof}
+
+
+\subsection*{Kết luận}
+
+Bổ đề Burnside và định lý Polya dùng để đếm số cấu hình khác nhau dựa trên nhóm hoán vị.

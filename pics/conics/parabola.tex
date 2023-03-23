@@ -1,0 +1,29 @@
+\documentclass{standalone}
+\usepackage{tkz-euclide,pgfplots}
+\pgfplotsset{compat=1.13}
+\begin{document}
+% bad
+%\begin{tikzpicture}[domain=0:2, scale = 0.75]
+%\draw[black, line width = 0.50mm]   plot[smooth,domain=-2:2] (\x, {4-\x^2});
+%\end{tikzpicture}
+
+% works
+%\begin{tikzpicture}[domain=0:2, scale = 0.75]
+%\draw[black, line width = 0.50mm]   plot[smooth,domain=-2:2] (\x, {4-\x*\x});
+%\end{tikzpicture}
+
+% works
+%\begin{tikzpicture}[domain=0:2, scale = 0.75]
+%\draw[black, line width = 0.50mm]   plot[smooth,domain=-2:2] (\x, {4-(\x)^2});
+%\end{tikzpicture}
+
+% even more fun
+\begin{tikzpicture}
+  \begin{axis}[
+    domain=-2:2,
+    ]
+    \addplot[no marks] {4-x^2};
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}

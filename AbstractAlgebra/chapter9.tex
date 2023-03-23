@@ -1,0 +1,66 @@
+\section*{Isomorphism}
+
+\subsection*{Tóm tắt lý thuyết}
+
+Cho 2 nhóm $(G, \star)$ và $(H, *)$. Ánh xạ $\varphi: G \rightarrow H$ được gọi là isomorphism từ $G$ tới $H$ nếu:
+
+\begin{itemize}
+    \item với mọi $g_1, g_2 \in G$ thì $\varphi(g_1 \star g_2) = \varphi(g_1) * \varphi(g_2)$
+    \item $\varphi$ là song ánh (one-to-one và onto)
+\end{itemize}
+
+\subsection*{Bài tập}
+
+18. Chứng minh rằng subgroup của $\QQ^*$ gồm các phần tử có dạng $2^m 3^n$ với $m, n \in \ZZ$ là internal direct product tới $\ZZ \times \ZZ$
+
+\begin{proof}
+    Xét ánh xạ $\varphi: \QQ^* \rightarrow \ZZ \times \ZZ$, $\varphi(2^m 3^n) = (m, n)$
+
+    Hàm này là well-defined vì với $m$ cố định thì mỗi phần tử $2^m 3^n$ chỉ cho ra một phần tử $(m, n)$. Tương tự với cố định $n$.
+
+    Hàm này là đơn ánh (one-to-one) vì với $m_1 = m_2$ và $n_1 = n_2$ thì $2^{m_1} 3^{n_1} = 2^{m_2} 3^{n_2}$.
+
+    Hàm này cũng là toàn ánh vì với mỗi cặp $(m, n)$ ta đều tính được $2^m 3^n$.
+
+    Vậy hàm $\varphi$ là song ánh.
+
+    Thêm nữa, 
+    \begin{align*}
+        \varphi(2^{m_1} 3^{n_1} \cdot 2^{m_2} 3^{n_2})& = \varphi(2^{m_1 + m_2} 3^{n_1 + n_2}) \\
+        & = (m_1 + m_2, n_1 + n_2) = (m_1, n_1) + (m_2, n_2) \\
+        & = \varphi(2^{m_1} 3^{n_1}) \varphi(2^{m_2} 3^{n_2})
+    \end{align*}
+
+    Vậy $\varphi$ là homomorphism, và là song ánh nên là isomorphism.
+
+    \end{proof}
+
+20. Chứng minh hoặc bác bỏ: mọi nhóm Abel có order chia hết bởi 3 chứa một subgroup có order là 3
+
+\begin{proof}
+    Gọi order của nhóm Abel là $n=3k$, và $g$ là phần tử sinh của nhóm Abel đó. Như vậy $g^n = g^{3k} = e$.
+
+    Nếu ta chọn $h = g^k$ thì $h^3 = e$, khi đó subgroup được sinh bởi $h$ có order 3 (đpcm).
+\end{proof}
+
+21. Chứng minh hoặc bác bỏ: mọi nhóm không phải Abel có order chia hết bởi 6 chứa một subgroup có order 6
+
+\begin{proof}
+    Với $\mathcal{S}_3$ có order là 6 nhưng không có nhóm con nào order 6 (nhóm con chỉ có order 1, 2 hoặc 3) (bác bỏ).
+\end{proof}
+
+22. Gọi $G$ là group với order 20. Nếu $G$ có các subgroup $H$ và $K$ với order 4 và 5 mà $hk=kh$ với mọi $h \in H$ và $k \in K$, chứng minh rằng $G$ là internal direct product của $H$ và $K$
+
+\begin{proof}
+    Ta chứng minh $H \cap K = \{ e \}$. Giả sử tồn tại phần tử $m \in H \cap K$, khi đó do $m \in H$ nên $mk = km$ với mọi $k \in K$. Tuy nhiên $m \in K$ do đó điều này xảy ra khi và chỉ khi $m = e$.
+
+    Như vậy $H \cap K = \{ e \}$.
+\end{proof}
+
+\subsection*{Kết luận}
+
+Isomorphism cho phép chúng ta chuyển từ việc tính toán trên một nhóm này thành tính toán trên nhóm khác dễ hơn (về mặt số học, toán tử).
+
+\begin{theorem}[Định lý Cayley]
+    Mọi nhóm hữu hạn $n$ phần tử isomorphism với nhóm con nào đó của nhóm hoán vị $S_n$
+\end{theorem}

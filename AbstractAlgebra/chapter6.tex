@@ -1,0 +1,76 @@
+\section*{Cosets}
+
+\subsection*{Tóm tắt lý thuyết}
+
+\begin{definition}[Left coset]
+    Cho nhóm $G$ và subgroup của nó là $H$. Khi đó, với phần tử $g \in G$, \textbf{left coset} của $g$ được định nghĩa là tập $gH = \{gh : h \in H\}$
+\end{definition}
+
+\begin{definition}[Right coset]
+    Tương tự, \textbf{right coset} là tập $Hg = \{hg : h \in H\}$
+\end{definition}
+
+\begin{theorem}[Định lý Lagrange]
+    Gọi $G$ là nhóm hữu hạn $n$ phần tử. Khi đó mọi subgroup $H$ của $G$ có số phần tử chia hết cho $n$.
+\end{theorem}
+
+\begin{definition}
+    Cho nhóm $G$ và subgroup $H$ của nó. Số lượng left coset của $H$  trong $G$ được gọi là \textbf{index} và được ký hiệu là $[G:H]$
+\end{definition}
+
+\begin{theorem}
+    Với $H$ là subgroup của $G$. Khi đó số lượng right coset bằng số lượng left coset
+\end{theorem}
+
+\subsection*{Bài tập}
+
+11. Gọi $H$ là subgroup của nhóm $G$ và giả sử $g_1, g_2 \in G$. Chứng minh các mệnh đề sau là tương đương:
+
+\begin{itemize}
+    \item[(a)] $g_1 H = g_2 H$
+    \item[(b)] $H g_1^{-1} = H g_2^{-1}$
+    \item[(c)] $g_1 H \subseteq g_2 H$
+    \item[(d)] $g_2 \in g_1 H$
+    \item[(e)] $g_1^{-1} g_2 \in H$ 
+\end{itemize}
+
+\begin{proof}
+    Từ (a) ra (b): Ta đã biết các coset là rời nhau hoặc trùng nhau, do đó với mọi $g_1 h \in g_1 H$, tồn tại $g_2 h' \in g_2 H$ mà $g_1 h = g_2 h'$. Suy ra $(g_1 h)^{-1} = (g_2 h')^{-1}$ hay $h^{-1} g_1^{-1} = h'^{_1} g_2^{-1}$ (đpcm)
+
+    Từ (a) ra (c): Hiển nhiên
+
+    Từ (a) ra (d): Với mọi $g_1 h \in g_1 H$, tồn tại $g_2 h' \in g_2 H$ sao cho $g_1 h = g_2 h'$, hay $g_2 = g_1 h h'^{-1}$, đặt $h'' = h h'^{-1}$ thì $h'' \in H$ ($H$ là nhóm con) nên $g_1 h'' \in g_1 H$. Suy ra $g_2 \in g_1 H$
+
+    Từ (a) ra (e): Tương tự, ta có $g_1 h = g_2 h'$, suy ra $h h'^{-1}= g_1^{-1} g_2 \in H$
+
+\end{proof}
+
+
+16. Nếu $g h g^{-1} \in H$ với mọi $g \in G$ và $h \in H$, chứng minh rằng right coset trùng với left coset
+
+\begin{proof}
+    Do $g h g^{-1} \in H$ nên tồn tại $h' \in H$ sao cho $g h g^{-1} = h'$. Tương đương $g h = h' g$ với mọi $h \in H$ nên $g H = H g$. Điều này đúng với mọi $g \in G$ nên các right coset trùng left coset.
+\end{proof}
+
+17. Giả sử $[G:H]=2$. Chứng minh rằng nếu $a, b$ không thuộc $H$ thì $ab \in H$.
+
+\begin{proof}
+    Ta biết rằng 2 coset ứng với 2 phần tử $g_1, g_2$ bất kì là trùng nhau hoặc rời nhau.
+
+    Do đó với $eH = H$, ta suy ra 2 coset của $G$ là $H$ và $G \backslash H$.
+
+    Vì $a, b \not\in H$ nên coset của chúng trùng nhau. Và nghịch đảo của $a$ cũng nằm trong $G \backslash H$ vì nếu nghịch đảo của $a$ nằm trong $H$ thì $a$ cũng phải nằm trong $H$.
+
+    Suy ra $a^{-1} H = b H$. Nghĩa là tồn tại 2 phần tử $h_1, h_2 \in H$ sao cho $a^{-1} h_1 = b h_2$, tương đương $h_1 h_2^{-1} = a b \in H$ (đpcm).
+\end{proof}
+
+21. Gọi $G$ là cyclic group với order $n$. Chứng minh rằng có đúng $\phi(n)$ phần tử sinh của $G$
+
+\begin{proof}
+    Gọi $g$ là một phần tử sinh của $G$. Khi đó $g$ sinh ra tất cả phần tử trong $G$, hay nói cách khác các phần tử trong $G$ có dạng $g^i$ với $0 \leq i < n$.
+
+    Như vậy một phần tử $h = g^i$ cũng là phần tử sinh của $G$ khi và chỉ khi $\gcd(i, n) = 1$ và có $\phi(n)$ số $i$ như vậy (đpcm).
+
+\end{proof}
+
+\subsection*{Kết luận}

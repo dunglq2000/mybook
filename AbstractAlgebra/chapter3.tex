@@ -1,0 +1,105 @@
+\section*{Groups}
+
+\subsection*{Tóm tắt lý thuyết}
+
+Tập hợp $G$ và toán tử 2 ngôi $\star$ trên $G$ tạo thành một nhóm nếu:
+
+\begin{itemize}
+    \item Tồn tại phần tử $e \in G$ sao cho với mọi $g \in G$, $e \star g = g \star e = g$. Khi đó $e$ là phần tử đơn vị của $G$.
+    \item Với mọi phần tử $g \in G$, tồn tại $g' \in G$ sao cho $g \star g' = g' \star g = e$. Khi đó $g'$ gọi là phần tử nghịch đảo của $g$ trong $G$.
+    \item Với mọi $a, b, c \in G$ thì $a \star (b \star c) = (a \star b) \star c$ (tính kết hợp)
+\end{itemize}
+
+Nếu có thêm tính chất $a \star b = b \star a$ với mọi $a, b \in G$ thì $G$ gọi là nhóm giao hoán (nhóm Abel).
+
+\subsection*{Bài tập}
+
+7. Đặt $S = \RR \backslash \{-1\}$ và định nghĩa toán tử 2 ngôi trên $S$ là $a \star b = a + b + ab$. Chứng minh rằng $(S, \star)$ là nhóm Abel
+
+\begin{proof}
+    \begin{itemize}
+        \item Giả sử tồn tại phần tử đơn vị $e$, khi đó $e \star s = s \star e = s$ với mọi $s \in S$. Nghĩa là $e + s + es = s + e + se = s$. Vậy $e + se = 0$ mà $s \neq -1$ nên $e = 0$
+        \item Với $e = 0$, giả sử với mọi $s \in S$ có nghịch đảo $s'$. Do $s \star s' = s' \star s = e$ nên $s + s' + ss' = s' + s + s's = e = 0$, tức là $s'(1 + s) = -s$. Vậy $s' = \frac{-s}{1 + s}$
+        \item Với mọi $a, b, c \in S$, $a \star (b \star c) = a \star (b + c + bc) = a + (b+c+bc) + a (b+c+bc) = a + b + c + ab + bc + ca + abc$ và $(a \star b) \star c = (a + b + ab) \star c = a + b + ab + c + c(a+b+bc) = a + b + c + ab + bc + ca + abc$. Như vậy $a \star (b \star c) = (a \star b) \star c$, tính kết hợp
+    \end{itemize}
+\end{proof}
+
+39. Gọi $G$ là tập các ma trận $2 \times 2$ với dạng
+$$\begin{pmatrix}
+    \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta
+\end{pmatrix}$$ với $\theta \in \RR$. Chứng minh rằng $G$ là subgroup của $SL_2 (\RR)$
+    
+\begin{proof}
+            Với $\theta_1, \theta_2 \in \RR$, ta có
+        
+        \begin{align*}
+        & \det \Bigg( \begin{pmatrix}
+            \cos \theta_1 & -\sin \theta_1 \\ \sin \theta_1 & \cos \theta_1
+        \end{pmatrix} \begin{pmatrix}
+            \cos \theta_2 & -\sin \theta_2 \\ \sin \theta_2 & \cos \theta_2
+        \end{pmatrix} \Bigg) \\
+        = & \det\Bigg(\begin{pmatrix}
+            \cos \theta_1 \cos \theta_2 - \sin \theta_1 \sin \theta_2 & -\cos \theta_1 \sin \theta_2 - \sin \theta_1 \cos \theta_2 \\ 
+            \sin \theta_1 \cos \theta_2 + \cos \theta_1 \sin \theta_2 & -\sin \theta_1 \sin \theta_2 + \cos \theta_1 \cos \theta_2
+        \end{pmatrix}\Bigg) \\
+        = & \det \Bigg( \begin{pmatrix}
+            \cos (\theta_1 + \theta_2) & -\sin (\theta_1 + \theta_2) \\
+            \sin (\theta_1 + \theta_2) & \cos (\theta_1 + \theta_2)
+        \end{pmatrix} \Bigg) \\
+        = & 1 \cdot 1 = 1
+        \end{align*}
+        
+        Như vậy phép nhân 2 ma trận có dạng trên đóng trên $SL_2 (\RR)$.
+        
+        Phần tử đơn vị là $\begin{pmatrix}
+        1 & 0 \\ 0 & 1
+        \end{pmatrix}$ tương ứng với $\theta = 0$
+        
+        Phần tử nghịch đảo là $\begin{pmatrix}
+        \cos (-\theta) & -\sin (-\theta) \\ \sin (-\theta) & \cos (-\theta)
+        \end{pmatrix}$ suy ra từ công thức định thức ban nãy
+        
+        Cuối cùng, phép nhân ma trận có tính kết hợp. Như vậy $G$ là subgroup của $SL_2 (\RR)$
+        
+\end{proof}
+
+47. Đặt $G$ là nhóm và $g \in G$. Chứng minh rằng $$Z(G) = \{ x \in G: gx = xg \; \forall \; g \in G \}$$ là subgroup của $G$. Subgroup này gọi là \textbf{center} của $G$
+
+\begin{proof}
+    Giả sử trong $G$ có 2 phần tử là $x_1$ và $x_2$ thuộc $Z(G)$. Khi đó
+
+        $x_1 g = g x_1$ và $x_2 g = g x_2$ với mọi $g \in G$.
+
+    Xét phần tử $x_1 x_2$, ta có
+    $$(x_1 x_2) g = x_1 (x_2 g) = x_1 (g x_2) = (g x_1) x_2 = g (x_1 x_2)$$ với mọi $g \in G$. Do đó $x_1 x_2 \in Z(G)$ nên $Z(G)$ là subgroup.
+
+\end{proof}
+
+49. Cho ví dụ về nhóm vô hạn mà mọi nhóm con không tầm thường của nó đều vô hạn
+
+Ví dụ tập $\ZZ$ và phép cộng số nguyên. Khi đó mọi nhóm con của $\ZZ$ có dạng $n\ZZ$ với $n \in \ZZ$. Ví dụ
+
+$2\ZZ = \{\cdots, -4, -2, 0, 2, 4, \cdots\}$ với phần tử sinh là $2$
+
+$n\ZZ = \{\cdots, -2n, -n, 0, n, 2n, \cdots\}$ với phần tử sinh là $n$
+
+54. Cho $H$ là subgroup của $G$ và $$C(H) = \{g \in G: gh = hg \; \forall \; h \in H\}$$
+
+Chứng minh rằng $C(H)$ là subgroup của $G$. Subgroup này được gọi là \textbf{centralizer} của $H$ trong $G$
+
+\begin{proof}
+    Gọi $g_1$ và $g_2$ thuộc $C(H)$. Khi đó
+
+    $g_1 h = h g_1$ và $g_2 h = h g_2$ với mọi $h \in H$
+
+    Xét phần tử $g_1 g_2$, với mọi $h \in H$ ta có
+    $$(g_1 g_2) h = g_1 (g_2 h) = g_1 (h g_2) = (g_1 h) g_2 = (h g_1) g_2 = h (g_1 g_2)$$
+
+    Như vậy $g_1 g_2 \in C(H)$, từ đó $C(H)$ là subgroup của $G$
+
+
+\end{proof}
+
+\subsection*{Kết luận}
+
+Bài tập số 47 và 54 là 2 khái niệm quan trọng cho bổ đề Burnside và định lý Polya.

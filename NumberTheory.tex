@@ -1,0 +1,112 @@
+\section{Số học}
+
+\subsection{Hàm Euler}
+
+\begin{defblock}{$\phi$ hàm Euler}
+    
+    Cho số nguyên dương $n$. Số lượng các số dương nhỏ hơn $n$ và nguyên tố cùng nhau với $n$ được ký hiệu bởi $\phi(n)$ và gọi là $\phi$ hàm Euler.
+
+    Nghĩa là, $\phi(n) = \# \{ a | (a, n) = 1\}$
+\end{defblock}
+
+Hàm Euler có ý nghĩa quan trọng trong lý thuyết số, công cụ giúp chúng ta giải các vấn đề về số mũ trong modulo.
+
+Sau đây chúng ta xem xét hệ thặng dư đầy đủ và hệ thặng dư thu gọn.
+
+Với số nguyên dương $n$, ta định nghĩa:
+
+\begin{defblock}{Hệ thặng dư đầy đủ}
+
+    \begin{definition}
+        Hệ thặng dư đầy đủ của $n$ là tập $\{0, 1, \cdots, n-1\}$.
+    \end{definition}
+\end{defblock}
+
+Nói cách khác, hệ thặng dư đầy đủ của $n$ là các số dư có thể có khi chia một số bất kì cho $n$.
+
+\begin{defblock}{Hệ thặng dư thu gọn}
+
+    \begin{definition}
+        Hệ thặng dư thu gọn của $n$ là tập các số $a$ mà $1 \leq a < n$ và $(a, n) = 1$. Số lượng các số $a$ như vậy là $\phi (n)$.  
+    \end{definition}
+
+\end{defblock}
+
+\begin{remark}
+    Hệ thặng dư thu gọn của $n$ gồm $\phi(n)$ phần tử là $$\{a_1, a_2, \cdots, a_{\phi(n)}\}$$
+\end{remark}
+
+\begin{remark}
+    Nếu $n$ là số nguyên tố thì $\phi(n) = p-1$
+\end{remark}
+\subsection{Định lý Euler}
+
+\begin{theoremblock}{Định lý Euler}
+    
+    Cho số nguyên dương $n$. Với mọi số nguyên $a$ mà $(a, n) = 1$ thì $$a^{\phi(n)} \equiv 1 \pmod n$$
+\end{theoremblock}
+
+\begin{proof}
+    Giả sử $S = \{a_1, a_2, \cdots, a_{\phi(n)}\}$ là hệ thặng dư thu gọn của $n$. Ta sẽ chứng minh rằng nếu $a$ là số sao cho $(a, n)=1$ thì tập hợp
+    $$\{a a_1, a a_2, \cdots, a a_{\phi(n)}\}$$ là hoán vị của tập $S$.
+
+    Thật vậy, giả sử $a a_i \equiv a a_j \pmod n$ với $1 \leq i, j \leq \phi(n)$ và $i \neq j$.
+
+    Do $(a, n) = 1$ nên tồn tại nghịch đảo $a' \pmod n$, nhân $a'$ cho 2 vế ta còn $a_i \equiv a_j \pmod n$.
+
+    Nói cách khác, nếu $a_i \not\equiv a_j \pmod n$ thì $a a_i \not\equiv a a_j \pmod n$. Suy ra tập
+    $$\{a a_1, a a_2, \cdots, a a_{\phi(n)}\}$$ là hoán vị của $S$.
+
+    Ta nhân tất cả phần tử của $S$ thì sẽ bằng tích phần tử của tập trên
+    $$a a_1 \cdot a a_2 \cdots a a_{\phi(n)} \equiv a_1 \cdot a_2 \cdots a_{\phi(n)} \pmod n$$
+
+    Đặt $I = a_1 \cdot a_2 \cdots a_{\phi(n)}$ thì phương trình trên tương đương với 
+    $$a^{\phi(n)} I \equiv I \pmod n$$
+    
+    Mà $(I, n) = 1$ do là tích các số nguyên tố cùng nhau với $n$ nên rút gọn 2 vế ta được
+    $$a^{\phi(n)} \equiv 1 \pmod n$$
+
+    Ta có điều phải chứng minh.
+\end{proof}
+
+\subsection{Định lý Fermat nhỏ}
+
+\begin{theoremblock}{Định lý Fermat nhỏ}
+    
+    Cho số nguyên tố $p$. Với mọi số nguyên $a$ thì $$a^p \equiv a \pmod p$$
+
+    Khi $(a, p) = 1$ thì $$a^{p-1} \equiv 1 \pmod p$$
+\end{theoremblock}
+
+\textit{Nhận xét}. Khi $(a, p) = 1$ thì định lý Fermat là hệ quả trực tiếp từ định lý Euler.
+
+\subsection*{Tính chất hàm Euler}
+
+\begin{remark}
+    Với $(m, n) = 1$ thì $$\phi(m n) = \phi(m) \phi(n)$$
+\end{remark}
+
+\begin{proof}
+    Ta viết các số từ 1 tới $mn$ thành bảng như sau
+
+    \begin{center}
+        \begin{tabular}{c c c c}
+            1 & $m+1$ & $\cdots$ & $(n-1)m + 1$ \\
+            2 & $m+2$ & $\cdots$ & $(n-1)m + 2$ \\
+            $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\
+            $m$ & $m+m$ & $\cdots$ & $(n-1)m + m$
+        \end{tabular}
+    \end{center}
+    
+    Hàng $r$ gồm các phần tử dạng $r m + k$ với $0 \leq r \leq n-1$ và $1 \leq k \leq m$. 
+    Ta thấy rằng nếu $(rm + k, m) = 1$ thì $(k, m) = 1$.
+
+    Do đó trên mỗi hàng có $\phi(m)$ phần tử nguyên tố cùng nhau với $m$.
+
+    Tiếp theo, trên các hàng vừa tìm được, do $(m, n) = 1$ nên để $(rm + k, n) = 1$ thì $(r, n) = 1$.
+    Nghĩa là có $\phi(n)$ hàng như vậy.
+
+    Tổng kết lại, ta có $\phi(m) \phi(n)$ phần tử trong bảng nguyên tố cùng nhau với $mn$. Do đó có điều phải chứng minh.
+\end{proof}
+
+\newpage
