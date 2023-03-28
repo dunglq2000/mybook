@@ -18,7 +18,7 @@ Với số nguyên dương $n$, ta định nghĩa:
 \begin{defblock}{Hệ thặng dư đầy đủ}
 
     \begin{definition}
-        Hệ thặng dư đầy đủ của $n$ là tập $\{0, 1, \cdots, n-1\}$.
+        Hệ thặng dư đầy đủ của $n$ là tập $\{0, 1, \ldots, n-1\}$.
     \end{definition}
 \end{defblock}
 
@@ -33,7 +33,7 @@ Nói cách khác, hệ thặng dư đầy đủ của $n$ là các số dư có 
 \end{defblock}
 
 \begin{remark}
-    Hệ thặng dư thu gọn của $n$ gồm $\phi(n)$ phần tử là $$\{a_1, a_2, \cdots, a_{\phi(n)}\}$$
+    Hệ thặng dư thu gọn của $n$ gồm $\phi(n)$ phần tử là \[\{a_1, a_2, \ldots, a_{\phi(n)}\}\]
 \end{remark}
 
 \begin{remark}
@@ -43,28 +43,28 @@ Nói cách khác, hệ thặng dư đầy đủ của $n$ là các số dư có 
 
 \begin{theoremblock}{Định lý Euler}
     
-    Cho số nguyên dương $n$. Với mọi số nguyên $a$ mà $(a, n) = 1$ thì $$a^{\phi(n)} \equiv 1 \pmod n$$
+    Cho số nguyên dương $n$. Với mọi số nguyên $a$ mà $(a, n) = 1$ thì \[a^{\phi(n)} \equiv 1 \pmod n \]
 \end{theoremblock}
 
 \begin{proof}
-    Giả sử $S = \{a_1, a_2, \cdots, a_{\phi(n)}\}$ là hệ thặng dư thu gọn của $n$. Ta sẽ chứng minh rằng nếu $a$ là số sao cho $(a, n)=1$ thì tập hợp
-    $$\{a a_1, a a_2, \cdots, a a_{\phi(n)}\}$$ là hoán vị của tập $S$.
+    Giả sử $S = \{a_1, a_2, \ldots, a_{\phi(n)}\}$ là hệ thặng dư thu gọn của $n$. Ta sẽ chứng minh rằng nếu $a$ là số sao cho $(a, n)=1$ thì tập hợp
+    \[ \{a a_1, a a_2, \ldots, a a_{\phi(n)}\}\] là hoán vị của tập $S$.
 
     Thật vậy, giả sử $a a_i \equiv a a_j \pmod n$ với $1 \leq i, j \leq \phi(n)$ và $i \neq j$.
 
     Do $(a, n) = 1$ nên tồn tại nghịch đảo $a' \pmod n$, nhân $a'$ cho 2 vế ta còn $a_i \equiv a_j \pmod n$.
 
     Nói cách khác, nếu $a_i \not\equiv a_j \pmod n$ thì $a a_i \not\equiv a a_j \pmod n$. Suy ra tập
-    $$\{a a_1, a a_2, \cdots, a a_{\phi(n)}\}$$ là hoán vị của $S$.
+    \[ \{a a_1, a a_2, \ldots, a a_{\phi(n)}\} \] là hoán vị của $S$.
 
     Ta nhân tất cả phần tử của $S$ thì sẽ bằng tích phần tử của tập trên
-    $$a a_1 \cdot a a_2 \cdots a a_{\phi(n)} \equiv a_1 \cdot a_2 \cdots a_{\phi(n)} \pmod n$$
+    \[ a a_1 \cdot a a_2 \ldots a a_{\phi(n)} \equiv a_1 \cdot a_2 \ldots a_{\phi(n)} \pmod n \]
 
-    Đặt $I = a_1 \cdot a_2 \cdots a_{\phi(n)}$ thì phương trình trên tương đương với 
-    $$a^{\phi(n)} I \equiv I \pmod n$$
+    Đặt $I = a_1 \cdot a_2 \ldots a_{\phi(n)}$ thì phương trình trên tương đương với 
+    \[ a^{\phi(n)} I \equiv I \pmod n \]
     
     Mà $(I, n) = 1$ do là tích các số nguyên tố cùng nhau với $n$ nên rút gọn 2 vế ta được
-    $$a^{\phi(n)} \equiv 1 \pmod n$$
+    \[ a^{\phi(n)} \equiv 1 \pmod n \]
 
     Ta có điều phải chứng minh.
 \end{proof}
@@ -73,17 +73,17 @@ Nói cách khác, hệ thặng dư đầy đủ của $n$ là các số dư có 
 
 \begin{theoremblock}{Định lý Fermat nhỏ}
     
-    Cho số nguyên tố $p$. Với mọi số nguyên $a$ thì $$a^p \equiv a \pmod p$$
+    Cho số nguyên tố $p$. Với mọi số nguyên $a$ thì \[ a^p \equiv a \pmod p \]
 
-    Khi $(a, p) = 1$ thì $$a^{p-1} \equiv 1 \pmod p$$
+    Khi $(a, p) = 1$ thì \[ a^{p-1} \equiv 1 \pmod p \]
 \end{theoremblock}
 
 \textit{Nhận xét}. Khi $(a, p) = 1$ thì định lý Fermat là hệ quả trực tiếp từ định lý Euler.
 
-\subsection*{Tính chất hàm Euler}
+\subsection{Tính chất hàm Euler}
 
 \begin{remark}
-    Với $(m, n) = 1$ thì $$\phi(m n) = \phi(m) \phi(n)$$
+    Với $(m, n) = 1$ thì \[ \phi(m n) = \phi(m) \phi(n) \]
 \end{remark}
 
 \begin{proof}
