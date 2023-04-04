@@ -1,6 +1,6 @@
-\section*{Groups}
+\section{Groups (chương 3)}
 
-\subsection*{Tóm tắt lý thuyết}
+\subsection{Tóm tắt lý thuyết}
 
 Tập hợp $G$ và toán tử 2 ngôi $\star$ trên $G$ tạo thành một nhóm nếu:
 
@@ -12,7 +12,7 @@ Tập hợp $G$ và toán tử 2 ngôi $\star$ trên $G$ tạo thành một nhó
 
 Nếu có thêm tính chất $a \star b = b \star a$ với mọi $a, b \in G$ thì $G$ gọi là nhóm giao hoán (nhóm Abel).
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 
 7. Đặt $S = \RR \backslash \{-1\}$ và định nghĩa toán tử 2 ngôi trên $S$ là $a \star b = a + b + ab$. Chứng minh rằng $(S, \star)$ là nhóm Abel
 
@@ -30,25 +30,33 @@ $$\begin{pmatrix}
 \end{pmatrix}$$ với $\theta \in \RR$. Chứng minh rằng $G$ là subgroup của $SL_2 (\RR)$
     
 \begin{proof}
-            Với $\theta_1, \theta_2 \in \RR$, ta có
+        Với $\theta_1, \theta_2 \in \RR$, ta có
         
         \begin{align*}
-        & \det \Bigg( \begin{pmatrix}
+        & \begin{pmatrix}
             \cos \theta_1 & -\sin \theta_1 \\ \sin \theta_1 & \cos \theta_1
         \end{pmatrix} \begin{pmatrix}
             \cos \theta_2 & -\sin \theta_2 \\ \sin \theta_2 & \cos \theta_2
-        \end{pmatrix} \Bigg) \\
-        = & \det\Bigg(\begin{pmatrix}
+        \end{pmatrix} \\
+        = & \begin{pmatrix}
             \cos \theta_1 \cos \theta_2 - \sin \theta_1 \sin \theta_2 & -\cos \theta_1 \sin \theta_2 - \sin \theta_1 \cos \theta_2 \\ 
             \sin \theta_1 \cos \theta_2 + \cos \theta_1 \sin \theta_2 & -\sin \theta_1 \sin \theta_2 + \cos \theta_1 \cos \theta_2
-        \end{pmatrix}\Bigg) \\
-        = & \det \Bigg( \begin{pmatrix}
+        \end{pmatrix} \\
+        = & \begin{pmatrix}
             \cos (\theta_1 + \theta_2) & -\sin (\theta_1 + \theta_2) \\
             \sin (\theta_1 + \theta_2) & \cos (\theta_1 + \theta_2)
-        \end{pmatrix} \Bigg) \\
-        = & 1 \cdot 1 = 1
+        \end{pmatrix}
         \end{align*}
         
+        Suy ra định thức của tích 2 ma trận là
+
+        \begin{align*}
+            \det \Biggl(\begin{pmatrix}
+                \cos (\theta_1 + \theta_2) & -\sin (\theta_1 + \theta_2) \\
+                \sin (\theta_1 + \theta_2) & \cos (\theta_1 + \theta_2)
+            \end{pmatrix}\Biggr)
+            = & 1 \cdot 1 = 1
+        \end{align*}
         Như vậy phép nhân 2 ma trận có dạng trên đóng trên $SL_2 (\RR)$.
         
         Phần tử đơn vị là $\begin{pmatrix}
@@ -100,6 +108,6 @@ Chứng minh rằng $C(H)$ là subgroup của $G$. Subgroup này được gọi 
 
 \end{proof}
 
-\subsection*{Kết luận}
+\subsection{Kết luận}
 
 Bài tập số 47 và 54 là 2 khái niệm quan trọng cho bổ đề Burnside và định lý Polya.

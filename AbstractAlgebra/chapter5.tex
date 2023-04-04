@@ -1,12 +1,12 @@
-\section*{Permutation Groups}
+\section{Permutation Groups (chương 5)}
 
-\subsection*{Tóm tắt lý thuyết}
+\subsection{Tóm tắt lý thuyết}
 
 Đặt $S_n$ là nhóm hoán vị trên tập $n$ phần tử. Như vậy $S_n$ có $n!$ phần tử.
 
 Mỗi phần tử trong $S_n$ có thể biểu diễn dưới dạng các chu trình (cycle) độc lập (disjoint).
 
-\subsection*{Bài tập}
+\subsection{Bài tập}
 
 13. Đặt $\sigma = \sigma_1 \cdots \sigma_m \in S_n$ là tích của các cycle độc lập. Chứng minh rằng order của $\sigma$ là LCM của độ dài các cycle $\sigma_1, \cdots, \sigma_m$.
 
@@ -30,6 +30,8 @@ Mỗi phần tử trong $S_n$ có thể biểu diễn dưới dạng các chu tr
 \end{enumerate}
 
 \begin{proof}
+    Để chứng minh 2 mệnh đề trên ta cần chú ý một số điều.
+
     \begin{enumerate}
         \item [(a)] Ta thấy rằng bất kì phần tử nào khác $a_1, a_2, \cdots, a_k$ thì khi qua $\tau$ không đổi, do đó khi đi qua $\sigma \tau \sigma^{-1}$ thì chỉ đi qua $\sigma \sigma^{-1}$ và cũng không đổi. Nói cách khác các phần tử $a_1, a_2, \cdots, a_k$ vẫn nằm trong chu trình nên ta có đpcm.
         \item [(b)] Từ câu (a), với $\mu = (b_1, b_2, \cdots, b_k)$ thì ta chọn $\sigma$ sao cho $b_i = \sigma(a_i)$.
@@ -37,6 +39,6 @@ Mỗi phần tử trong $S_n$ có thể biểu diễn dưới dạng các chu tr
 \end{proof}
 
 
-\subsection*{Kết luận}
+\subsection{Kết luận}
 
 Bổ đề Burnside và định lý Polya dùng để đếm số cấu hình khác nhau dựa trên nhóm hoán vị.

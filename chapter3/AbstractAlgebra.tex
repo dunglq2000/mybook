@@ -1,0 +1,130 @@
+\chapter{Lý thuyết nhóm}
+
+Câu chuyện bắt đầu vào một ngày khi mình vẫn còn sống ngày tháng tươi đẹp.
+
+Cho tới khi học \textbf{lý thuyết nhóm} thì đời bớt đẹp hơn tí.
+
+Để bắt đầu mình cần hiểu nhóm là gì.
+
+\section{Nhóm}
+
+\begin{defblock}{Nhóm (Group)}
+
+Một tập hợp $G$ và toán tử 2 ngôi $\star$ trên $G$ tạo thành một nhóm nếu:
+\begin{enumerate}[noitemsep]
+    \item Tồn tại phần tử $e \in G$ sao cho với mọi $g \in G$ thì $g \star e = e \star g = g$. Khi đó $e$ được gọi là \textbf{phần tử đơn vị} của $G$.
+    \item Với mọi $g \in G$, tồn tại $g' \in G$ sao cho $g \star g' = g' \star g = e$. Khi đó $g'$ được gọi là \textbf{phần tử nghịch đảo} của $g$.
+    \item Tính kết hợp: với mọi $a, b, c \in G$ thì $a \star (b \star c) = (a \star b) \star c$.
+\end{enumerate}
+\end{defblock}
+
+\begin{defblock}{Nhóm Abel}
+    
+    Nếu nhóm $G$ có thêm tính giao hoán, tức là với mọi $a, b \in G$ thì $a \star b = b \star a$ thì $G$ gọi là nhóm giao hoán hay nhóm Abel
+\end{defblock}
+
+Lý thuyết nhóm thuộc toán trừu tượng, và nó trừu tượng thật. Tuy nhiên khi học về nó mình dần hiểu hơn về cách toán học vận hành và phát triển.
+
+\begin{example}
+    Xét tập hợp số nguyên $\mathbb{Z}$ và phép cộng 2 số nguyên.
+    \begin{enumerate}[noitemsep]
+        \item Phần tử đơn vị là 0 vì với mọi $a \in \mathbb{Z}$ thì $a + 0 = 0 + a = a$
+        \item Với mọi $a \in \mathbb{Z}$, phần tử nghịch đảo là $-a$ vì $a + (-a) = (-a) + a = 0$
+        \item Phép cộng số nguyên có tính kết hợp do đó thỏa mãn điều kiện về tính kết hợp
+    \end{enumerate}
+    Như vậy $(\mathbb{Z}, +)$ tạo thành nhóm. Lưu ý do phép cộng 2 số nguyên có tính giao hoán nên đây cũng là nhóm Abel.
+\end{example}
+
+\begin{example}
+    Xét tập hợp số hữu tỉ khác 0 $\mathbb{Q}^*$ và phép nhân 2 số hữu tỉ. Ta thấy do $a, b \in \mathbb{Q}^*$ nên tích $a \cdot b$ cũng khác 0, do đó cũng thuộc $\mathbb{Q}^*$.
+    \begin{enumerate}[noitemsep]
+        \item Phần tử đơn vị là 1 vì với mọi $a \in \mathbb{Q}^*$ thì $a \cdot 1 = 1 \cdot a = a$
+        \item Với mọi $a \in \mathbb{Q}^*$, phần tử nghịch đảo là $\frac{1}{a}$ vì $a \cdot \frac{1}{a} = \frac{1}{a} \cdot a = 1$
+        \item Phép nhân 2 số hữu tỉ có tính giao hoán do đó thỏa mãn điều kiện về tính kết hợp
+    \end{enumerate}
+    Tương tự như nhóm $\mathbb{Z, +}$, nhóm $(\mathbb{Q}^*, \cdot)$ cũng là nhóm Abel.
+\end{example}
+
+\section{Nhóm con}
+
+\begin{definition}{Nhóm con (Subgroup)}
+    Cho nhóm $(G, \star)$. Tập hợp $H \subset G$ được gọi là \textit{nhóm con} của $G$ nếu với mọi $a, b \in H$ thì $a \star b \in H$
+\end{definition}
+ 
+Nghĩa là toán tử $\star$ đóng với các phần tử trong $H$.
+
+\begin{example}
+    Xét nhóm $(\mathbb{Z}, +)$ như trên. Ta xét tập con gồm các số chẵn của nó
+    \[2\mathbb{Z} = \{\ldots, -4, -2, 0, 2, 4, \ldots\}\]
+
+    Ta thấy rằng tổng 2 số chẵn vẫn là số chẵn, nghĩa là phép cộng số nguyên đóng trên $2\mathbb{Z}$.
+    Do đó $(2\mathbb{Z}, +)$ là nhóm con của $(\mathbb{Z}, +)$.
+
+    Như vậy mọi tập hợp có dạng $n \mathbb{Z}$ đều là nhóm con của $(\mathbb{Z}, +)$.
+\end{example}
+
+\section{Coset}
+
+\begin{definition}{Coset}
+    (tạm dịch - \textit{lớp kề} theo wikipedia) Cho nhóm $G$ và nhóm con $H$ của $G$.
+
+    Coset trái của $H$ đối với phần tử $g \in G$ là tập hợp
+    \[gH = \{gh : h \in H \}\]
+
+    Tương tự, coset phải là tập hợp
+    \[Hg = \{hg : h \in H \}\]
+\end{definition}
+
+Từ đây nếu không nói gì thêm ta ngầm hiểu là coset trái.
+
+Ví dụ với nhóm con $2\mathbb{Z}$ của $\mathbb{Z}$, ta thấy rằng
+
+\begin{enumerate}
+    \item Nếu $g \in \mathbb{Z}$ là lẻ thì khi cộng với bất kì phần tử nào của $2\mathbb{Z}$ ta có số lẻ
+    \item Nếu $g \in \mathbb{Z}$ là chẵn thì khi cộng với bất kì phần tử nào của $2\mathbb{Z}$ ta có số chẵn
+\end{enumerate}
+
+Nói cách khác, coset của $2\mathbb{Z}$ chia tập $\mathbb{Z}$ thành
+\[0 (2\mathbb{Z}) = \{\ldots, -4, -2, 0, 2, 4, \ldots\}\]
+ 
+\[1 (2\mathbb{Z}) = \{\ldots, -3, -1, 1, 3, \ldots \}\]
+
+Trực quan mà nói, 2 coset trên rời nhau.
+
+\begin{remark}
+    Hai coset bất kì hoặc rời nhau, hoặc trùng nhau.
+\end{remark}
+
+\begin{proof}
+    Nếu hai coset rời nhau thì không có gì phải nói. Ta chứng minh trường hợp còn lại.
+
+    Giả sử $g_1 H \cap g_2 H \neq \emptyset$. Như vậy tồn tại $h_1, h_2 \in H$ mà $g_1 h_1 = g_2 h_2$.
+
+    Do $h_1^{-1} \in H$, ta có $g_1 = g_2 h_2 h_1^{-1}$, nghĩa là $g_1 \in g_2 H$.
+
+    Mà mọi phần tử trong $g_1 H$ có dạng $g_1 h$ nên $g_1 h = g_2 h_2 h_1^{-1} h$. Do $H$ là nhóm con của $G$ nên $h_2 h_1^{-1} h \in H$.
+    Từ đó $g_1 H \subseteq g_2 H$. Tương tự ta cũng có $g_2 H \subseteq g_1 H$. Vậy $g_1 H = g_2 H$.
+\end{proof}
+
+\section{Normal Subgroup}
+
+\begin{definition}{Normal Subgroup}
+    (tạm dịch - \textit{nhóm con chuẩn tắc}) Nhóm con $H$ của $G$ được gọi là \textit{normal subgroup} nếu với mọi $g \in G$ ta có coset trái trùng với coset phải.
+    \[gH = Hg \; \forall g \in G\]
+\end{definition}
+
+Nếu $H$ là normal subgroup của $G$ ta ký hiệu $H \triangleleft G$.
+
+\begin{definition}{Quotient Group}
+    (tạm dịch - \textit{nhóm thương}, hay Factor Group - \textit{nhóm nhân tử}). Với nhóm $G$ và normal subgroup của nó là $H$.
+    Quotient Group được ký hiệu là $G / H$ và được định nghĩa là tập hợp các coset tương ứng với normal subgroup $H$.
+    \[G / H = \{gH : g \in H \}\]
+
+    Ta thấy rằng điều này chỉ xảy ra nếu $H$ là normal subgroup.
+\end{definition}
+
+\begin{example}
+    Với nhóm $\mathbb{Z}$ và normal subgroup của nó là $2\mathbb{Z}$.
+    Ta thấy $\mathbb{Z} / 2 \mathbb{Z} = \{0 + 2 \mathbb{Z}, 1 + 2 \mathbb{Z}\}$
+\end{example}
+\newpage

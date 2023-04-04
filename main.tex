@@ -1,0 +1,66 @@
+%\PassOptionsToPackage{svgnames}{xcolor}
+\documentclass[oneside]{book}
+
+\input{config.tex} 
+
+\title{Nơi huyền thoại lưu danh}   
+\author{Lê Quốc Dũng} 
+\date{\today}
+
+\begin{document}
+
+%=========================================
+\begin{titlepage}
+		\centering{
+			{\fontsize{40}{48}\selectfont 
+			Nơi huyền thoại lưu danh}
+		}\\
+			
+		\vspace{10mm}
+		\centering{\Large{Lê Quốc Dũng}}\\
+		\vspace{\fill}
+		\centering \large{2023}
+\end{titlepage}
+
+\newpage
+%\thispagestyle {empty}
+
+\vspace*{2cm}
+
+\begin{center}
+	\Large{\parbox{10cm}{
+		\begin{raggedright}
+		{\Large 
+			\textit{Đường đi ngàn dặm, bắt đầu bằng một bước chân.}
+		}
+	
+		\vspace{.5cm}\hfill{Lão Tử}
+		\end{raggedright}
+	}
+}
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\input{Notations.tex}
+
+\part{Đại cương toán học}
+\input{chapter1/LinearAlgebra.tex}
+\input{chapter2/NumberTheory.tex}
+\input{chapter3/AbstractAlgebra.tex}
+\input{chapter3/BooleanAlgebra.tex}
+\input{chapter4/GroupAction.tex}
+\input{chapter5/Conics.tex}
+
+\part{Lời giải cho bài tập trong một số sách}
+\input{AbstractAlgebra/book1.tex}
+
+\part{Lịch sử toán học}
+\input{History/History.tex}
+
+
+\end{document}

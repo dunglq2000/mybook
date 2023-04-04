@@ -1,0 +1,59 @@
+\usepackage{geometry}
+
+\usepackage{tcolorbox}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{pdfpages}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\chapterfont{\centering}
+%\usepackage{hyphenat}
+%\hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+%\usepackage[utf8]{inputenc, vietnam}
+\usepackage[T2A]{fontenc}
+\usepackage[russian, vietnam]{babel}
+
+\definecolor{green}{rgb}{0.0, 255.0, 0.0}
+\definecolor{cyan}{rgb}{0.0, 255.0, 255.0}
+\definecolor{red}{rgb}{255.0, 0.0, 0.0}
+\definecolor{magenta}{rgb}{255.0, 0.0, 255.0}
+\definecolor{yello}{rgb}{255.0, 255.0, 0.0}
+\definecolor{white}{rgb}{255.0, 255.0, 255.0}
+
+\geometry{a5paper}
+
+\newcommand{\rank}{\text{rank}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Định nghĩa}[chapter]
+\newtheorem{theorem}{Định lý}[chapter]
+\newtheorem{corollary}{Hệ quả}[chapter]
+\newtheorem{lemma}{Bổ đề}[chapter]
+
+\newtheorem*{remark}{Nhận xét}
+\newtheorem*{axiom}{Tiên đề}
+\newtheorem*{example}{Ví dụ}
+
+\renewcommand*\contentsname{Mục lục}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\lcm}{\text{lcm}}
+
+\newenvironment{myexampleblock}[1]{%
+    \tcolorbox[colback=LightGreen,colframe=DarkGreen,title=#1]}
+    {\endtcolorbox}
+
+\newenvironment{defblock}[2]{%
+    \tcolorbox[colback=white,colframe=blue
+    ,title=#1
+    ]}
+    {\endtcolorbox}
+
+\newenvironment{theoremblock}[2]{%
+    \tcolorbox[colback=white,colframe=magenta
+    ,title=#1
+    ]}
+    {\endtcolorbox}
