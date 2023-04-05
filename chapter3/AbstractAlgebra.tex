@@ -8,41 +8,44 @@ Cho tới khi học \textbf{lý thuyết nhóm} thì đời bớt đẹp hơn t�
 
 \section{Nhóm}
 
-\begin{defblock}{Nhóm (Group)}
+%\begin{defblock}{Nhóm (Group)}
+\begin{definition}{Nhóm (Group)}
+    Một tập hợp $G$ và toán tử 2 ngôi $\star$ trên $G$ tạo thành một nhóm nếu:
+    \begin{enumerate}[noitemsep]
+        \item Tồn tại phần tử $e \in G$ sao cho với mọi $g \in G$ thì $g \star e = e \star g = g$. Khi đó $e$ được gọi là \textbf{phần tử đơn vị} của $G$.
+        \item Với mọi $g \in G$, tồn tại $g' \in G$ sao cho $g \star g' = g' \star g = e$. Khi đó $g'$ được gọi là \textbf{phần tử nghịch đảo} của $g$.
+        \item Tính kết hợp: với mọi $a, b, c \in G$ thì $a \star (b \star c) = (a \star b) \star c$.
+    \end{enumerate}
+\end{definition}
 
-Một tập hợp $G$ và toán tử 2 ngôi $\star$ trên $G$ tạo thành một nhóm nếu:
-\begin{enumerate}[noitemsep]
-    \item Tồn tại phần tử $e \in G$ sao cho với mọi $g \in G$ thì $g \star e = e \star g = g$. Khi đó $e$ được gọi là \textbf{phần tử đơn vị} của $G$.
-    \item Với mọi $g \in G$, tồn tại $g' \in G$ sao cho $g \star g' = g' \star g = e$. Khi đó $g'$ được gọi là \textbf{phần tử nghịch đảo} của $g$.
-    \item Tính kết hợp: với mọi $a, b, c \in G$ thì $a \star (b \star c) = (a \star b) \star c$.
-\end{enumerate}
-\end{defblock}
+%\end{defblock}
 
-\begin{defblock}{Nhóm Abel}
-    
+%\begin{defblock}{Nhóm Abel}
+\begin{definition}{Nhóm Abel}
     Nếu nhóm $G$ có thêm tính giao hoán, tức là với mọi $a, b \in G$ thì $a \star b = b \star a$ thì $G$ gọi là nhóm giao hoán hay nhóm Abel
-\end{defblock}
+\end{definition}
+%\end{defblock}
 
 Lý thuyết nhóm thuộc toán trừu tượng, và nó trừu tượng thật. Tuy nhiên khi học về nó mình dần hiểu hơn về cách toán học vận hành và phát triển.
 
 \begin{example}
-    Xét tập hợp số nguyên $\mathbb{Z}$ và phép cộng 2 số nguyên.
+    Xét tập hợp số nguyên $\ZZ$ và phép cộng 2 số nguyên.
     \begin{enumerate}[noitemsep]
-        \item Phần tử đơn vị là 0 vì với mọi $a \in \mathbb{Z}$ thì $a + 0 = 0 + a = a$
-        \item Với mọi $a \in \mathbb{Z}$, phần tử nghịch đảo là $-a$ vì $a + (-a) = (-a) + a = 0$
+        \item Phần tử đơn vị là 0 vì với mọi $a \in \ZZ$ thì $a + 0 = 0 + a = a$
+        \item Với mọi $a \in \ZZ$, phần tử nghịch đảo là $-a$ vì $a + (-a) = (-a) + a = 0$
         \item Phép cộng số nguyên có tính kết hợp do đó thỏa mãn điều kiện về tính kết hợp
     \end{enumerate}
-    Như vậy $(\mathbb{Z}, +)$ tạo thành nhóm. Lưu ý do phép cộng 2 số nguyên có tính giao hoán nên đây cũng là nhóm Abel.
+    Như vậy $(\ZZ, +)$ tạo thành nhóm. Lưu ý do phép cộng 2 số nguyên có tính giao hoán nên đây cũng là nhóm Abel.
 \end{example}
 
 \begin{example}
-    Xét tập hợp số hữu tỉ khác 0 $\mathbb{Q}^*$ và phép nhân 2 số hữu tỉ. Ta thấy do $a, b \in \mathbb{Q}^*$ nên tích $a \cdot b$ cũng khác 0, do đó cũng thuộc $\mathbb{Q}^*$.
+    Xét tập hợp số hữu tỉ khác 0 $\QQ^*$ và phép nhân 2 số hữu tỉ. Ta thấy do $a, b \in \QQ^*$ nên tích $a \cdot b$ cũng khác 0, do đó cũng thuộc $\QQ^*$.
     \begin{enumerate}[noitemsep]
-        \item Phần tử đơn vị là 1 vì với mọi $a \in \mathbb{Q}^*$ thì $a \cdot 1 = 1 \cdot a = a$
-        \item Với mọi $a \in \mathbb{Q}^*$, phần tử nghịch đảo là $\frac{1}{a}$ vì $a \cdot \frac{1}{a} = \frac{1}{a} \cdot a = 1$
+        \item Phần tử đơn vị là 1 vì với mọi $a \in \QQ^*$ thì $a \cdot 1 = 1 \cdot a = a$
+        \item Với mọi $a \in \QQ^*$, phần tử nghịch đảo là $\frac{1}{a}$ vì $a \cdot \frac{1}{a} = \frac{1}{a} \cdot a = 1$
         \item Phép nhân 2 số hữu tỉ có tính giao hoán do đó thỏa mãn điều kiện về tính kết hợp
     \end{enumerate}
-    Tương tự như nhóm $\mathbb{Z, +}$, nhóm $(\mathbb{Q}^*, \cdot)$ cũng là nhóm Abel.
+    Tương tự như nhóm $\mathbb{Z, +}$, nhóm $(\QQ^*, \cdot)$ cũng là nhóm Abel.
 \end{example}
 
 \section{Nhóm con}
@@ -54,13 +57,13 @@ Lý thuyết nhóm thuộc toán trừu tượng, và nó trừu tượng thật
 Nghĩa là toán tử $\star$ đóng với các phần tử trong $H$.
 
 \begin{example}
-    Xét nhóm $(\mathbb{Z}, +)$ như trên. Ta xét tập con gồm các số chẵn của nó
-    \[2\mathbb{Z} = \{\ldots, -4, -2, 0, 2, 4, \ldots\}\]
+    Xét nhóm $(\ZZ, +)$ như trên. Ta xét tập con gồm các số chẵn của nó
+    \[2\ZZ = \{\ldots, -4, -2, 0, 2, 4, \ldots\}\]
 
-    Ta thấy rằng tổng 2 số chẵn vẫn là số chẵn, nghĩa là phép cộng số nguyên đóng trên $2\mathbb{Z}$.
-    Do đó $(2\mathbb{Z}, +)$ là nhóm con của $(\mathbb{Z}, +)$.
+    Ta thấy rằng tổng 2 số chẵn vẫn là số chẵn, nghĩa là phép cộng số nguyên đóng trên $2\ZZ$.
+    Do đó $(2\ZZ, +)$ là nhóm con của $(\ZZ, +)$.
 
-    Như vậy mọi tập hợp có dạng $n \mathbb{Z}$ đều là nhóm con của $(\mathbb{Z}, +)$.
+    Như vậy mọi tập hợp có dạng $n \ZZ$ đều là nhóm con của $(\ZZ, +)$.
 \end{example}
 
 \section{Coset}
@@ -77,17 +80,17 @@ Nghĩa là toán tử $\star$ đóng với các phần tử trong $H$.
 
 Từ đây nếu không nói gì thêm ta ngầm hiểu là coset trái.
 
-Ví dụ với nhóm con $2\mathbb{Z}$ của $\mathbb{Z}$, ta thấy rằng
+Ví dụ với nhóm con $2\ZZ$ của $\ZZ$, ta thấy rằng
 
 \begin{enumerate}
-    \item Nếu $g \in \mathbb{Z}$ là lẻ thì khi cộng với bất kì phần tử nào của $2\mathbb{Z}$ ta có số lẻ
-    \item Nếu $g \in \mathbb{Z}$ là chẵn thì khi cộng với bất kì phần tử nào của $2\mathbb{Z}$ ta có số chẵn
+    \item Nếu $g \in \ZZ$ là lẻ thì khi cộng với bất kì phần tử nào của $2\ZZ$ ta có số lẻ
+    \item Nếu $g \in \ZZ$ là chẵn thì khi cộng với bất kì phần tử nào của $2\ZZ$ ta có số chẵn
 \end{enumerate}
 
-Nói cách khác, coset của $2\mathbb{Z}$ chia tập $\mathbb{Z}$ thành
-\[0 (2\mathbb{Z}) = \{\ldots, -4, -2, 0, 2, 4, \ldots\}\]
+Nói cách khác, coset của $2\ZZ$ chia tập $\ZZ$ thành
+\[0 (2\ZZ) = \{\ldots, -4, -2, 0, 2, 4, \ldots\}\]
  
-\[1 (2\mathbb{Z}) = \{\ldots, -3, -1, 1, 3, \ldots \}\]
+\[1 (2\ZZ) = \{\ldots, -3, -1, 1, 3, \ldots \}\]
 
 Trực quan mà nói, 2 coset trên rời nhau.
 
@@ -124,7 +127,7 @@ Nếu $H$ là normal subgroup của $G$ ta ký hiệu $H \triangleleft G$.
 \end{definition}
 
 \begin{example}
-    Với nhóm $\mathbb{Z}$ và normal subgroup của nó là $2\mathbb{Z}$.
-    Ta thấy $\mathbb{Z} / 2 \mathbb{Z} = \{0 + 2 \mathbb{Z}, 1 + 2 \mathbb{Z}\}$
+    Với nhóm $\ZZ$ và normal subgroup của nó là $2\ZZ$.
+    Ta thấy $\ZZ / 2 \ZZ = \{0 + 2 \ZZ, 1 + 2 \ZZ\}$
 \end{example}
 \newpage

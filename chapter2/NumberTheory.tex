@@ -2,12 +2,12 @@
 
 \section{Hàm Euler}
 
-\begin{defblock}{$\phi$ hàm Euler}
-    
-    Cho số nguyên dương $n$. Số lượng các số dương nhỏ hơn $n$ và nguyên tố cùng nhau với $n$ được ký hiệu bởi $\phi(n)$ và gọi là $\phi$ hàm Euler.
-
-    Nghĩa là, $\phi(n) = \# \{ a | (a, n) = 1\}$
-\end{defblock}
+%\begin{defblock}{$\phi$ hàm Euler}
+\begin{definition}
+    Cho số nguyên dương $n$. Số lượng các số dương nhỏ hơn $n$ và nguyên tố cùng nhau với $n$ được ký hiệu bởi $\phi(n)$ và gọi là $\phi$ hàm Euler. Nghĩa là
+    \[\phi(n) = | \{ a : (a, n) = 1\} |\]
+\end{definition}   
+%\end{defblock}
 
 Hàm Euler có ý nghĩa quan trọng trong lý thuyết số, công cụ giúp chúng ta giải các vấn đề về số mũ trong modulo.
 
@@ -15,25 +15,24 @@ Sau đây chúng ta xem xét hệ thặng dư đầy đủ và hệ thặng dư 
 
 Với số nguyên dương $n$, ta định nghĩa:
 
-\begin{defblock}{Hệ thặng dư đầy đủ}
-
-    \begin{definition}
-        Hệ thặng dư đầy đủ của $n$ là tập $\{0, 1, \cdots, n-1\}$.
-    \end{definition}
-\end{defblock}
+%\begin{defblock}{Hệ thặng dư đầy đủ}
+\begin{definition}
+    Hệ thặng dư đầy đủ của $n$ là tập $\{0, 1, \ldots, n-1\}$.
+\end{definition}
+%\end{defblock}
 
 Nói cách khác, hệ thặng dư đầy đủ của $n$ là các số dư có thể có khi chia một số bất kì cho $n$.
 
-\begin{defblock}{Hệ thặng dư thu gọn}
+%\begin{defblock}{Hệ thặng dư thu gọn}
 
-    \begin{definition}
-        Hệ thặng dư thu gọn của $n$ là tập các số $a$ mà $1 \leq a < n$ và $(a, n) = 1$. Số lượng các số $a$ như vậy là $\phi (n)$.  
-    \end{definition}
+\begin{definition}
+    Hệ thặng dư thu gọn của $n$ là tập các số $a$ mà $1 \leq a < n$ và $(a, n) = 1$. Số lượng các số $a$ như vậy là $\phi (n)$.  
+\end{definition}
 
-\end{defblock}
+%\end{defblock}
 
 \begin{remark}
-    Hệ thặng dư thu gọn của $n$ gồm $\phi(n)$ phần tử là $$\{a_1, a_2, \cdots, a_{\phi(n)}\}$$
+    Hệ thặng dư thu gọn của $n$ gồm $\phi(n)$ phần tử là $$\{a_1, a_2, \ldots, a_{\phi(n)}\}$$
 \end{remark}
 
 \begin{remark}
@@ -42,26 +41,28 @@ Nói cách khác, hệ thặng dư đầy đủ của $n$ là các số dư có 
 
 \section{Định lý Euler}
 
-\begin{theoremblock}{Định lý Euler}
-    
-    Cho số nguyên dương $n$. Với mọi số nguyên $a$ mà $(a, n) = 1$ thì $$a^{\phi(n)} \equiv 1 \pmod n$$
-\end{theoremblock}
+%\begin{theoremblock}{Định lý Euler}
+    \begin{theorem}    
+        Cho số nguyên dương $n$. Với mọi số nguyên $a$ mà $(a, n) = 1$ thì 
+        \[a^{\phi(n)} \equiv 1 \pmod n\]
+    \end{theorem}
+%\end{theoremblock}
 
 \begin{proof}
-    Giả sử $S = \{a_1, a_2, \cdots, a_{\phi(n)}\}$ là hệ thặng dư thu gọn của $n$. Ta sẽ chứng minh rằng nếu $a$ là số sao cho $(a, n)=1$ thì tập hợp
-    $$\{a a_1, a a_2, \cdots, a a_{\phi(n)}\}$$ là hoán vị của tập $S$.
+    Giả sử $S = \{a_1, a_2, \ldots, a_{\phi(n)}\}$ là hệ thặng dư thu gọn của $n$. Ta sẽ chứng minh rằng nếu $a$ là số sao cho $(a, n)=1$ thì tập hợp
+    $$\{a a_1, a a_2, \ldots, a a_{\phi(n)}\}$$ là hoán vị của tập $S$.
 
     Thật vậy, giả sử $a a_i \equiv a a_j \pmod n$ với $1 \leq i, j \leq \phi(n)$ và $i \neq j$.
 
     Do $(a, n) = 1$ nên tồn tại nghịch đảo $a' \pmod n$, nhân $a'$ cho 2 vế ta còn $a_i \equiv a_j \pmod n$.
 
     Nói cách khác, nếu $a_i \not\equiv a_j \pmod n$ thì $a a_i \not\equiv a a_j \pmod n$. Suy ra tập
-    $$\{a a_1, a a_2, \cdots, a a_{\phi(n)}\}$$ là hoán vị của $S$.
+    $$\{a a_1, a a_2, \ldots, a a_{\phi(n)}\}$$ là hoán vị của $S$.
 
     Ta nhân tất cả phần tử của $S$ thì sẽ bằng tích phần tử của tập trên
-    $$a a_1 \cdot a a_2 \cdots a a_{\phi(n)} \equiv a_1 \cdot a_2 \cdots a_{\phi(n)} \pmod n$$
+    $$a a_1 \cdot a a_2 \ldots a a_{\phi(n)} \equiv a_1 \cdot a_2 \ldots a_{\phi(n)} \pmod n$$
 
-    Đặt $I = a_1 \cdot a_2 \cdots a_{\phi(n)}$ thì phương trình trên tương đương với 
+    Đặt $I = a_1 \cdot a_2 \ldots a_{\phi(n)}$ thì phương trình trên tương đương với 
     $$a^{\phi(n)} I \equiv I \pmod n$$
     
     Mà $(I, n) = 1$ do là tích các số nguyên tố cùng nhau với $n$ nên rút gọn 2 vế ta được
@@ -72,12 +73,13 @@ Nói cách khác, hệ thặng dư đầy đủ của $n$ là các số dư có 
 
 \section{Định lý Fermat nhỏ}
 
-\begin{theoremblock}{Định lý Fermat nhỏ}
-    
+%\begin{theoremblock}{Định lý Fermat nhỏ}
+    \begin{theorem}    
     Cho số nguyên tố $p$. Với mọi số nguyên $a$ thì $$a^p \equiv a \pmod p$$
 
-    Khi $(a, p) = 1$ thì $$a^{p-1} \equiv 1 \pmod p$$
-\end{theoremblock}
+    Khi $(a, p) = 1$ thì \[a^{p-1} \equiv 1 \pmod p\]
+    \end{theorem}
+%\end{theoremblock}
 
 \begin{remark}
     Khi $(a, p) = 1$ thì định lý Fermat là hệ quả trực tiếp từ định lý Euler.
