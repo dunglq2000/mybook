@@ -28,14 +28,13 @@
 \vspace*{2cm}
 
 \begin{center}
-	\Large{\parbox{10cm}{
-		\begin{raggedright}
-		{\Large 
+	{\Large 
 			\textit{Đường đi ngàn dặm, bắt đầu bằng một bước chân.}
-		}
-	
+	}
+	\Large{\parbox{10cm}{
+		\begin{raggedleft}
 		\vspace{.5cm}\hfill{Lão Tử}
-		\end{raggedright}
+		\end{raggedleft}
 	}
 }
 \end{center}
@@ -51,17 +50,26 @@
 \part{Đại cương toán học}
 \input{chapter1/Algebra.tex}
 \input{chapter2/NumberTheory.tex}
-\input{chapter3/AbstractAlgebra.tex}
-\input{chapter3/BooleanAlgebra.tex}
-\input{chapter4/GroupAction.tex}
+
+\input{chapter3/GroupTheory.tex}
+\input{chapter3/RingTheory.tex}
+\input{chapter3/GroupAction.tex}
+
+%\input{chapter4/BooleanAlgebra.tex}
+
+
 \input{chapter5/Conics.tex}
 \input{chapter6/LinearAlgebra.tex}
 
 \part{Lời giải cho bài tập trong một số sách}
 \input{AbstractAlgebra/book1.tex}
+\input{IntroductionCryptography/book2.tex}
 
 \part{Lịch sử toán học}
 \input{History/History.tex}
+
+\part{Mật mã học}
+\input{aes/aes.tex}
 
 
 \end{document}

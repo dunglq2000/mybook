@@ -1,0 +1,58 @@
+\section{Chapter 4}
+
+4.1.	 $d = 561517$, $N=661643$
+		 $sig = 206484$
+	
+
+
+4.2. $S$ and $S"$
+
+
+4.3. $p = 212081$, $q=128311$ \\ $\Rightarrow d = 18408628619 \Rightarrow S = D^d \pmod N = 22054770669$
+
+
+4.4. With $c = m^{e_B} \pmod{N_B}$ and $s = Hash(m)^{d_A} \pmod{N_A}$
+
+$\Rightarrow c^{d_B} = m^{e_B\cdot d_B} \pmod{N_B} = m$ and $s^{e_A} = Hash(m)^{d_A \cdot e_A} \pmod{N_A} = Hash(m)$. Hence this method works
+
+
+4.5.
+		 $A = g^a \pmod p = 2065$
+		 $S_1 = g^k \pmod p = 3534$ \\ $S_2 = (D-a\cdot S_1)K^{-1} \pmod{p-1} = 5888$ \\ $\Rightarrow$ signature is $(S_1, S_2) = (3534, 5888)$
+	
+
+
+4.6. $A^{S_1} \cdot S_1^{S_2} \equiv g^D \pmod p$ \\ $\Rightarrow (S_1^", S_2^")$ is valid signature.
+
+
+4.8.
+		 $S_1 = S_1' = g^k \pmod p$, from here Eve can know at first glance that the same random element $k$ is used
+		 $S_2 = (D-aS_1)k^{-1} \pmod{p-1}$, $S_2' = (D'-aS_1')k^{-1} \pmod{p-1}$ \\ $\Rightarrow S_2 - S_2' \equiv (D - D')k^{-1} \pmod{p-1}$ (as $aS_1 = aS_2$) \\ $\Rightarrow k = (D-D')(S_2-S_2')^{-1} \pmod{p-1}$ \\ Here we get $D - aS_1 = S_2 k \pmod{p-1}$ \\ $\Rightarrow \begin{cases}
+			a = (D - S_2 k) S_1{-1} \pmod{p-1} \\ a = (D'-S_2' k) S_1^{-1} \pmod{p-1}
+		\end{cases}$
+	
+
+
+4.9. $p \equiv 1 \pmod q$, $1 \leq a \leq q-1$, $A=g^a \pmod p$, $S_1 = (g^k \bmod p) \bmod q$, $S_2 = (D + aS_1) k^{-1} \pmod q$
+	
+	Verify: $V_1 = D \cdot S_2^{-1} \pmod q$, $V_2 = S_1 S_2^{-1} \pmod q$. We need to prove that $(g^{V_1} \cdot A^{V_2} \bmod p) \bmod q = S_1$
+	
+	Here we have
+	\begin{align*}
+		g^{V_1} \cdot A^{V_2} & \equiv g^{D \cdot S_2^{-1}} \cdot g^{aS_1 S_2^{-1}} \pmod p \\ & \equiv g^{(D+aS_1)S_2^{-1}} \pmod p \\ & \equiv g^k \pmod p
+	\end{align*}
+	$$\Rightarrow (g^{V_1} A^{V_2} \bmod p) \bmod q = S_1$$
+
+
+4.10. $(p, q, g) = (22531, 751, 4488)$. Public key $A = 22476$
+	
+		 Not valid
+		 Not valid
+	
+
+
+4.11. $A = g^a \pmod p$. $A = 31377$, $g = 21947$, $p = 103687 \Rightarrow a = 602$
+	
+	$S_1 = (g^k \bmod p) \bmod q = 439$
+	
+	$S_2 = (D + aS_1)k^{-1} \pmod q = 1259$

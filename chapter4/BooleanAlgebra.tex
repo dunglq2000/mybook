@@ -1,0 +1,35 @@
+\chapter{Đại số Boolean}
+
+Boolean (hay luận lý) chỉ giá trị đúng hoặc sai của mệnh đề nào đó. 
+Theo cách hiểu cơ bản, boolean gồm 2 giá trị 0 hoặc 1 (sai hoặc đúng).
+
+\section{Hàm Boolean}
+
+Hàm boolean $f$ đối với các biến $x_1, x_2, \ldots, x_n$ là hàm số nhận giá trị trong $\{0, 1\}^n$ và trả về giá trị thuộc $\{0, 1\}$.
+
+Nghĩa là $f: \{0,1\}^n \mapsto \{0, 1\}$
+
+\section{Các loại hàm boolean}
+
+\begin{definition}{Đa thức Zhegalkin}
+    Với hàm bool $f(x_1, x_2, \ldots, x_n)$, đa thức Zhegalkin tương ứng với hàm bool đó là cách biểu diễn
+    đa thức đó dưới dạng tổng các tích như sau
+    \[f(x_1, x_2, \ldots, x_n) = a_0 \oplus a_1 x_1 \oplus a_2 x_2 \oplus a_3 x_1 x_2 \oplus \ldots \oplus a_k x_1 x_2 \ldots x_n\]
+    với $a_i \in \{0, 1\}$. Ta thấy rằng có $n$ biến, do đó có $2^n$ hệ số $a_i$.
+\end{definition}
+
+\begin{example}
+    Cho hàm bool $f(x, y) = x \vee y$. Ta có bảng chân trị sau
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{c c c}
+            $x$ & $y$ & $f(x, y)$ \\
+            0 & 0 & 0 \\
+            0 & 1 & 1 \\
+            1 & 0 & 1 \\
+            1 & 1 & 1 \\
+        \end{tabular}
+    \end{table}
+    Bảng chân trị này tương đương với đa thức Zhegalkin
+    \[f(x, y) = x \oplus y \oplus xy\]
+\end{example}

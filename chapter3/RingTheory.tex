@@ -1,0 +1,36 @@
+\chapter{Lý thuyết vành}
+
+\section{Vành}
+
+\begin{definition}{Vành (Ring)}
+    Cho tập hợp $R$, trên đó ta định nghĩa 2 toán tử \textit{cộng} và \textit{nhân}.
+
+    Khi đó, $(R, +, \times)$ tạo thành vành nếu
+
+    \begin{itemize}
+        \item $(R, +)$ là nhóm Abel
+        \item $(R, \times)$ có tính kết hợp với phép nhân. Với mọi $a, b, c \in R$ thì $a \times (b \times c) = (a \times b) \times c$
+        \item Tính phân phối của phép cộng và phép nhân. Với mọi $a, b, c \in R$ thì $(a + b) \times c = a \times c + b \times c$
+    \end{itemize}
+\end{definition}
+
+Tóm lại, $(R, +, \times)$ là vành nếu nó là nhóm Abel đối với phép cộng và có tính kết hợp với phép nhân.
+
+\textbf{Lưu ý}. Phép nhân ở đây không nhất thiết có phần tử đơn vị, hay phần tử nghịch đảo như trong định nghĩa nhóm. Trong trường hợp này $(R, \times)$ gọi là semigroup (nửa nhóm).
+
+\begin{definition}{Vành với đơn vị}
+    (ring with identity). Nếu có phần tử $1_R \in R$ sao cho với mọi $r \in R$ ta đều có
+    \[1_R \times r = r \times 1_R = r\]
+    thì $1_R$ được gọi là phần tử đơn vị đối với phép nhân.
+\end{definition}
+
+Ta thường ký hiệu $0_R$ là phần tử đơn vị của phép cộng $(R, +)$ và gọi là \textbf{phần tử trung hòa}.
+Khi đó phần tử nghịch đảo của phép cộng gọi là \textbf{phần tử đối} và được ký hiệu là $-a$ nếu là đối của phần tử $a$.
+
+Và $1_R$ là \textbf{phần tử đơn vị} đối với phép nhân $(R, \times)$.
+
+\begin{definition}{Vành giao hoán}
+    (commutative ring). Nếu ta có tính giao hoán đối với phép nhân, nghĩa là với mọi $a, b \in $ đều thỏa
+    \[a \times b = b \times a\]
+    thì ta nói là vành giao hoán (không cần nói rõ là phép nhân vì phép cộng bắt buộc phải giao hoán theo định nghĩa vành rồi).
+\end{definition}
