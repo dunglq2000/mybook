@@ -244,11 +244,11 @@ $\sigma\sigma^2 = e = \sigma^2\sigma = e$, \quad $\tau^2 = e$, \quad $(\sigma\ta
     
     Therefore, $\text{GL}_2(\mathbb{F}_p)$ is a group.
 
- (b) Show that $\text{GL}_2(\mathbb{F}_p)$ is a noncommutative group for every prime $p$.
+(b) Show that $\text{GL}_2(\mathbb{F}_p)$ is a noncommutative group for every prime $p$.
     Suppose we have $A = \begin{pmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{pmatrix} \in \text{GL}_2(\mathbb{F}_p)$ and $B=\begin{pmatrix}b_{11} & b_{12} \\ b_{21} & b_{22}\end{pmatrix} \in \text{GL}_2(\mathbb{F}_p)$
     
     Top left element of product $AB$ is $(a_{11}b_{11}+a_{12}b_{21}) \pmod p$ \\ Top left element of product $BA$ is $(b_{11}a_{11} + b_{12}a_{21}) \pmod p$ \\ If we choose $a_{12} \not\equiv b_{21}^{-1}a_{21}b_{21} \pmod p$, then $AB \neq BA$, which means noncommutative.
- (c) Describe $\text{GL}_2(\mathbb{F}_p)$ completely. That is, list its elements and describe the multiplication table.
+(c) Describe $\text{GL}_2(\mathbb{F}_p)$ completely. That is, list its elements and describe the multiplication table.
     $A_1 = \begin{pmatrix}0 & 1\\1 & 0\end{pmatrix}$, $A_2 = \begin{pmatrix}0 & 1\\1 & 1\end{pmatrix}$, $A_3 = \begin{pmatrix}1 & 0\\0 & 1\end{pmatrix}$, $A_4 = \begin{pmatrix}1 & 0\\1 & 1\end{pmatrix}$, $A_5 = \begin{pmatrix}1 & 1\\0 & 1\end{pmatrix}$, $A_6 = \begin{pmatrix}1 & 1\\1 & 0\end{pmatrix}$
     
     Multiplication table:
@@ -266,6 +266,7 @@ $\sigma\sigma^2 = e = \sigma^2\sigma = e$, \quad $\tau^2 = e$, \quad $(\sigma\ta
             \hline
         \end{tabular}
     \end{center}
+
 (d) How many elements are there in the group $\text{GL}_2(\mathbb{F}_p)$?
     
     First row $u_1$ is any vector but $(0, 0)$. We have $p^2-1$ ways. \\ Second row $u_2$ is any vector but multiple of first vector. We have $p^2-p$ ways (remove $0u_1$ to $(p-1)u_1$). \\ $\Rightarrow$ There are $(p^2-1)(p^2-p)$ elements.
@@ -352,8 +353,10 @@ and that every solution to (1) has the form $x=a+cm+ymn$ for some $y \in \mathbb
 
 (c) We prove by induction that for each $n \geq 1$, there is a $b_n \in \mathbb{Z}$ such that
 
-    \[f(b_n)=b_n^2-a \equiv 0 \pmod{p^n}\]
-    \[b_n=b \pmod{p^n}\]
+    \begin{align*}
+        f(b_n) & =b_n^2-a \equiv 0 \pmod{p^n} \\
+        b_n & = b \pmod{p^n}
+    \end{align*}
 
     The case $n=1$ is trivial, using $b_1=b$. If the inductive hypothesis holds for $n$, which means: 
     

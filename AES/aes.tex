@@ -1,5 +1,7 @@
 \chapter{AES}
 
+Phần này tham khảo chính từ \cite{nhatrang}
+
 AES biến đổi theo khối 128 bit, sử dụng mô hình mạng SPN.
 
 Bốn phép biến đổi chính là Add Round Key, Substitute Bytes, Shift Rows và Mix Columns.
@@ -104,7 +106,7 @@ Xáo trộn các byte để tạo ra các cột cho Mix Columns.
 \subsection{Mix Columns}
 
 Mix cols biến đổi từng cột của ma trận state một cách độc lập bằng phép nhân đa thức. Giả sử cột đầu tiên của ma trận state viết dưới dạng đa thức là
-\[f(z) = s_{00} z^3 + s_{10} x^2 + s_{20} x + s_{30} \] với $z \in GF(2^8)$
+\[f(z) = s_{00} z^3 + s_{10} z^2 + s_{20} z + s_{30} \] với $z \in GF(2^8)$
 
 Khi đó $f(z)$ sẽ được nhân với $a(z) = 3z^3 + z^2 + z + 2$ (tất cả hệ số, phép cộng và nhân thực hiện trên $GF(2^8)$) và sau đó modulo cho $n(z) = z^4 + 1$.
 

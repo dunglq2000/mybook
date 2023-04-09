@@ -9,7 +9,7 @@ Cho tới khi học \textbf{lý thuyết nhóm} thì đời bớt đẹp hơn t�
 \section{Nhóm}
 
 %\begin{defblock}{Nhóm (Group)}
-\begin{definition}{Nhóm (Group)}
+\begin{definition}[Nhóm (Group)]
     Một tập hợp $G$ và toán tử 2 ngôi $\star$ trên $G$ tạo thành một nhóm nếu:
     \begin{enumerate}[noitemsep]
         \item Tồn tại phần tử $e \in G$ sao cho với mọi $g \in G$ thì $g \star e = e \star g = g$. Khi đó $e$ được gọi là \textbf{phần tử đơn vị} của $G$.
@@ -21,7 +21,7 @@ Cho tới khi học \textbf{lý thuyết nhóm} thì đời bớt đẹp hơn t�
 %\end{defblock}
 
 %\begin{defblock}{Nhóm Abel}
-\begin{definition}{Nhóm Abel}
+\begin{definition}[Nhóm Abel]
     Nếu nhóm $G$ có thêm tính giao hoán, tức là với mọi $a, b \in G$ thì $a \star b = b \star a$ thì $G$ gọi là nhóm giao hoán hay nhóm Abel
 \end{definition}
 %\end{defblock}
@@ -50,7 +50,7 @@ Lý thuyết nhóm thuộc toán trừu tượng, và nó trừu tượng thật
 
 \section{Nhóm con}
 
-\begin{definition}{Nhóm con (Subgroup)}
+\begin{definition}[Nhóm con (Subgroup)]
     Cho nhóm $(G, \star)$. Tập hợp $H \subset G$ được gọi là \textit{nhóm con} của $G$ nếu với mọi $a, b \in H$ thì $a \star b \in H$
 \end{definition}
  
@@ -68,7 +68,7 @@ Nghĩa là toán tử $\star$ đóng với các phần tử trong $H$.
 
 \section{Coset}
 
-\begin{definition}{Coset}
+\begin{definition}[Coset]
     (tạm dịch - \textit{lớp kề} theo wikipedia) Cho nhóm $G$ và nhóm con $H$ của $G$.
 
     Coset trái của $H$ đối với phần tử $g \in G$ là tập hợp
@@ -111,14 +111,14 @@ Trực quan mà nói, 2 coset trên rời nhau.
 
 \section{Normal Subgroup}
 
-\begin{definition}{Normal Subgroup}
+\begin{definition}[Normal Subgroup]
     (tạm dịch - \textit{nhóm con chuẩn tắc}) Nhóm con $H$ của $G$ được gọi là \textit{normal subgroup} nếu với mọi $g \in G$ ta có coset trái trùng với coset phải.
     \[gH = Hg \; \forall g \in G\]
 \end{definition}
 
 Nếu $H$ là normal subgroup của $G$ ta ký hiệu $H \triangleleft G$.
 
-\begin{definition}{Quotient Group}
+\begin{definition}[Quotient Group]
     (tạm dịch - \textit{nhóm thương}, hay Factor Group - \textit{nhóm nhân tử}). Với nhóm $G$ và normal subgroup của nó là $H$.
     Quotient Group được ký hiệu là $G / H$ và được định nghĩa là tập hợp các coset tương ứng với normal subgroup $H$.
     \[G / H = \{gH : g \in H \}\]
@@ -130,4 +130,3 @@ Nếu $H$ là normal subgroup của $G$ ta ký hiệu $H \triangleleft G$.
     Với nhóm $\ZZ$ và normal subgroup của nó là $2\ZZ$.
     Ta thấy $\ZZ / 2 \ZZ = \{0 + 2 \ZZ, 1 + 2 \ZZ\}$
 \end{example}
-\newpage

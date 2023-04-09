@@ -2,15 +2,66 @@
 
 \section{Nhắc lại các khái niệm cơ bản}
 
-\begin{defblock}{Hạng của ma trận}
+\begin{definition}[Hạng của ma trận]
     
     Cho ma trận $\bm{M}_{m \times n}$ có $m$ hàng và $n$ cột. \textbf{Hạng} của ma trận $\bm{M}$ là cấp của ma trận vuông con lớn nhất của $\bm{M}$ có định thức khác 0.
 
-    \textit{Ký hiệu}. Hạng (hay rank) của ma trận $\bm{M}$ ký hiệu là $r = \rank(\bm{M})$
+    \textit{Ký hiệu}. Hạng (hay rank) của ma trận $\bm{M}$ được ký hiệu là $r = \rank(\bm{M})$
 
-    \end{defblock}
+\end{definition}
 
 \begin{remark}
     Nếu $r$ là hạng của ma trận $\bm{M}_{m \times n}$ thì $r \leq \min (m, n)$
 \end{remark}
-\newpage
+
+\section{Tổ hợp tuyến tính}
+
+Xét tập hợp các vector $\{\bm{v_1}, \bm{v_2}, \ldots, \bm{v_d}\}$ trên $\RR$.
+
+\begin{definition}[Tổ hợp tuyến tính]
+Với vector $\bm{x}$ bất kì thuộc $\RR$, nếu tồn tại các số thực $\alpha_1, \alpha_2, \ldots, \alpha_d \in \RR$ sao cho
+\[\bm{x} = \alpha_1 \bm{v_1} + \alpha_2 \bm{v_2} + \ldots + \alpha_d \bm{v_d}\]
+thì $\bm{x}$ được gọi là \textbf{tổ hợp tuyến tính} của các vector $\bm{v_i}$, $i = 1, 2, \ldots, d$.
+\end{definition}
+
+Ta thấy rằng vector không $\bm{0}$ là tổ hợp tuyến tính của mọi tập các vector $\bm{v_i}$
+
+Bây giờ ta xét tổ hợp tuyến tính
+\[\alpha_1 \bm{v_1} + \alpha_2 \bm{v_2} + \ldots + \alpha_d \bm{v_d} = \bm{0}\]
+
+\begin{definition}[Độc lập tuyến tính]
+    Tập hợp các vector $\bm{v_1}$, $\bm{v_2}$, ..., $\bm{v_d}$ được gọi \textbf{độc lập tuyến tính} nếu
+    chỉ có duy nhất trường hợp $\alpha_1 = \alpha_2 = \ldots = \alpha_d = 0$ thỏa tổ hợp tuyến tính trên.    
+\end{definition}
+
+\begin{definition}[Phụ thuộc tuyến tính]
+    Tập các vector là phụ thuộc tuyến tính nếu không độc lập tuyến tính.
+    Nói cách khác tồn tại ít nhất 1 phần tử $\alpha_i \neq 0$.
+\end{definition}
+
+\section{Không gian vector}
+
+Xét tập hợp các vector $\mathcal{V} \subset \RR^n$.
+
+Ta định nghĩa hai phép tính cộng và nhân trên các vector này sao cho
+
+\begin{itemize}[noitemsep]
+    \item Phép cộng: Với mọi $\bm{x}, \bm{y} \in \mathcal{V}$ thì $\bm{x} + \bm{y} \in \mathcal{V}$
+    \item Phân nhân vô hướng: Với mọi $\alpha \in \RR$ và $\bm{x} \in \mathcal{V}$ thì $\alpha \bm{x} \in \mathcal{V}$
+\end{itemize}
+
+Nói cách khác, phép cộng 2 vector và phép nhân vô hướng 1 số với vector cho kết quả vẫn nằm trong không gian vector đó.
+
+Đồng thời, phép cộng và phép nhân vô hướng phải thỏa mãn các tính chất sau
+
+\begin{enumerate}[noitemsep]
+    \item Tính giao hoán với phép cộng: với mọi $\bm{x}, \bm{y} \in \mathcal{V}$, $\bm{x} + \bm{y} = \bm{y} + \bm{x}$
+    \item Tính kết hợp với phép cộng: với mọi $\bm{x}, \bm{y}, \bm{z} \in \mathcal{V}$, $\bm{x} + (\bm{y} + \bm{z}) = (\bm{x} + \bm{y}) + \bm{z}$
+    \item Phần tử đơn vị của phép cộng: tồn tại vector không $\bm{0}$ sao cho với mọi $\bm{x} \in \mathcal{V}$, $\bm{0} + \bm{x} = \bm{x} + \bm{0} = \bm{x}$
+    \item Phần tử đối của phép cộng: với mọi $\bm{x} \in \mathcal{V}$, tồn tại phần tử $\bm{y'} \in \mathcal{V}$ sao cho $\bm{x} + \bm{x'} = \bm{x} + \bm{x'} = \bm{0}$
+    \item Phần tử đơn vị của phép nhân vô hướng: tồn tại số thực $\bm{1}$ sao cho với mọi $\bm{x} \in \mathcal{V}$ thì $1 \cdot \bm{x} = \bm{x}$
+    \item Tính kết hợp của phép nhân vô hướng: với mọi $\alpha, \beta \in \RR$, với mọi $\bm{x} \in \mathcal{V}$ thì $\alpha (\beta \bm{x}) = (\alpha \beta) \bm{x}$
+    \item Tính phân phối giữa phép cộng và nhân: với mọi $\alpha \in \RR$, với mọi $\bm{x}, \bm{y} \in \mathcal{V}$ thì $\alpha (\bm{x} + \bm{y}) = \alpha \bm{x} + \alpha \bm{y}$
+    \item Tính phân phối giữa phép nhân vô hướng: với mọi $\alpha, \beta \in \RR$, với mọi $\bm{x} \in \mathcal{V}$ thì $(\alpha + \beta) \bm{x} = \alpha \bm{x} + \beta \bm{x}$
+\end{enumerate}
+
