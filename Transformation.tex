@@ -1,0 +1,83 @@
+\chapter{Phép biến hình}
+
+Trong thực tế chúng ta hay gặp các vấn đề về việc di dời một hình
+nào đó sang một vị trí khác trong mặt phẳng, không gian và phải đảm bảo 
+giữ nguyên một số quan hệ nhất định. Trong đó cơ bản nhất và được ứng dụng 
+rộng rãi là phép dời hình và phép đồng dạng.
+
+\section{Phép dời hình}
+
+\begin{definition}[Phép dời hình]
+    Phép dời hình từ hình $\mathcal{H}$ thành hình $\mathcal{H}'$ 
+    là một ánh xạ $f$ biến mỗi điểm thuộc hình $\mathcal{H}$ thành điểm
+    thuộc hình $\mathcal{H}'$ sao cho khoảng cách giữa 2 điểm bất
+    kì trong $\mathcal{H}$ bảo toàn khi qua $\mathcal{H}'$.
+\end{definition}
+
+Nói cách khác, với mọi điểm $A, B \in \mathcal{H}$, ánh xạ $f$
+biến $A$ thành $A'$ và $B$ thành $B'$ ($A', B' \in \mathcal{H}$)
+thì $A'B' = AB$.
+
+Chúng ta thường thấy việc dời hình theo vector (dời theo 1 hướng nhất định),
+đối xứng qua trục, đối xứng qua tâm, quay quanh tâm hoặc trục nào đó.
+
+\section{Phép dời hình theo vector}
+
+Phép dời hình theo vector $\vec{v} \neq \vec{0}$ biến
+điểm $A$ thành điểm $A'$ sao cho $\overrightarrow{AA'} = \vec{v}$.
+
+Dễ thấy đây là phép dời hình vì với mọi $A, B$ biến thành $A', B'$ ta có
+$\overrightarrow{A'B'} = \overrightarrow{A'A} + \overrightarrow{AB} + \overrightarrow{BB'}$
+mà ta có $\overrightarrow{A'A} = -\vec{v} = -\overrightarrow{BB'}$ nên
+$\overrightarrow{A'B'} = \overrightarrow{AB}$. Vector bằng nhau thì độ dài cũng bằng nhau.
+Ta có điều phải chứng minh.
+
+\section{Phép đối xứng qua tâm cố định}
+
+Cho điểm cố định $O$. Phép đối xứng tâm $O$ biến điểm $A$ thành điểm $A'$ sao
+cho $\overrightarrow{OA} = -\overrightarrow{OA'}$. Nói cách khác $O$ là trung điểm
+đoạn thẳng $AA'$.
+
+\section{Phép quay quanh tâm cố định}
+
+Cho điểm cố định $O$. Phép quay (mặc định là ngược chiều đồng hồ) quanh tâm $O$
+theo một góc cố định $\varphi$ biến điểm $A$ thành điểm $A'$ sao cho
+$\widehat{(\overrightarrow{OA}, \overrightarrow{OA'})} = \varphi$.
+
+Trên mặt phẳng chúng ta có thể biểu diễn phép quay dưới hệ tọa độ như sau.
+
+Giả sử vector $\overrightarrow{OA}$ có độ dài là $r$ và hợp với trục $Ox$ một góc $\alpha$.
+
+Khi đó, giả sử tọa độ của $\overrightarrow{OA} = (x, y)$ thì ta có 
+\begin{align*}
+    x & = r \cos \alpha \\
+    y & = r \sin \alpha
+\end{align*}
+
+Nếu ta quay vector này quanh gốc tọa độ, ngược chiều kim đồng hồ một góc $\varphi$ thì 
+thực ra góc (mới) hợp bởi vector $\overrightarrow{OA'}$ và trục $Ox$ là $\alpha + \varphi$.
+Do đó
+\begin{align*}
+    x' & = r \cos (\alpha + \varphi) \\
+    y' & = r \sin (\alpha + \varphi)
+\end{align*}
+
+Khi khai triển ra,
+\begin{align*}
+    x' & = r \cos \alpha \cos \varphi - r \sin \alpha \sin \varphi
+= x \cos \varphi - y \sin \varphi \\
+    y' & = r \sin \alpha \cos \varphi + r \cos \alpha \sin \varphi 
+= y \cos \varphi + x \sin \varphi
+\end{align*}
+
+Như vậy viết dưới dạng ma trận
+\[\begin{pmatrix}
+    x' \\ y'
+\end{pmatrix} = \begin{pmatrix}
+    \cos \varphi & -\sin \varphi \\
+    \sin \varphi & \cos \varphi
+\end{pmatrix} \begin{pmatrix}
+    x \\ y
+\end{pmatrix}\]
+
+Dễ thấy, phép quay bảo toàn khoảng cách từ tâm $O$ tới điểm đó. Nghĩa là $OA = OA'$.

@@ -59,9 +59,103 @@ Nói cách khác, phép cộng 2 vector và phép nhân vô hướng 1 số vớ
     \item Tính kết hợp với phép cộng: với mọi $\bm{x}, \bm{y}, \bm{z} \in \mathcal{V}$, $\bm{x} + (\bm{y} + \bm{z}) = (\bm{x} + \bm{y}) + \bm{z}$
     \item Phần tử đơn vị của phép cộng: tồn tại vector không $\bm{0}$ sao cho với mọi $\bm{x} \in \mathcal{V}$, $\bm{0} + \bm{x} = \bm{x} + \bm{0} = \bm{x}$
     \item Phần tử đối của phép cộng: với mọi $\bm{x} \in \mathcal{V}$, tồn tại phần tử $\bm{y'} \in \mathcal{V}$ sao cho $\bm{x} + \bm{x'} = \bm{x} + \bm{x'} = \bm{0}$
+<<<<<<< HEAD
     \item Phần tử đơn vị của phép nhân vô hướng: tồn tại số thực $\bm{1}$ sao cho với mọi $\bm{x} \in \mathcal{V}$ thì $1 \cdot \bm{x} = \bm{x}$
+=======
+    \item Phần tử đơn vị của phép nhân vô hướng: tồn tại số thực $\bm{1}$ sao cho với mọi $\bm{x} \in \mathcal{V}$ thì $\bm{1} \cdot \bm{x} = \bm{x}$
+>>>>>>> tuyetngan
     \item Tính kết hợp của phép nhân vô hướng: với mọi $\alpha, \beta \in \RR$, với mọi $\bm{x} \in \mathcal{V}$ thì $\alpha (\beta \bm{x}) = (\alpha \beta) \bm{x}$
     \item Tính phân phối giữa phép cộng và nhân: với mọi $\alpha \in \RR$, với mọi $\bm{x}, \bm{y} \in \mathcal{V}$ thì $\alpha (\bm{x} + \bm{y}) = \alpha \bm{x} + \alpha \bm{y}$
     \item Tính phân phối giữa phép nhân vô hướng: với mọi $\alpha, \beta \in \RR$, với mọi $\bm{x} \in \mathcal{V}$ thì $(\alpha + \beta) \bm{x} = \alpha \bm{x} + \beta \bm{x}$
 \end{enumerate}
 
+<<<<<<< HEAD
+=======
+\section{Cơ sở và số chiều của không gian vector}
+
+Nếu trong không gian vector $\mathcal{V}$ tồn tại các vector $\bm{v_1}$, $\bm{v_2}$, ..., $\bm{v_d}$
+mà tất cả các vector trong $\mathcal{V}$ có thể biểu diễn dưới dạng tổ hợp tuyến tính của các vector $\bm{v_i}$ trên,
+thì tập hợp các vector 
+\[\{ \bm{v_1}, \bm{v_2}, \ldots, \bm{v_d} \}\]
+được gọi là \textbf{cơ sở} của không gian vector $\mathcal{V}$.
+
+Khi đó,
+\[\bm{x} = \sum_{i=1}^{d} \alpha_i \bm{v_i} \quad \forall \bm{x} \in \mathcal{V}\]
+
+Số lượng phần tử của tập hợp các vector đó (ở đây là $d$) gọi là \textbf{số chiều (dimension)} của không gian vector $\mathcal{V}$.
+Ta ký hiệu $\text{dim} \mathcal{V} = d$.
+
+Ta còn ký hiệu 
+\[\mathcal{V} = \text{span} \{\bm{v_1}, \bm{v_2}, \ldots, \bm{v_d}\}\]
+và nói là không gian vector $\mathcal{V}$ được span (hay được sinh) bởi các vector $\bm{v_i}$.
+
+Ta thấy rằng có thể có nhiều cơ sở cho cùng một không gian vector.
+
+\begin{theorem}
+    Mọi cơ sở của không gian vector $\mathcal{V}$ đều có số phần tử bằng $\text{dim} \mathcal{V}$
+\end{theorem}
+
+Từ đó ta có điều kiện cần và đủ để một tập hợp vector là cơ sở của không gian vector.
+
+Giả sử ta có $\bm{v_1}$, $\bm{v_2}$, ..., $\bm{v_d}$ là một cơ sở của không gian vector $\RR^n$.
+Khi đó nếu hệ vector $\bm{w_1}$, $\bm{w_2}$, ..., $\bm{w_d}$ cũng là một hệ cơ sở khi và chỉ khi tồn 
+tại ma trận khả nghịch $\bm{A}$ sao cho $\bm{W} = \bm{A} \cdot \bm{V}$.
+
+\begin{proof}
+    Ta viết các vector $\bm{v_i}$ dưới dạng $\RR^n$.
+
+    \begin{align*}
+        \bm{v_1} & = (v_{11}, v_{12}, \ldots, v_{1n}) \\
+        \bm{v_2} & = (v_{21}, v_{22}, \ldots, v_{2n}) \\
+        \ldots & = (\ldots, \ldots, \ldots, \ldots) \\
+        \bm{v_d} & = (v_{d1}, v_{d2}, \ldots, v_{dn})
+    \end{align*}
+
+    Tương tự là các vector $\bm{w_i}$.
+
+    \begin{align*}
+        \bm{w_1} & = (w_{11}, w_{12}, \ldots, w_{1n}) \\
+        \bm{w_2} & = (w_{21}, w_{22}, \ldots, w_{2n}) \\
+        \ldots & = (\ldots, \ldots, \ldots, \ldots) \\
+        \bm{w_d} & = (w_{d1}, w_{d2}, \ldots, w_{dn})
+    \end{align*}
+
+    Do $\bm{v_i}$ là một cơ sở của $\RR^n$, mọi vector trong $\RR^n$ được biểu diễn dưới dạng tổ hợp tuyến tính của các $\bm{v_i}$.
+
+    Khi đó ta viết các $\bm{w_i}$ dưới dạng tổ hợp tuyến tính của $\bm{v_i}$.
+
+    \begin{align*}
+        \bm{w_1} = \alpha_{11} \bm{v_1} + \alpha_{12} \bm{v_2} + \ldots + \alpha_{1d} \bm{v_d} \\
+        \bm{w_2} = \alpha_{21} \bm{v_1} + \alpha_{22} \bm{v_2} + \ldots + \alpha_{2d} \bm{v_d} \\
+        \ldots = \ldots
+        \bm{w_d} = \alpha_{d1} \bm{v_1} + \alpha_{d2} \bm{v_2} + \ldots + \alpha_{dd} \bm{v_d}
+    \end{align*}
+
+    Điều này tương đương với 
+
+    \begin{align*}
+        \begin{pmatrix}
+            w_{11} & w_{12} & \ldots & w_{1n} \\
+            w_{21} & w_{22} & \ldots & w_{2n} \\
+            \ldots & \ldots & \ldots & \ldots \\
+            w_{d1} & w_{d2} & \ldots & w_{dn}
+        \end{pmatrix}
+        = & \begin{pmatrix}
+            \alpha_{11} & \alpha_{12} & \ldots & \alpha_{1d} \\
+            \alpha_{21} & \alpha_{22} & \ldots & \alpha_{2d} \\
+            \ldots & \ldots & \ldots & \ldots \\
+            \alpha_{d1} & \alpha_{d2} & \ldots & \alpha_{dd}
+        \end{pmatrix} \\
+        & \times \begin{pmatrix}
+            v_{11} & v_{12} & \ldots & v_{1n} \\ 
+            v_{21} & v_{22} & \ldots & v_{2n} \\ 
+            \ldots & \ldots & \ldots & \ldots \\ 
+            v_{d1} & v_{d2} & \ldots & v_{dn}
+        \end{pmatrix}
+    \end{align*}
+\end{proof}
+
+Nếu $\bm{w_i}$ cũng là cơ sở của $\mathcal{V}$, thì các vector $\bm{v_i}$ cũng phải
+biểu diễn được dưới dạng tổ hợp tuyến tính của $\bm{w_i}$.
+Nói cách khác, ma trận $(\alpha_{ij})$ khả nghịch.
+>>>>>>> tuyetngan
