@@ -1,0 +1,189 @@
+\chapter{Lý thuyết trường}
+
+\section{Trường}
+
+\begin{definition}[Trường - Field]
+    Cho tập hợp $F$ và hai toán tử 2 ngôi trên $F$ là phép cộng $+$ và phép nhân $\times$.
+    Khi đó $(F, +, \times)$ là trường nếu
+    \begin{itemize}[noitemsep]
+        \item $(F, +, \times)$ là vành giao hoán với đơn vị
+        \item Với mọi phần tử $f \neq 0_F$, tồn tại nghịch đảo $f^{-1}$ của $f$ đối với phép nhân. 
+        Nghĩa là $f \times f^{-1} = f^{-1} \times f = 1_F$
+    \end{itemize}
+\end{definition}
+
+Nói cách khác, $(F, \times)$ là nhóm Abel. Trên trường ta thực hiện được 4 phép tính cộng, trừ, nhân, chia.
+
+\begin{example}
+    Tập hợp số thực $\RR$ là một trường. Tập hợp các số phức $\CC$ là một trường.
+    Tập hợp các số hữu tỷ dạng $a + b \sqrt{2}$ cũng là một trường.
+\end{example}
+
+Những trường trên được gọi là \textbf{trường vô hạn} vì có vô số phần tử.
+
+Ngược lại, chúng ta cũng có các \textbf{trường hữu hạn}.
+
+\begin{theorem}
+    Gọi $R$ là vành giao hoán với đơn vị. Khi đó, nếu $I$ là ideal
+    của $R$ thì $R / I$ là trường khi và chỉ khi $I$ là maximal ideal.
+\end{theorem}
+
+\begin{proof}
+    Ta chứng minh điều kiện cần và điều kiện đủ.
+    \begin{enumerate}
+        \item Điều kiện cần. Ta có $I$ là maximal ideal. Ta thấy rằng
+        $a + I \neq 0 \Leftrightarrow a \not\in I$. Vì nếu $a \in I$ thì 
+        tồn tại $-a \in I$. Theo định nghĩa vành thì $a R$ cũng là ideal
+        nên $I + a R$ là ideal, mà $a \not\in I$ và $a \in I + a R$ suy ra
+        $I \subset I + a R$. Ta lại có $I$ là maximal nên $I + aR = R$, 
+        do đó tồn tại $n \in I$ và $b \in R$ sao cho $n + ab = 1$. Tóm 
+        lại là tồn tại nghịch đảo của phép nhân, do đó $R / I$ là trường.
+        \item Điều kiện đủ. Với $R / I$ là trường. Ta giả sử $I$ không là
+        maximal ideal. Khi đó tồn tại $I'$ sao cho $I \subset I' \subset R$.
+        Khi đó tồn tại phần tử $a \in I'$ và $a \not\in I$ mà $a + I \neq 0$.
+        Do đó $(a + I) (b + I) = 1 + I$ suy ra tồn tại $n \in I \subset I'$ 
+        sao cho $a b = 1 + n$. Do $a, b \in I'$ nên $1 \in I'$, từ đó
+        $1 \in R$ nên $I'$ không phải maximal. Ta có điều phải chứng minh.
+    \end{enumerate}
+\end{proof}
+
+\section{Trường hữu hạn $GF(p)$}
+
+Cho $p$ là số nguyên tố. Khi đó tập hợp các số dư khi chia cho $p$ 
+cùng với phép cộng và nhân modulo $p$ tạo thành trường.
+
+\begin{proof}
+    Xét tập hợp các số dư khi chia cho $p$ là
+    \[S = \{0, 1, \ldots, p-2, p-1\}\]
+    Ta thấy rằng với mọi $a, b \in S$ thì $a + b \pmod p$ và $a \cdot b \pmod p$ đều thuộc $S$.
+
+    \begin{itemize}[noitemsep]
+        \item Vì $0 + a = a + 0 = a \pmod p$ với mọi $a \in S$ nên $0$ là phần tử đơn vị của phép cộng.
+        \item Với mọi $a \in S$, ta có $(p-a) + a = a + (p-a) \equiv 0 \pmod p$ nên phần tử nghịch đảo của $a$ 
+        đối với phép cộng là $p-a \in S$.
+        \item Phép cộng modulo có tính kết hợp
+        \item Phép cộng modulo có tính giao hoán
+    \end{itemize}
+    Như vậy $(S, +)$ là nhóm Abel.
+
+    Tiếp theo, ta thấy rằng phép cộng và nhân có tính phân phối trên modulo.
+    Đồng thời phép nhân modulo cũng có tính kết hợp. Do đó $(S, +, \cdot)$ là vành.
+
+    \begin{itemize}[noitemsep]
+        \item Phần tử đơn vị của phép nhân là 1
+        \item Phép nhân modulo có tính giao hoán
+        \item Do mọi phần tử thuộc $S$ đều nguyên tố cùng nhau với $p$ nên luôn tồn tại nghịch đảo của phần tử khác 0 trong $S$
+    \end{itemize}
+    Kết luận: $(S, +, \cdot)$ là trường.
+\end{proof}
+
+Ta thường ký hiệu trường này là $GF(p)$ (GF là viết tắt của Galois Field
+để tưởng nhớ người có đóng góp quan trọng trong lý thuyết nhóm).
+
+Trong mật mã học $GF(p)$ thường được sử dụng vì những tính toán 
+của 2 quá trình ngược nhau là mã hóa và giải mã phải cho ra đúng
+giá trị ban đầu. Nói cách khác việc tính toán không được vượt ra
+ngoài một tập hợp nào đó. Việc lựa chọn trường $GF(p)$ cũng từ 
+đó mà hiệu quả.
+
+Tuy nhiên để đảm bảo an toàn thông tin, số nguyên tố $p$ được chọn khá lớn
+(khoảng 256 bit). Việc này làm chậm tốc độ tính toán, cài đặt phức tạp (đa 
+số các ngôn ngữ lập trình chỉ hỗ trợ kiểu dữ liệu cơ bản 2, 4, 8 byte, nên
+cần định nghĩa kiểu dữ liệu mới để tính toán trên 32 byte).
+
+Chúng ta có một ý tưởng ổn áp hơn ở phần sau.
+
+\section{Trường hữu hạn $GF(p^n)$}
+
+Xét các đa thức với hệ số nguyên
+\[f(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_2 x^2 + a_1 x + a_0\]
+
+Ta thấy rằng phép cộng và nhân 2 đa thức tạo thành một vành giao hoán với đơn vị.
+Thêm nữa vành này có vô số phần tử. Ta cần một phương án để số phần tử là hữu hạn,
+và đồng thời là trường.
+
+Với $p$ là số nguyên tố và $n$ là số nguyên dương. Mình xét
+các đa thức có bậc tối đa là $n-1$ với hệ số nằm trong tập hợp các số dư khi chia cho $p$.
+Như vậy mình có $p^n$ đa thức như vậy.
+
+\begin{example}
+    Với $p=3$ và $n=2$. Khi đó các đa thức có thể có là
+    $0, 1, 2, x, x+1, x+2, 2x, 2x+1, 2x+2$
+\end{example}
+
+Tương tự với việc modulo cho một số nguyên tố, ở đây mình 
+xét phép cộng và nhân trên modulo một đa thức tối giản (irreducible 
+polynomial) có bậc $n$ (vì khi modulo một đa thức bậc bất kì cho 
+đa thức bậc $n$ ta có đa thức bậc nhỏ hơn $n$). Đồng thời hệ số của
+đa thức từ phép cộng và nhân cũng được modulo $p$ (nằm trong $GF(p)$).
+
+Với trường hợp $p=3$ và $n=2$ ở trên mình có thể chọn đa thức modulo 
+là $m(x) = x^2 + 2x + 2$. Khi đó bảng phép nhân (phép cộng 
+khá đơn giản nên mình không viết) 2 đa thức bậc 
+nhỏ hơn 2 trong modulo $m(x)$ là
+
+\begin{table}
+    \centering
+    \begin{subtable}[h]{\textwidth}
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            & 0 & 1 & 2 & $x$ & $x+1$ \\
+            \hline
+            0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & 0 & 1 & 2 & $x$ & $x+1$ \\
+            \hline
+            2 & 0 & 2 & 1 & $2x$ & $2x+2$\\
+            \hline
+            $x$ & 0 & $2x$ & $x+1$ & $2x$ & $2x+1$ \\
+            \hline
+            $x+1$ & 0 & $x+1$ & $2x+2$ & $2x+1$ & 2\\
+            \hline
+            $x+2$ & 0 & $x+2$ & $2x+1$ & 1 & $x$ \\
+            \hline
+            $2x$ & 0 & $2x$ & $x$ & $2x+2$ & $x+2$ \\
+            \hline
+            $2x+1$ & 0 & $2x+1$ & $x+2$ & 2 & $2x$ \\
+            \hline
+            $2x+2$ & 0 & $2x+2$ & $x+1$ & $x+2$ & 1 \\
+            \hline
+        \end{tabular}
+        \caption{Nửa đầu bảng nhân}
+    \end{subtable}
+    
+    \begin{subtable}[h]{\textwidth}
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            & $x+2$ & $2x$ & $2x+1$ & $2x+2$ \\
+            \hline
+            0 & 0 & 0 & 0 & 0 \\
+            \hline
+            1 & $x+2$ & $2x$ & $2x+1$ & $2x+2$ \\
+            \hline
+            2 & $2x+1$ & $x$ & $x+2$ & $x+1$ \\
+            \hline
+            $x$ & 1 & $2x+2$ & 2 & $x+2$ \\
+            \hline
+            $x+1$ & $x$ & $x+2$ & $2x$ & 1 \\
+            \hline
+            $x+2$ & $2x+2$ & 2 & $x+1$ & $2x$ \\
+            \hline
+            $2x$ & 2 & $x+1$ & 1 & $2x+1$ \\
+            \hline
+            $2x+1$ & $x+1$ & 1 & $2x+2$ & $x$ \\
+            \hline
+            $2x+2$ & $2x$ & $2x+1$ & $x$ & 2 \\
+            \hline
+        \end{tabular}
+        \caption{Nửa sau bảng nhân}
+    \end{subtable}
+    \caption{Bảng nhân trên $GF(3^2)$}
+\end{table}
+
+Ta thấy rằng bảng phép nhân đối xứng qua đường chéo chính. 
+Điều này chứng minh phép nhân có tính giao hoán. 
+Thêm nữa ở mỗi hàng hoặc cột khác 0 đều có 9 phần tử 
+khác nhau.
+

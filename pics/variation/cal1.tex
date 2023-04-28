@@ -1,0 +1,16 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{tkz-tab}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=3, espcl=1.5]
+        {$x$ / 1 , $f'(x)=-\sin(x)$ / 1, $f(x) = \cos(x)$ / 2}
+        {$0$, $\dfrac{\pi}{2}$, $\pi$, $\dfrac{3\pi}{2}$, $2\pi$}
+        \tkzTabLine
+        { z , , - , , z , , + , , z }
+        \tkzTabVar
+        { +/$1$, R/, -/$-1$, R/, +/$1$}
+    \end{tikzpicture}
+\end{document}

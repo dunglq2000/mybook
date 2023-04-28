@@ -1,0 +1,191 @@
+\chapter{Georg Cantor}
+
+\begin{center}
+    \textit{Nhà toán học vĩ đại bị vùi lấp trong sự bảo thủ} - L.Q. Dũng
+\end{center}
+
+\section{Dẫn nhập}
+
+Con người luôn tìm tòi, học hỏi, sáng tạo để tiến lên.
+Tuy nhiên luôn tồn tại những định chế bảo thủ, cố chấp theo
+lối mòn kìm hãm sự phát triển của những thiên tài, những ý 
+tưởng cách mạng. Cantor có lẽ đã sinh sai thời, hoặc những phát kiến của ông
+quá vượt trội so với thời đại, khiến những định chế cấp cao
+khó lòng chấp nhận.
+
+Georg Cantor (1845-1918), người được thầy Lê Quang Ánh gọi 
+là \textit{người chế ngự vô cực}, là nhà toán học vĩ đại mà
+mình rất nể phục.
+
+Khi học về tổ hợp, các phương pháp đếm ở phổ thông, thầy giáo bảo lớp mình
+"đếm" thử xem, số lượng phần tử của tập hợp $\NN$ và $\ZZ$ cái
+nào nhiều hơn. Ban đầu ai cũng nghĩ rằng $\ZZ$ lớn hơn vì rõ ràng
+$\NN$ là tập con của $\ZZ$. Tuy nhiên thầy đã giải thích như sau:
+
+Chúng ta "móc nối" giữa một phần tử thuộc $\NN$ và một phần tử thuộc $\ZZ$
+theo quy tắc
+\begin{itemize}[noitemsep]
+    \item Ta ghép một số chẵn của $\NN$ với một và chỉ một số dương của $\ZZ$.
+    Ví dụ $0 \to 0$, $2 \to 1$, $4 \to 2$, và tương tự;
+    \item Ta ghép một số lẻ của $\NN$ với một và chỉ một số âm của $\ZZ$.
+    Ví dụ $1 \to -1$, $3 \to -2$, $5 \to -3$, và tương tự.
+\end{itemize}
+
+Thật kỳ lạ, nếu theo quy tắc này, với mọi số thuộc $\NN$ ta luôn tìm được 
+duy nhất một người bạn bên $\ZZ$. Ngược lại với mỗi số thuộc $\ZZ$ ta cũng
+tìm ngược lại được một người đồng hành bên $\NN$. Nói theo toán học thì 
+đây là một song ánh. Như vậy hai tập hợp có số phần tử (lực lượng) bằng nhau.
+
+Về sau mình biết được người nghĩ ra phương pháp này là Cantor.
+Xét theo thời đó, đây là một phát kiến bất ngờ gây tiếng vang 
+lớn thời đó.
+
+Chúng ta học đếm từ nhỏ: đếm 1, 2, 3 viên bi; đếm 1, 2, 3 quả táo; vân vân.
+Khi một tập hợp có hữu hạn phần tử, ta đếm được số lượng phần tử của tập hợp đó.
+Nhưng nếu là một tập vô hạn thì sao? Chúng có đếm được không? Mà đếm là sao?
+
+Chúng ta quay lại nguồn gốc toán học. Các con số đã được sử dụng từ xa xưa,
+nhất là các số tự nhiên bởi vì chúng ... tự nhiên xuất hiện. Chúng ta đếm
+số lượng viên bi, số lượng quả táo thông qua các số tự nhiên, mà 
+tập hợp $\NN$ là vô hạn. Chúng ta cứ đếm lên 1, rồi lại đếm lên 1, 
+cứ như vậy mãi mãi. Như vậy có thể thấy tập $\NN$ là tập vô hạn đếm được.
+
+Cantor đã chỉ ra rằng, một tập hợp vô hạn gọi là đếm được nếu
+tồn tại một song ánh từ $\NN$ tới nó. Ngược lại thì là tập không đếm được.
+Quay lại vấn đề về tập $\ZZ$ và $\NN$
+ban nãy thì song ánh từ $\ZZ$ tới $\NN$ (nếu $\phi$ là song ánh
+thì ánh xạ ngược $\phi^{-1}$ cũng là song ánh) là:
+
+\begin{equation*}
+    f(z) = \begin{cases}
+        2z, & z \geq 0 \\
+        -1-2z, & z < 0
+    \end{cases}    
+\end{equation*}
+
+Bằng lý luận tương tự, tập hợp số hữu tỷ $\QQ$ cũng là tập
+đếm được do có song ánh từ $\ZZ \times \NN$ tới $\QQ$ (tử số
+và mẫu số).
+
+\section{Cantor tiến xa}
+
+Bây giờ chúng ta xem xét tập $\RR$, nơi hội tụ của vô số anh
+hào hữu tỷ, vô tỷ, siêu việt, v.v. Chúng ta không thể kiểm soát
+các số vô tỷ, đơn giản vì chúng không có cấu trúc đặc biệt gì cho chúng.
+Chẳng hạn như $\ZZ$ rời rạc kéo dài về 2 phía, hoặc $\QQ$
+là tích Descartes của $\ZZ$ và $\NN$. Cantor sẽ giúp chúng ta 
+gỡ bỏ những rắc rối này.
+
+Đầu tiên, Cantor chứng minh rằng tập $\RR$ là tương đương khoảng
+$(0, 1)$. Chúng ta dễ thấy hàm số $f: \RR \to (0, 1)$ cho
+bởi công thức $f(x) = \frac{e^x}{e^x + 1}$ là song ánh.
+Như vậy công việc cần làm là chứng minh không tồn tại song
+ánh từ khoảng $(0, 1)$ tới $\NN$ nữa là xong. Khi đó $(0, 1)$
+sẽ là tập không đếm được.
+
+Cantor đưa ra hai phép chứng minh, cả hai đều chưa từng có và
+gây ra tiếng vang lớn thời đó.
+
+\begin{proof}[Phương pháp đường chéo]
+    Giả sử $(0, 1)$ là tập đếm được, nhưg vậy tồn tại song ánh từ $\NN$ tới $(0, 1)$.
+    Cantor chứng minh toàn ánh không xảy ra.
+
+    Với mọi số tự nhiên $n$, ta xét các số thực khác nhau thuộc $(0, 1)$
+
+    \begin{align*}
+        1 & \to a_1 = 0.a_{11} a_{12} \ldots a_{1n} \ldots \\
+        2 & \to a_2 = 0.a_{21} a_{22} \ldots a_{2n} \ldots \\
+        & \ldots \\
+        i & \to a_i = 0.a_{i1} a_{i2} \ldots a_{in} \ldots \\
+        & \ldots \\
+        n & \to a_n = 0.a_{n1} a_{n2} \ldots a_{nn} \ldots
+    \end{align*}
+
+    Bây giờ ta chọn số $b = 0.b_1 b_2 \ldots b_n \ldots$ sao cho
+    $b_i \neq a_{ii}$. Nghĩa là $b$ khác $a_i$ ở vị trí thứ $i$,
+    từ đó $b \neq a_i$ với mọi $a_i$.
+    Nhưng như vậy thì không có $n$ nào là biến thành $b$. Vậy không tồn
+    tại toàn ánh và như vậy ta có điều phải chứng minh.
+\end{proof}
+
+\begin{proof}[Phương pháp dãy các khoảng kín bị chặn lồng vào nhau]
+    Như trên, ta vẫn giả sử tập $(0, 1)$ đếm được. Khi đó tồn tại song ánh
+    từ $(0, 1)$ tới $\NN$, và do vậy ta có thể liệt kê (một cách vô hạn)
+    các phần tử của $(0, 1)$ như việc viết các số tự nhiên:
+    \[I = (0, 1) = \{x_1, x_2, x_3, \ldots \}\]
+
+    Đầu tiên ta chọn một khoảng kín $I_1$ trong $I$ sao cho $x_1 \not\in I_1$.
+    Sau đó ta chọn một khoảng kín $I_2$ trong $I_1$ sao cho $x_2 \not\in I_2$.
+    Cứ tiếp tục như vậy ta được dãy các khoảng kín lồng vào nhau
+    \[ \ldots I_n \subseteq I_{n-1} \subseteq \ldots \subseteq I_2 \subseteq I_1 \subseteq I\]
+    sao cho $x_n \not\in I_n$ với mọi số tự nhiên $n$. Theo tính chất của dãy 
+    các khoảng kín bị chặn lồng vào nhau thì giao của tất cả $I_k$ ($k = 1, 2, \ldots $)
+    khác rỗng. Hay nói cách khác tồn tại $\alpha \in I_n$ với mọi số tự nhiên
+    $n$. Khi đó $\alpha \neq x_i$ với $i=1, 2, \ldots, n$, nghĩa là $\alpha$
+    khác với mọi phần tử được liệt kê ở trên. Điều này vô lý vì $\alpha \in I_n$ nên
+    $\alpha \in I$. Như vậy tập $(0, 1)$ là không đếm được.
+\end{proof}
+
+Từ chứng minh trên ta có định lý Cantor:
+
+\begin{theorem}
+    Tập hợp các số vô tỷ không đếm được.
+\end{theorem}
+
+\section{Thiên tài và bi kịch}
+
+Như đầu bài đã nói, những phát kiến vượt quá thời đại thường bị những
+phe phái bảo thủ chống đối và kìm hãm phát triển. Người thầy cũ, cũng 
+là gây nên vết thương đau đớn nhất cho Cantor là nhà toán học 
+Leopold Kronecker (1823 - 1891).
+
+Leopold Kronecker thường được biết đến với ký hiệu Leopold Kronecker 
+trong thặng dư chính phương (như Legendre hay Jacobi). Ông là nhà toán
+học người Đức nổi tiếng là bảo thủ. Ông thậm chí còn cho rằng \textit{
+    "Thượng Đế làm ra số nguyên, tất cả còn lại là do con người."
+}. Theo cách nói của ông, những gì không được xây dựng trên cơ sở
+các số nguyên đều là lố bịch, vớ vẩn. Và giải tích tất nhiên là nạn 
+nhân của định kiến này. Giải tích do Wierstrass tạo ra như cái gai trong
+mắt ông vì giải tích liên quan đến sự liên tục, tới những thứ vô cùng nhỏ
+như trong ngôn ngữ $\delta - \varepsilon$ của Cauchy, điều mà Kronecker 
+cũng thấy không ưa. Nhưng mà, thưa Kronecker tài ba, từ thời Pythargoras
+đã tìm ra số vô tỉ $\sqrt{2}$. Như vậy nếu ông từ chối lý thuyết tập hợp 
+của Cantor, thì có phải ông vừa quăng sự phát triển toán học hàng thế kỷ 
+về với gốc rễ của nó? Sự thật là đúng như vậy. Nếu phủ nhận lý thuyết tập
+hợp của Cantor cũng chính là phủ nhận sự tồn tại của các số vô tỉ
+(theo lời Cantor).
+
+Nhưng thế lực của Kronecker lúc đó quá mạnh. Còn Cantor chỉ là giảng
+viên ở một trường đại học hạng hai, luôn muốn có nhiệm sở tại trung 
+tâm khoa học của Đức - Đại học Berlin. Kronecker thậm chí còn dùng
+quyền lực gây ảnh hưởng lên các tòa soạn khiến các bài báo của Cantor
+không được đăng ở các tạp chí uy tín mà chỉ có thể đăng ở các tạp chí 
+hạng thấp. Cuộc sống chật vật khó khăn, cộng thêm áp lực trong thời gian
+dài không thể chứng minh \textit{giả thiết về sự liên tục} đã làm Cantor
+kiệt sức.
+
+Hơn thế nữa, ông trời có vẻ rất thích đùa giỡn với những thiên tài.
+Năm 1899, người con trai út của ông - người con ông yêu thương nhất - 
+đột ngột qua đời. Chấn động đó làm ông đột quỵ. Sau đó ông cứ nhập viện,
+xuất viện nhiều lần và cuối cùng rời nhiệm sở trong tình trạng gần như 
+mất trí.
+
+Tuy nhiên, chân lý của ông, lý thuyết của ông lúc này đã được đón nhận
+khắp mọi nơi sau chiến thắng của phe David Hilbert, người được gọi là
+nhà thông thái cuối cùng của thế kỷ 20. Lý thuyết của Cantor ban đầu đã
+được các nhà toán học tài năng thời đó ủng hộ như Dedekind, Wierstrass, Hilbert, 
+... . Tuy nhiên phe bảo thủ của Kronecker quá mạnh nên sự giúp đỡ của
+họ cho Cantor không đủ để thắng phe bảo thủ. Và rồi cái gì cần tới cũng phải
+tới. Những suy luận đúng đắn, những lập luận chặt chẽ sẽ mang tới kết quả
+đúng đắn, dù nó có khó tin tới đâu đi nữa. Các nhà toán học cuối cùng cũng 
+đi tới kết luận rằng lý thuyết tập hợp của Cantor là mũi tên vững chắc
+mở đường cho toán học phát triển.
+
+Cantor đã ra đi mãi mãi tại bệnh viện vào ngày 6 tháng 1 năm 1918, để
+lại cho đời sau nhiều ý tưởng đột phá. Hilbert đã từng nói về lý thuyết 
+của Cantor rằng \textit{"Đó là một sản phẩm trí tuệ tinh tế nhất của một 
+thiên tài Toán học, một trong thành tựu cao cấp nhất mà trí tuệ con người
+có thể đạt được."} (Burton). Hilbert cũng nói thêm rằng \textit{
+    "Không ai có thể ngăn cấm chúng ta bước vào thế giới kỳ diệu
+    mà Cantor đã tạo ra."
+}(Dunham).

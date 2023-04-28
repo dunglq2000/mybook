@@ -2,6 +2,220 @@
 
 \section{Giới hạn của dãy số}
 
+\begin{definition}[Giới hạn hữu hạn của dãy số]
 Cho dãy số $\{a_n\}$. Ta nói dãy $\{a_n\}$ có giới hạn hữu hạn $L$ nếu với mọi 
-$\epsilon > 0$, tồn tại $n_0 \in \NN$ sao cho với mọi $n > n_0$ thì 
-\[| a_{n} - L | < \epsilon \]
+$\varepsilon > 0$, tồn tại $n_0 \in \NN$ sao cho với mọi $n \geq n_0$ thì 
+\[| a_{n} - L | < \varepsilon \]
+
+Ký hiệu: $\displaystyle{\lim_{n \to \infty} a_n = L}$
+
+\end{definition}
+
+Nói cách khác, trên trục số với điểm $L$, nếu ta chọn một đường tròn bán kính $\varepsilon$ tùy ý,
+thì mọi số hạng của dãy số kể từ số hạng $n_0$ nào đó trở đi đều nằm trong đường tròn này.
+Thông thường $\varepsilon$ rất nhỏ.
+
+\begin{example}
+    Xét dãy số cho bởi công thức $a_n = \frac{1}{n}$.
+
+    Ta chứng minh dãy số có giới hạn hữu hạn là 0.
+
+    Với mọi $\varepsilon > 0$ tùy ý, ta cần chứng minh tồn tại
+    số $n_0 \geq 1$ sao cho với mọi $n \geq n_0$ thì $| a_n - 0 | < \varepsilon$.
+
+    Hay nói cách khác $a_{n_0} < \varepsilon$.
+
+    Tương đương với $\frac{1}{n_0} < \varepsilon \Leftrightarrow n_0 > \frac{1}{\varepsilon}$
+
+    Vậy ta chỉ cần chọn $n_0$ thỏa bất đẳng thức trên (luôn tìm được).
+
+    Kết luận: $\displaystyle{\lim_{n \to \infty} a_n = 0}$
+\end{example}
+
+\begin{definition}[Dãy số có giới hạn vô cực]
+    Cho dãy số $\{a_n\}$. Ta nói dãy số có giới hạn ở dương vô cực
+    nếu với mọi $M > 0$, tồn tại $n_0 \in \NN$ sao cho với mọi $n \geq n_0$
+    thì $a_n > M$.
+\end{definition}
+
+Nói cách khác, nếu ta chọn một số $M$ rất lớn bất kì, thì mọi số hạng
+của dãy số kể từ một số hạng nào đó trở đi luôn lớn hơn $M$.
+
+Định nghĩa về dãy số có giới hạn ở âm vô cực cũng tương tự.
+
+\section{Giới hạn hàm số}
+
+Định nghĩa của hàm số theo kiểu Cauchy (hay còn được gọi là
+ngôn ngữ $\delta-\varepsilon$) là kiểu định nghĩa phổ biến được
+giảng dạy trong nhà trường.
+
+\begin{definition}[Giới hạn hữu hạn của hàm số]
+    Xét hàm số $f(x)$. Ta nói hàm số có giới hạn hữu hạn $L$
+    khi $x$ tiến tới $x_0$, nếu với mọi $\varepsilon > 0$, tồn tại 
+    $\delta > 0$ sao cho với mọi $x$ mà $| x - x_0 | < \delta$ thì
+    $|f(x) - L| < \varepsilon$.
+
+    Ký hiệu: $\displaystyle{\lim_{x \to x_0} f(x) = L}$
+\end{definition}
+
+Một cách hình ảnh, tương tự như giới hạn dãy số, lần này ta nhìn trên 2 trục 
+của mặt phẳng tọa độ $Oxy$. Với mọi quả cầu bán kính $\varepsilon$ tâm $L$ (dành cho $f(x)$)
+ta luôn chọn được quả cầu bán kính $\delta$ tâm $x_0$ (dành cho $x$). Lúc này khi $x$
+nằm trong quả cầu tâm $x_0$ bán kính $\delta$ thì $f(x)$ tương ứng sẽ nằm trong quả cầu
+tâm $L$ bán kính $\varepsilon$.
+
+Ta có thể thấy ở đây $x$ tiến về $x_0$ (khá giống định nghĩa giới hạn hàm số)
+và $f(x)$ tương ứng tiến về $L$.
+
+Tương tự ta cũng có giới hạn hàm số ở vô cực
+
+\begin{definition}[Giới hạn hàm số ở vô cực]
+    Với hàm số $f(x)$, ta nói hàm số có giới hạn tại dương vô cực
+    khi $x$ tiến về $x_0$ nếu với mọi $M > 0$, tồn tại $\delta > 0$ sao cho với mọi $x$ mà $|x - x_0| < \delta$ 
+    thì $f(x) > M$
+
+    Ký hiệu: $\displaystyle{\lim_{x \to x_0} f(x) = +\infty}$
+\end{definition}
+
+\begin{definition}[Giới hạn một bên]
+    Ta nói hàm số $f(x)$ có giới hạn phải $L$ tại $x_0$ khi $x$ tiến về bên phải $x_0$
+    nếu với mọi $\varepsilon > 0$, tồn tại $\delta > 0$ sao cho với mọi $0 < x - x_0 < \delta$ 
+    thì $|f(x) - L| < \varepsilon$.
+
+    Ký hiệu: $\displaystyle{\lim_{x \to x_0^+} f(x) = L}$
+\end{definition}
+
+Nghĩa là chúng ta chỉ xét giới hạn khi $x$ tiến tới $x_0$ từ bên phải $x > x_0$.
+Tương tự cho giới hạn trái.
+
+Lưu ý rằng trong nhiều trường hợp, mặc dù cùng tiến tới $x_0$ nhưng
+giới hạn trái và giới hạn phải có thể không bằng nhau.
+
+\begin{example}
+    Xét hàm số $y = \frac{1}{x}$. Ta thấy hàm số không xác định
+    tại $x = 0$, và giới hạn trái và phải khác nhau:
+    \[\lim_{x \to 0^+} = +\infty, \quad \lim_{x \to 0^-} = -\infty\]
+\end{example}
+
+\section{Tính liên tục của hàm số}
+
+Cho hàm số $f(x)$ xác định trên miền $D$ và $x_0$ là một điểm thuộc $D$.
+
+\begin{definition}[Hàm số liên tục tại một điểm]
+    Ta nói hàm số $f(x)$ liên tục tại $x_0$ nếu
+    \[\lim_{x \to x_0} f(x) = f(x_0)\]
+\end{definition}
+
+Định nghĩa tương tự cho liên tục trái và liên tục phải (ta lấy giới hạn một bên).
+
+Như vậy, có 3 khả năng hàm số không liên tục tại một điểm.
+
+\begin{enumerate}[noitemsep]
+    \item Hàm số không xác định tại $x_0$
+    \item Hàm số xác định tại $x_0$ nhưng giới hạn tại đó không bằng $f(x_0)$. 
+    \item Giới hạn trái và giới hạn phải không bằng nhau
+\end{enumerate}
+
+Nếu hàm số không liên tục tại $x_0$ ta gọi hàm số bị \textbf{gián đoạn} tại $x_0$.
+
+\section{Đạo hàm}
+
+\begin{definition}[Đạo hàm]
+    Cho hàm số $f(x)$ xác định trên miền $D$ và $x_0$ là điểm thuộc $D$.
+    Ta nói hàm số $f(x)$ có đạo hàm tại $x_0$ (hoặc khả vi tại $x_0$) nếu
+    tồn tại giới hạn hữu hạn
+    \[\lim_{x \to x_0}\frac{f(x) - f(x_0)}{x - x_0}\]
+\end{definition}
+
+\begin{example}
+    Xét hàm số $f(x) = x^2 + 1$ trên $\RR$. Tìm đạo hàm tại $x_0 \in \RR$.
+
+    Ta có $f(x)-f(x_0) = x^2 + 1 - (x_0^2 + 1) = (x - x_0) (x + x_0)$.
+
+    Khi đó $\frac{f(x)-f(x_0)}{x-x_0} = x + x_0$ nên ta có
+    \[ \lim_{x \to x_0} (x + x_0) = 2 x_0 \]
+\end{example}
+
+Nếu hàm số khả vi trên mọi điểm thuộc khoảng (đoạn) nào đó thì
+ta nói hàm số khả vi trên khoảng (đoạn) đó và ký hiệu là $f'(x)$.
+
+Với ví dụ trên, ta thấy giới hạn tồn tại với mọi $x_0 \in \RR$ nên ta có thể
+thay $x_0$ bởi $x$ và có $f'(x) = 2x$ với $f(x) = x^2 + 1$.
+
+\begin{remark}
+    Từ định nghĩa ta thấy rằng nếu $f(x)$ khả vi tại $x_0$ thì nó cũng liên tục tại $x_0$.
+    Lưu ý là chiều ngược lại không đúng.
+\end{remark}
+
+\section{Ý nghĩa cơ học của đạo hàm}
+
+Xét một chất điểm (vật lý) chuyển động. Quãng đường chuyển động của chất điểm được 
+biểu diễn bởi hàm số theo thời gian. Ta đã biết vận tốc là đặc trưng chuyển động của 
+chất điểm trong một đơn vị thời gian (phản ánh chất điểm chuyển động nhanh hay chậm).
+Nếu đặt $\Delta s$ là độ biến thiên tọa độ của chất điểm trong khoảng thời gian $\Delta t$,
+thì vận tốc là $v = \frac{\Delta s}{\Delta t}$.
+
+Vận tốc tức thời đặc trưng cho sự nhanh chậm của chuyển động.
+Ta không thể khảo sát vận tốc tại 1 điểm vì chất điểm chuyển động
+chứ không đứng yên. Do đó một ý tưởng đơn giản là chúng ta khảo sát
+trong một khoảng thời gian cực nhỏ, khi $\Delta t \to 0$, khi đó
+vận tốc gần như đúng tại một thời điểm nên gọi là vận tốc tức thời.
+
+Do đó ta có hàm số $v = s'(t)$ biểu diễn vận tốc theo thời gian, 
+với $s(t)$ là hàm số biểu diễn chuyển động của chất điểm theo thời gian.
+
+\section{Đồng biến và nghịch biến}
+
+\begin{definition}
+    Xét hàm số $f(x)$ xác định trên khoảng $(a, b)$. Ta nói $f(x)$ đồng biến trên $(a, b)$ 
+    nếu với mọi $x_1 < x_2$ mà $x_1, x_2 \in (a, b)$ ta có $f(x_1) < f(x_2)$.
+\end{definition}
+
+Tương tự $f(x)$ nghịch biến trên $(a, b)$ nếu với $x_1 < x_2$ ta có $f(x_1) > f(x_2)$.
+Lưu ý ở các so sánh trên dấu bằng có thể xảy ra.
+
+Nếu hàm số đồng biến (hoặc nghịch biến) trên khoảng xác định nào đó thì ta
+nói hàm số đơn điệu trên khoảng đó.
+
+Đồ thị của hàm số khi đồng biến sẽ đi lên (theo chiều từ trái sang phải), và đi
+xuống nếu nghịch biến.
+
+\begin{example}
+    Khảo sát sự biến thiên của hàm số $f(x) = x^2 + 3$.
+
+    Để khảo sát sự biến thiên, một cách làm đơn giản theo định nghĩa
+    là ta xét $x_1 < x_2$ và so sánh $f(x_1)$ với $f(x_2)$.
+
+    Ta có $f(x_1) - f(x_2) = x_1^2 + 3 - x_2^2 - 3 = (x_1 - x_2)(x_1 + x_2)$
+
+    Do $x_1 < x_2$, nên với $x_1, x_2 \geq 0$ thì $x_1 + x_2 > 0$ và
+    $x_1 - x_2 < 0$. Suy ra $f(x_1) - f(x_2) < 0$ và từ đó $f(x_1) < f(x_2)$. Như
+    vậy $f(x)$ đồng biến trên $(0, +\infty)$.
+
+    Tương tự, khi $x_1, x_2 < 0$ thì $x_1 + x_2 < 0$. Khi đó $f(x_1) > f(x_2)$
+    nên $f(x)$ nghịch biến trên $(-\infty, 0)$
+\end{example}
+
+\begin{theorem}
+    Xét hàm số $f(x)$ khả vi trên khoảng $(a, b)$. Nếu $f'(x) > 0$ 
+    với mọi $x \in (a, b)$ thì $f(x)$ đồng biến trên $(a, b)$.
+\end{theorem}
+
+Tương tự, $f'(x) < 0$ với mọi $x \in (a, b)$ thì $f(x)$ nghịch biến trên
+$(a, b)$.
+
+%\section{Cực trị}
+
+%\begin{definition}
+ %   Xét hàm số $f(x)$ xác định và liên tục trên khoảng $(a, b)$. Điểm $x=x_0$ được
+ %   gọi là \textbf{cực tiểu} của hàm số $f(x)$ nếu $f(x)$ nghịch biến trên khoảng 
+ %   $(a, x_0)$ và đồng biến trên khoảng $(x_0, b)$.
+%\end{definition}
+
+%Xét hàm số $f(x)$ khả vi trên khoảng $(a, b)$. Gọi $f'(x)$ là
+%đạo hàm của hàm số $f(x)$ trên $(a, b)$. Khi đó điểm $x_0 \in (a, b)$ được gọi là
+%\begin{itemize}
+ %   \item Cực tiểu nếu $f'(x)$ đổi chiều từ âm sang dương khi đi qua $x_0$
+ %   \item Cực đại nếu $f'(x)$ đổi chiều từ dương sang âm khi đi qua $x_0$
+%\end{itemize}
+

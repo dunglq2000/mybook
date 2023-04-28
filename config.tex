@@ -13,6 +13,7 @@
 \usepackage{algorithm}
 \usepackage{mathtools}
 \usepackage[square,numbers]{natbib}
+\usepackage{listings}
 
 \bibliographystyle{unsrtnat}
 
@@ -28,14 +29,14 @@
 \usepackage[T2A]{fontenc}
 \usepackage[russian, vietnam]{babel}
 
+\setlist[itemize,enumerate]{noitemsep}
+
 \definecolor{green}{rgb}{0.0, 255.0, 0.0}
 \definecolor{cyan}{rgb}{0.0, 255.0, 255.0}
 \definecolor{red}{rgb}{255.0, 0.0, 0.0}
 \definecolor{magenta}{rgb}{255.0, 0.0, 255.0}
 \definecolor{yello}{rgb}{255.0, 255.0, 0.0}
 \definecolor{white}{rgb}{255.0, 255.0, 255.0}
-
-
 
 \theoremstyle{definition}
 \newtheorem{definition}{Định nghĩa}[chapter]
@@ -50,10 +51,12 @@
 \renewcommand*\contentsname{Mục lục}
 
 \newcommand{\rank}{\text{rank}}
+\newcommand{\CC}{\mathbb{C}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathbb{F}}
 \newcommand{\lcm}{\text{lcm}}
 
 \newenvironment{myexampleblock}[1]{%

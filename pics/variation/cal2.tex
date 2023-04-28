@@ -1,0 +1,16 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{tkz-tab}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=3, espcl=1.5]
+        {$x$ / 1, $f'(x)$ / 1, $f(x) = \sqrt{\dfrac{x-1}{x+1}}$ / 2}
+        {$-\infty$, $-1$, $1$, $+\infty$}
+        \tkzTabLine
+        { , + , d , h, d , +, }
+        \tkzTabVar
+        { -/$1$, +DH/$\infty$, -C/$0$, +/$1$}
+    \end{tikzpicture}
+\end{document}

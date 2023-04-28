@@ -1,0 +1,16 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{tkz-tab}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+    \begin{tikzpicture}
+        \tkzTabInit[lgt=2.75]
+        {$x$ / 1, $f'(x)$ / 1, $f(x) = \tan(x)$ / 2}
+        {$0$, $\dfrac{\pi}{2}$, $\pi$}
+        \tkzTabLine
+        { , + , d , +, }
+        \tkzTabVar
+        { -/$0$, +D-/$+\infty$/$-\infty$, +/$0$}
+    \end{tikzpicture}
+\end{document}

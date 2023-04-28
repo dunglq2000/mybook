@@ -1,0 +1,92 @@
+\chapter{Không gian vector}
+
+Phần này định nghĩa tổng quát của không gian vector.
+
+\section{Không gian vector}
+
+Xét tập hợp các vector $\mathcal{V}$ trên trường $\FF$.
+
+Ta định nghĩa hai phép tính cộng và nhân trên các vector này sao cho
+
+\begin{itemize}[noitemsep]
+    \item Phép cộng là một ánh xạ $\mathcal{V} \times \mathcal{V} \to \mathcal{V}$ sao cho
+    với mọi $\bm{x}, \bm{y} \in \mathcal{V}$ thì $\bm{x} + \bm{y} \in \mathcal{V}$
+    \item Phân nhân vô hướng là ánh xạ $\FF \times \mathcal{V} \to \mathcal{V}$ sao cho
+    với mọi $\alpha \in \FF$ và $\bm{x} \in \mathcal{V}$ thì $\alpha \bm{x} \in \mathcal{V}$
+\end{itemize}
+
+Nói cách khác, phép cộng 2 vector và phép nhân vô hướng 1 số với vector cho kết quả vẫn nằm trong không gian vector đó.
+
+Đồng thời, phép cộng và phép nhân vô hướng phải thỏa mãn các tính chất sau
+
+\begin{enumerate}[noitemsep]
+    \item Tính giao hoán với phép cộng: với mọi $\bm{x}, \bm{y} \in \mathcal{V}$, $\bm{x} + \bm{y} = \bm{y} + \bm{x}$
+    \item Tính kết hợp với phép cộng: với mọi $\bm{x}, \bm{y}, \bm{z} \in \mathcal{V}$, $\bm{x} + (\bm{y} + \bm{z}) = (\bm{x} + \bm{y}) + \bm{z}$
+    \item Phần tử đơn vị của phép cộng: tồn tại vector không $\bm{0} \in \mathcal{V}$ sao cho với mọi $\bm{x} \in \mathcal{V}$, $\bm{0} + \bm{x} = \bm{x} + \bm{0} = \bm{x}$
+    \item Phần tử đối của phép cộng: với mọi $\bm{x} \in \mathcal{V}$, tồn tại phần tử $\bm{x'} \in \mathcal{V}$ sao cho $\bm{x} + \bm{x'} = \bm{x} + \bm{x'} = \bm{0}$
+    \item Phần tử đơn vị của phép nhân vô hướng: tồn tại phần tử $1_F \in \FF$ sao cho với mọi $\bm{x} \in \mathcal{V}$ thì $1_F \cdot \bm{x} = \bm{x}$
+    \item Tính kết hợp của phép nhân vô hướng: với mọi $\alpha, \beta \in \FF$, với mọi $\bm{x} \in \mathcal{V}$ thì $\alpha (\beta \bm{x}) = (\alpha \beta) \bm{x}$
+    \item Tính phân phối giữa phép cộng và nhân: với mọi $\alpha \in \FF$, với mọi $\bm{x}, \bm{y} \in \mathcal{V}$ thì $\alpha (\bm{x} + \bm{y}) = \alpha \bm{x} + \alpha \bm{y}$
+    \item Tính phân phối giữa phép nhân vô hướng: với mọi $\alpha, \beta \in \FF$, với mọi $\bm{x} \in \mathcal{V}$ thì $(\alpha + \beta) \bm{x} = \alpha \bm{x} + \beta \bm{x}$
+\end{enumerate}
+
+Ta thấy rằng không gian vector xét ở chương trước xác định trên trường $\RR$.
+Khi đó $\mathcal{V} = \RR^n$ và $\FF \equiv \RR$.
+
+\section{Cơ sở và số chiều của không gian vector}
+
+Tương tự, ta cũng có khái niệm cơ sở và số chiều của không gian vector.
+
+Nếu trong không gian vector $\mathcal{V}$ tồn tại các vector độc lập tuyến tính $\bm{v_1}$, $\bm{v_2}$, ..., $\bm{v_d}$
+mà tất cả các vector trong $\mathcal{V}$ có thể biểu diễn dưới dạng tổ hợp tuyến tính của các vector $\bm{v_i}$ trên,
+thì tập hợp các vector 
+\[\{ \bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d \}\]
+được gọi là \textbf{cơ sở} của không gian vector $\mathcal{V}$.
+
+Khi đó,
+\[\bm{x} = \sum_{i=1}^{d} \alpha_i \bm{v}_i \quad \forall \bm{x} \in \mathcal{V}\]
+
+Số lượng phần tử của tập hợp các vector đó (ở đây là $d$) gọi là \textbf{số chiều (dimension)} của không gian vector $\mathcal{V}$.
+Ta ký hiệu $\text{dim} \mathcal{V} = d$.
+
+Ta còn ký hiệu 
+\[\mathcal{V} = \text{span} \{\bm{v}_1, \bm{v}_2, \ldots, \bm{v}_d\}\]
+và nói là không gian vector $\mathcal{V}$ được span (hay được sinh) bởi các vector $\bm{v_i}$.
+
+Ta thấy rằng có thể có nhiều cơ sở cho cùng một không gian vector.
+
+\begin{theorem}
+    Mọi cơ sở của không gian vector $\mathcal{V}$ đều có số phần tử bằng $\text{dim} \mathcal{V}$
+\end{theorem}
+
+\section{Ví dụ về không gian vector}
+
+Xét không gian vector $\RR$.
+
+Ta biết rằng mọi điểm $M = (x, y)$ là tổ hợp tuyến tính 
+của 2 vector $\vec{i} = (1, 0)$ và $\vec{j} = (0, 1)$.
+Nghĩa là $(x, y) = x (1, 0) + y (0, 1)$. Như vậy $\vec{i}$
+và $\vec{j}$ là cơ sở của $\RR^2$ và $\dim \RR^2 = 2$.
+
+Cơ sở $\{\vec{i}, \vec{j}\}$ được gọi là \textbf{cơ sở chính tắc}
+của $\RR^2$. Bây giờ xét 2 vector $(1, 2)$ và $(3, 4)$.
+
+Ta thấy rằng $(1, 2) = 1 \cdot (1, 0) + 2 \cdot (0, 1)$
+và $(3, 4) = 3 \cdot (1, 0) + 4 \cdot (0, 1)$. Viết dưới 
+dạng ma trận là
+\[
+    \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
+    \times \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
+\]
+mà ma trận $\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$
+khả nghịch. Vậy $(1, 2)$ và $(3, 4)$ cũng là một cơ sở của $\RR^2$.
+
+\begin{remark}
+    Ta thấy rằng trên $\RR^n$ luôn có hệ cơ sở chính tắc.
+    Như vậy, hệ vector trên $\RR^n$ là cơ sở khi và chỉ khi 
+    chúng độc lập tuyến tính, hay nói cách khác là khi viết 
+    các hàng thành ma trận thì ma trận có định thức khác 0,
+    hoặc rank ma trận bằng $n$.
+\end{remark}
+

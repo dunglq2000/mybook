@@ -18,7 +18,7 @@ Tóm lại, $(R, +, \times)$ là vành nếu nó là nhóm Abel đối với ph�
 
 \textbf{Lưu ý}. Phép nhân ở đây không nhất thiết có phần tử đơn vị, hay phần tử nghịch đảo như trong định nghĩa nhóm. Trong trường hợp này $(R, \times)$ gọi là semigroup (nửa nhóm).
 
-\begin{definition}[Vành với đơn vị (ring with identity)] Nếu có phần tử $1_R \in R$ sao cho với mọi $r \in R$ ta đều có
+\begin{definition}[Vành với đơn vị - Ring with identity] Nếu có phần tử $1_R \neq 0_R \in R$ sao cho với mọi $r \in R$ ta đều có
     \[1_R \times r = r \times 1_R = r\]
     thì $1_R$ được gọi là phần tử đơn vị đối với phép nhân.
 \end{definition}
@@ -28,8 +28,67 @@ Khi đó phần tử nghịch đảo của phép cộng gọi là \textbf{phần
 
 Và $1_R$ là \textbf{phần tử đơn vị} đối với phép nhân $(R, \times)$.
 
-\begin{definition}[Vành giao hoán (commutative ring)]
+\begin{definition}[Vành giao hoán - Commutative ring]
     Nếu ta có tính giao hoán đối với phép nhân, nghĩa là với mọi $a, b \in $ đều thỏa
     \[a \times b = b \times a\]
     thì ta nói là vành giao hoán (không cần nói rõ là phép nhân vì phép cộng bắt buộc phải giao hoán theo định nghĩa vành rồi).
 \end{definition}
+
+\section{Ideal}
+
+\begin{definition}[Ideal]
+    Xét vành $(R, +, \times)$. Một tập con $I$ của $R$ được gọi là 
+    \textit{ideal trái} nếu
+    \begin{itemize}
+        \item $(I, +)$ là nhóm con của $(R, +)$
+        \item với mọi $r \in R$, với mọi $x \in I$ thì $rx \in I$
+    \end{itemize}
+\end{definition}
+
+Ta định nghĩa tương tự với ideal phải, khi đó $xr \in I$.
+Từ đây về sau nếu không nói gì thêm nghĩa là mình xét ideal trái.
+
+\begin{definition}[Ideal chính - Principal ideal]
+    Nếu $I = aR$ với $a$ là phần tử nào đó trong $R$ thì $I$ được gọi 
+    là  \textit{principal ideal}.
+\end{definition}
+
+Nói cách khác, nếu có một phần tử trong $R$ "sinh" ra được $I$ thì 
+$I$ là principal.
+
+\begin{definition}[Ideal cực đại - Maximal ideal]
+    Nếu $I$ là một ideal của $R$ và không tồn tại tập con $I'$ mà 
+    $I \subset I' \subset R$ (tập con thực thụ) thì $I$ được gọi
+    là maximal ideal.
+\end{definition}
+
+\begin{corollary}
+    Xét vành số nguyên $\ZZ$. Khi đó mọi ideal của $\ZZ$ đều là principal.
+\end{corollary}
+
+\begin{proof}
+    Giả sử ideal $I$ của $\ZZ$ có phần tử dương nhỏ nhất là $n$.
+    Theo định nghĩa của ideal thì với mọi $q \in \ZZ$ ta có 
+    $qn \in I$.
+
+    Nếu phần tử $a \in I$, theo phép chia Euclid ta có $a = qn + r$
+    với $0 \leq r < n$, mà $a \in I$ và $qn \in I$ nên $r = a - qn \in I$.
+    Tuy nhiên phần tử dương nhỏ nhất thuộc $I$ là $n$, do đó $r = 0$.
+
+    Nói cách khác mọi phần tử $a \in I$ đều có dạng $qn$ với $q \in \ZZ$.
+
+    Vậy mọi ideal đều là principal.
+\end{proof}
+
+\begin{corollary}
+    Ideal $I$ của $\ZZ$ là maximal khi và chỉ khi $I = n\ZZ$ với
+    $n$ là số nguyên tố.
+\end{corollary}
+
+\begin{proof}
+    Ta chứng minh chiều thuận, chiều ngược tương tự. Sử dụng phản chứng,
+    ta giả sử $n$ là hợp số. Khi đó $n = n_1 n_2$ ($n_1 \geq n_2 > 1$).
+
+    Khi đó $n \ZZ \subset n_1 \ZZ \subset \ZZ$, suy ra ideal không phải
+    maximal. Ta có điều phải chứng minh.
+\end{proof}
