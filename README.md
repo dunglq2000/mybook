@@ -1,11 +1,11 @@
 Project sách này nhằm mục đích chính là luyện latex (trình bày latex, vẽ hình với tikz, ...)
 
-Project này gồm 4 phần:
+Project này gồm 9 phần:
 
-- Lý thuyết toán tổng quát, trải dài các phần như đại số tuyến tính, số học, toán rời rạc, toán trừu tượng, thích gì viết nấy và là phiên bản hoàn chỉnh hơn của blog [dunglq](https://dunglq.gitbook.io/mathcrypto/) (có nhiều hạn chế khi sử dụng latex trên web, dù gì mathjax cũng chỉ hỗ trợ tác vụ cơ bản của latex trên web);
-- Lời giải bài tập của một số sách mà mình dùng để tham khảo, học về toán;
-- Lịch sử toán học về các nhà toán học nổi tiếng, tìm hiểu về cuộc đời và công trình của họ;
-- Mật mã học: viết về các loại mã bình thường, vẽ hình, ...
+- 1 tới 6: Lý thuyết toán tổng quát, trải dài các phần như đại số tuyến tính, số học, toán rời rạc, toán trừu tượng, thích gì viết nấy và là phiên bản hoàn chỉnh hơn của blog [dunglq](https://dunglq.gitbook.io/mathcrypto/) (có nhiều hạn chế khi sử dụng latex trên web, dù gì mathjax cũng chỉ hỗ trợ tác vụ cơ bản của latex trên web);
+- 7: Lời giải bài tập của một số sách mà mình dùng để tham khảo, học về toán;
+- 8: Lịch sử toán học về các nhà toán học nổi tiếng, tìm hiểu về cuộc đời và công trình của họ;
+- 9: Mật mã học: viết về các loại mã bình thường, vẽ hình, ...
 
 Sách được viết ở khổ A5.
 

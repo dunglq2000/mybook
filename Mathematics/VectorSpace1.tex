@@ -152,3 +152,53 @@ tại ma trận khả nghịch $\bm{A}$ sao cho $\bm{W} = \bm{A} \cdot \bm{V}$.
 Nếu $\bm{w}_i$ cũng là cơ sở của $\mathcal{V}$, thì các vector $\bm{v}_i$ cũng phải
 biểu diễn được dưới dạng tổ hợp tuyến tính của $\bm{w}_i$.
 Nói cách khác, ma trận $(\alpha_{ij})$ khả nghịch.
+
+\section{Không gian vector con}
+
+Cho không gian vector $\mathcal{V} \subset \RR^n$ với phép cộng hai vector
+và phép nhân vô hướng. Một tập con $L$ của $\mathcal{V}$ được gọi
+là không gian vector con nếu:
+
+\begin{itemize}
+    \item Với mọi $\bm{x}$, $\bm{y}$ thuộc $L$, $\bm{x} + \bm{y} \in L$
+    \item Với mọi $\alpha \in \RR$, với mọi $\bm{x} \in L$, $\alpha \bm{x} \in L$
+\end{itemize}
+
+Nói cách khác, phép cộng và phép nhân vô hướng \textit{đóng} trong
+không gian vector con.
+
+\begin{remark}
+    Trên $\RR^n$, hệ phương trình tuyến tính thuần nhất có thể sinh
+    ra một không gian vector con của $\RR^n$.
+\end{remark}
+
+\begin{example}
+    Xét hệ phương trình tuyến tính sau:
+
+    \begin{equation}
+        \begin{array}{cccccccc}
+            x_1 & + & 3x_2 & + & 5x_3 & + & 7x_4 & = 0 \\
+            2x_1 & & & + & 4x_3 & + & 2x_4 & = 0 \\
+            3x_1 & + & 2x_2 & + & 8x_3 & + & 7x_4 & = 0
+        \end{array}
+    \end{equation}
+
+    Biến đổi ma trận
+
+    \[
+        \begin{pmatrix}
+            1 & 3 & 5 & 7 \\
+            2 & 0 & 4 & 2 \\
+            3 & 2 & 8 & 7
+        \end{pmatrix} \sim \begin{pmatrix}
+            1 & 3 & 5 & 7 \\
+            0 & -6 & -6 & -12 \\
+            0 & -7 & -7 & -14
+        \end{pmatrix} \sim \begin{pmatrix}
+            1 & 3 & 5 & 7 \\
+            0 & 1 & 1 & 2 \\
+            0 & 0 & 0 & 0
+        \end{pmatrix}
+    \]
+
+\end{example}
