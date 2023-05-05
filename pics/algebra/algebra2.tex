@@ -1,0 +1,13 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+    \draw[->] (-4, 0) -- (4, 0) node[right] {$x$};
+  \draw[->] (0, -1) -- (0, 12) node[above] {$y$};
+  \draw[scale=1, domain=-3:3, smooth, variable=\x, red] plot ({\x}, {\x*\x + 3})
+    node[right, black] {$y = x^2 + 3$};
+  %\draw[scale=0.5, domain=-3:3, smooth, variable=\y, red]  plot ({\y*\y}, {\y});
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,16 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{tikzpicture}
+    \draw[->] (-5, 0) -- (5, 0) node[right] {$x$};
+    \draw[->] (0, -5) -- (0, 5) node[above] {$y$};
+    \draw[scale=1, domain=-5:-0.2, smooth, variable=\x, red] plot ({\x}, {1 / \x})
+    node[below left, black] {$y = \dfrac{1}{x}$};
+    \draw[scale=1, domain=0.2:5, smooth, variable=\x, red] plot ({\x}, {1 / \x})
+    node[above right, black] {$y = \dfrac{1}{x}$};
+  %\draw[scale=0.5, domain=-3:3, smooth, variable=\y, red]  plot ({\y*\y}, {\y});
+\end{tikzpicture}
+\end{document}

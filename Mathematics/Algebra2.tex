@@ -1,0 +1,86 @@
+\chapter{Một số loại hàm số}
+
+Một số hàm số có tính chất đặc biệt giúp chúng ta tiết kiệm 
+công sức trong chứng minh, tính toán.
+
+\section{Hàm chẵn và hàm lẻ}
+
+Xét hàm số $y=f(x)$ xác định trên miền $D$ có tính đối xứng, 
+nghĩa là với mỗi phần tử dương $x$ thì có phần tử âm $-x$
+hoặc ngược lại. Khi đó:
+
+\begin{definition}
+    Hàm số $y=f(x)$ được gọi là hàm số chẵn nếu với mọi $x \in D$
+    ta có $f(-x) = f(x)$.
+\end{definition}
+
+Ví dụ như hàm số $y = x^2 + 3$ ở trên là một hàm chẵn vì với mọi
+$x \in \RR$, $f(x) = x^2 + 3 = (-x)^2 + 3 = f(-x)$. Dễ thấy rằng
+hàm chẵn đối xứng qua trục tung. Dựa vào tính chất này, 
+trong lúc khảo sát hoặc tính toán đôi khi ta chỉ cần quan tâm 
+một bên trục tung, bên kia tương tự (tính tích phân chẳng hạn).
+
+\begin{definition}
+    Hàm số $y=f(x)$ được gọi là hàm số lẻ nếu với mọi $x \in D$
+    ta có $f(-x) = -f(x)$.
+\end{definition}
+
+Ví dụ như hàm số $y = \dfrac{1}{x}$ ở trên là một hàm lẻ vì với
+mọi $x \in (0, +\infty)$, $f(-x) = \dfrac{1}{-x} = -\dfrac{1}{x} = 
+-f(x)$. Dễ thấy rằng hàm lẻ đối xứng qua gốc tọa độ $O$.
+
+\section{Hàm cộng tính}
+
+Xét hàm số $y=f(x)$ xác định trên miền $D$. 
+
+\begin{definition}
+    Hàm số $y = f(x)$ được gọi là cộng tính nếu với mọi $x, y \in D$
+    ta có $f(x+y) = f(x) + f(y)$.
+\end{definition}
+
+\begin{example}
+    Hàm số $y = 2x$ trên $\RR$ là hàm cộng tính vì với mọi $x, y \in \RR$,
+    ta có $f(x+y) = 2(x+y) = 2x + 2y = f(x) + f(y)$.
+\end{example}
+
+Hàm cộng tính có vai trò quan trọng trong giải tích, sẽ được trình bày
+ở phần Giải tích phía sau.
+
+\section{Hàm nhân tính}
+
+Tương tự hàm cộng tính, ta định nghĩa hàm nhân tính.
+
+\begin{definition}
+    Hàm số $y = f(x)$ được gọi là hàm nhân tính nếu với mọi $x, y \in D$
+    ta có $f(xy) = f(x) \cdot f(y)$.
+\end{definition}
+
+Hàm nhân tính quan trọng được sử dụng trong số học là phi-hàm Euler
+về số lượng các số nguyên tố cùng nhau với số nguyên dương $n$. Hàm
+Euler được trình bày ở phần Số học.
+
+\section{Hàm tuần hoàn}
+
+Xét hàm số $y=f(x)$ xác định trên miền $D$.
+
+\begin{definition}
+    Hàm số $y=f(x)$ được gọi là hàm tuần hoàn nếu tồn tại số $T$
+    sao cho $f(x+T) = f(x)$ với mọi $x \in D$.
+\end{definition}
+
+Nói cách khác, hàm số sẽ lặp lại sau một đoạn nhất định.
+
+Số $T$ nhỏ nhất thỏa mãn $f(x+T) = f(x)$ được gọi là \textbf{chu kỳ}
+của hàm tuần hoàn. Vì sao lại là nhỏ nhất?
+
+Ta thấy rằng, nếu $f(x+T) = f(x)$ với mọi $x \in D$, ta thay $x$ bởi
+$x + T$ thì thu được $f(x + T + T) = f(x+T)$, hay $f(x+2T) = f(x+T)$.
+Suy ra $f(x+2T) = f(x+T) = f(x)$. Như vậy thì sau $2T$ hàm số cũng
+lặp lại đúng trạng thái đó. Tương tự cho $3T$, $4T$, .... Nên số $T$
+nhỏ nhất thỏa mãn đẳng thức $f(x+T) = f(x)$ sẽ là chu kỳ.
+
+\begin{example}
+    Hàm số $y = \sin(x)$ là hàm tuần hoàn với chu kỳ $T = 2\pi$.
+    Do đó chúng ta chỉ cần khảo sát hàm số trong khoảng $(-\pi, \pi)$
+    thôi là đủ.
+\end{example}

@@ -164,38 +164,6 @@ vận tốc gần như đúng tại một thời điểm nên gọi là vận t�
 Do đó ta có hàm số $v = s'(t)$ biểu diễn vận tốc theo thời gian, 
 với $s(t)$ là hàm số biểu diễn chuyển động của chất điểm theo thời gian.
 
-\section{Đồng biến và nghịch biến}
-
-\begin{definition}
-    Xét hàm số $f(x)$ xác định trên khoảng $(a, b)$. Ta nói $f(x)$ đồng biến trên $(a, b)$ 
-    nếu với mọi $x_1 < x_2$ mà $x_1, x_2 \in (a, b)$ ta có $f(x_1) < f(x_2)$.
-\end{definition}
-
-Tương tự $f(x)$ nghịch biến trên $(a, b)$ nếu với $x_1 < x_2$ ta có $f(x_1) > f(x_2)$.
-Lưu ý ở các so sánh trên dấu bằng có thể xảy ra.
-
-Nếu hàm số đồng biến (hoặc nghịch biến) trên khoảng xác định nào đó thì ta
-nói hàm số đơn điệu trên khoảng đó.
-
-Đồ thị của hàm số khi đồng biến sẽ đi lên (theo chiều từ trái sang phải), và đi
-xuống nếu nghịch biến.
-
-\begin{example}
-    Khảo sát sự biến thiên của hàm số $f(x) = x^2 + 3$.
-
-    Để khảo sát sự biến thiên, một cách làm đơn giản theo định nghĩa
-    là ta xét $x_1 < x_2$ và so sánh $f(x_1)$ với $f(x_2)$.
-
-    Ta có $f(x_1) - f(x_2) = x_1^2 + 3 - x_2^2 - 3 = (x_1 - x_2)(x_1 + x_2)$
-
-    Do $x_1 < x_2$, nên với $x_1, x_2 \geq 0$ thì $x_1 + x_2 > 0$ và
-    $x_1 - x_2 < 0$. Suy ra $f(x_1) - f(x_2) < 0$ và từ đó $f(x_1) < f(x_2)$. Như
-    vậy $f(x)$ đồng biến trên $(0, +\infty)$.
-
-    Tương tự, khi $x_1, x_2 < 0$ thì $x_1 + x_2 < 0$. Khi đó $f(x_1) > f(x_2)$
-    nên $f(x)$ nghịch biến trên $(-\infty, 0)$
-\end{example}
-
 \begin{theorem}
     Xét hàm số $f(x)$ khả vi trên khoảng $(a, b)$. Nếu $f'(x) > 0$ 
     với mọi $x \in (a, b)$ thì $f(x)$ đồng biến trên $(a, b)$.

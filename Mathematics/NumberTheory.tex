@@ -1,0 +1,47 @@
+\chapter{Mở đầu về số học}
+
+Số học xuất hiện từ xa xưa, từ những bước đi đầu tiên của con
+người. Tuy nhiên số học lại mang vẻ bí ẩn khó tưởng, sự phức
+tạp vượt ra phạm vi số học. Nhà toán học vĩ đại Gauss từng nói
+\textit{Toán học là vua của các môn khoa học, và số học là
+nữ hoàng}. Hay một trong 23 bài toán thế kỷ của Hilbert về sự
+phi mâu thuẫn của số học, người ta đã chứng minh được rằng
+không thể chứng minh sự phi mâu thuẫn của số học chỉ bằng các
+lý thuyết về số học.
+
+\section{Phép chia Euclid}
+
+Đây là nền tảng, cơ sở của số học. Từ khi biết tới phép chia
+hai số nguyên, ta có thể tìm \textit{thương} và \textit{số dư}.
+Nói theo toán học, nếu ta có 2 số nguyên dương $a$ và $b$, thì
+tồn tại cặp số $q$, $r$ sao cho $a = qb + r$ với $0 \leq r < b$.
+
+Khi đó, $a$ gọi là số bị chia, $b$ gọi là số chia, $q$ là thương
+(q trong quotient) và $r$ là số dư (r trong remainder).
+
+Đặc biệt là sự tồn tại của cặp số $q$ và $r$ là duy nhất. Thật
+vậy, nếu ta giả sử tồn tại 2 cặp số $(q_1, r_1)$ và $(q_2, r_2)$ 
+đều thỏa đẳng thức trên, nghĩa là
+\[a = q_1 b + r_1, \quad a = q_2 b + r_2\]
+
+Trừ 2 đẳng thức vế theo vế ta có $(q_1 - q_2) b + (r_1 - r_2) = 0$.
+Tương đương $(r_2 - r_1) = (q_1 - q_2) b$, mà $0 \leq r_1, r_2 < b$
+nên $-b < r_2 - r_1 < b$. Như vậy chỉ có thể xảy ra trường hợp
+$r_2 - r_1 = 0$ hay $r_2 = r_1$, kéo theo $q_1 = q_2$.
+
+\section{Thuật toán Euclid}
+
+Dựa trên phép chia Euclid, ta có một thuật toán hiệu quả để tìm
+ước chung lớn nhất giữa hai số $a$ và $b$.
+
+Ký hiệu $\gcd(a, b)$ là ước chung lớn nhất của $a$ và $b$. Chúng 
+ta thực hiện đệ quy như sau:
+\[\gcd(a, b) = \begin{cases}
+    a, \quad & \text{nếu}\,b = 0 \\
+    \gcd(b, a \bmod b), \quad & \text{nếu}\,b \neq 0
+\end{cases} 
+    \]
+
+Điểm quan trọng ở thuật toán Euclid là thuật toán chắc chắn sẽ dừng
+sau một số hữu hạn bước, và kết quả sẽ là ước chung lớn nhất của 2
+số $a$ và $b$.
