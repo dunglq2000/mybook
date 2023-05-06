@@ -1,0 +1,27 @@
+\documentclass{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        %xtick={-1,1},
+        xmin=-3, xmax=4,
+        ymin=-7, ymax=7,
+        xlabel={$x$},
+        ylabel={$y$},
+        %scale only axis,
+        domain=-2.1038:3,
+        samples=201,
+        smooth,
+        clip=false,
+        %axis equal image=true
+    ]
+    \addplot [red] {sqrt(x^3 -3*x + 3)}
+        node[above] {$y^2 = x^3 - 3x+ 3$};
+    \addplot [red] {-sqrt(x^3 - 3*x + 3)};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-3, xmax=4,
+        ymin=-7, ymax=7,
+        xlabel={$x$},
+        ylabel={$y$},
+        domain=-2:3,
+        samples=200,
+        smooth,
+        clip=false,
+    ]
+    \addplot [red] {sqrt(x^3+8)}
+        node[right] {$y^2 = x^3 + 8$};
+    \addplot [red] {-sqrt(x^3+8)};
+    \end{axis}
+\end{tikzpicture}
+\end{document}
