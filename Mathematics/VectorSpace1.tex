@@ -184,7 +184,6 @@ không gian vector con.
     \end{equation}
 
     Biến đổi ma trận
-
     \[
         \begin{pmatrix}
             1 & 3 & 5 & 7 \\
@@ -200,5 +199,25 @@ không gian vector con.
             0 & 0 & 0 & 0
         \end{pmatrix}
     \]
+
+    Như vậy hệ tương đương với
+    \[x_1 + 3x_2 + 5x_3 + 7x_4 = 0, \quad x_2 + x_3 + 2x_4 = 0\]
+
+    Ta chọn $x_3, x_4 \in \RR$ tự do, khi đó $x_1$ và $x_2$ được 
+    biểu diễn theo $x_3$ và $x_4$ 
+    \begin{equation}
+        x_1 = -2x_3 - x_4, \quad x_2 = -x_3 - 2x_4
+    \end{equation}
+
+    Mọi vector trong không gian tuyến tính khi đó có dạng
+    \begin{align*}
+        (x_1, x_2, x_3, x_4) & = (-2x_3 - x_4, -x_3 - 2x_4, x_3, x_4)
+        \\ & = x_3 \cdot (-2, -1, 1, 0) + x_4 \cdot (-1, -2, 0, 1) 
+    \end{align*}
+
+    Ở đây ta thấy $x_3, x_4$ nhận giá trị tùy ý trong $\RR$, và
+    mọi vector trong không gian nghiệm là tổ hợp tuyến tính của
+    hai vector $(-2, -1, 1, 0)$ và $(-1, -2, 0, 1)$. Suy ra hai vector
+    này là cơ sở của không gian nghiệm, và $\dim \mathcal{V} = 2$.
 
 \end{example}

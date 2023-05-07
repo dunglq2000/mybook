@@ -43,7 +43,7 @@ của dãy số kể từ một số hạng nào đó trở đi luôn lớn hơn
 
 Định nghĩa về dãy số có giới hạn ở âm vô cực cũng tương tự.
 
-\section{Giới hạn hàm số}
+\section{Giới hạn của hàm số}
 
 Định nghĩa của hàm số theo kiểu Cauchy (hay còn được gọi là
 ngôn ngữ $\delta-\varepsilon$) là kiểu định nghĩa phổ biến được
@@ -112,7 +112,7 @@ Như vậy, có 3 khả năng hàm số không liên tục tại một điểm.
 
 \begin{enumerate}[noitemsep]
     \item Hàm số không xác định tại $x_0$
-    \item Hàm số xác định tại $x_0$ nhưng giới hạn tại đó không bằng $f(x_0)$. 
+    \item Hàm số xác định tại $x_0$ nhưng giới hạn tại đó không bằng $f(x_0)$
     \item Giới hạn trái và giới hạn phải không bằng nhau
 \end{enumerate}
 
@@ -144,8 +144,13 @@ thay $x_0$ bởi $x$ và có $f'(x) = 2x$ với $f(x) = x^2 + 1$.
 
 \begin{remark}
     Từ định nghĩa ta thấy rằng nếu $f(x)$ khả vi tại $x_0$ thì nó cũng liên tục tại $x_0$.
-    Lưu ý là chiều ngược lại không đúng.
+    Lưu ý là chiều ngược lại không đúng. Ví dụ với hàm số $y = \lvert x \rvert$, 
+    hàm số liên tục tại $x=0$ nhưng giới hạn (đạo hàm) phải là 1, 
+    còn giới hạn (đạo hàm) trái là -1.
 \end{remark}
+
+Về mặt hình ảnh, khi hàm số khả vi tại một điểm thì đồ thị sẽ "trơn",
+không gấp khúc tại điểm đó.
 
 \section{Ý nghĩa cơ học của đạo hàm}
 
@@ -164,6 +169,11 @@ vận tốc gần như đúng tại một thời điểm nên gọi là vận t�
 Do đó ta có hàm số $v = s'(t)$ biểu diễn vận tốc theo thời gian, 
 với $s(t)$ là hàm số biểu diễn chuyển động của chất điểm theo thời gian.
 
+\section{Cực trị}
+
+Đầu tiên chúng ta cần một định lý về tính đơn điệu của hàm số
+khả vi.
+
 \begin{theorem}
     Xét hàm số $f(x)$ khả vi trên khoảng $(a, b)$. Nếu $f'(x) > 0$ 
     với mọi $x \in (a, b)$ thì $f(x)$ đồng biến trên $(a, b)$.
@@ -172,13 +182,25 @@ với $s(t)$ là hàm số biểu diễn chuyển động của chất điểm t
 Tương tự, $f'(x) < 0$ với mọi $x \in (a, b)$ thì $f(x)$ nghịch biến trên
 $(a, b)$.
 
-%\section{Cực trị}
+\begin{definition}[Cực tiểu của hàm số]
+    Xét hàm số $f(x)$ liên tục trên khoảng $(a, b)$. Điểm $(x_0, f(x_0))$ được
+    gọi là \textbf{cực tiểu} của hàm số $f(x)$ nếu tồn tại một lân cận $U$
+    chứa $x_0$ nằm trong khoảng $(a, b)$ sao cho với mọi $x \in U$ thì $f(x) \geq f(x_0)$.
+\end{definition}
 
-%\begin{definition}
- %   Xét hàm số $f(x)$ xác định và liên tục trên khoảng $(a, b)$. Điểm $x=x_0$ được
- %   gọi là \textbf{cực tiểu} của hàm số $f(x)$ nếu $f(x)$ nghịch biến trên khoảng 
- %   $(a, x_0)$ và đồng biến trên khoảng $(x_0, b)$.
-%\end{definition}
+\begin{definition}[Cực đại của hàm số]
+    Xét hàm số $f(x)$ liên tục trên khoảng $(a, b)$. Điểm $(x_0, f(x_0))$ được
+    gọi là \textbf{cực đại} của hàm số $f(x)$ nếu tồn tại một lân cận $U$
+    chứa $x_0$ nằm trong khoảng $(a, b)$ sao cho với mọi $x \in U$ thì $f(x) \leq f(x_0)$.
+\end{definition}
+
+Theo định nghĩa cực tiểu thì chỉ cần tồn tại lân cận chứa $x_0$
+mà $f(x) \geq f(x_0)$ thì điểm đó là cực tiểu. Như vậy một hàm số có 
+thể có nhiều cực tiểu, tương tự cũng có thể có nhiều cực đại.
+
+Lưu ý rằng cực đại và cực tiểu không phải điểm chỉ giá trị lớn nhất
+hay giá trị nhỏ nhất của hàm số. Nó chỉ lớn nhất hoặc nhỏ nhất trong
+vùng lân cận đó theo định nghĩa, nên người ta còn gọi là cực trị địa phương.
 
 %Xét hàm số $f(x)$ khả vi trên khoảng $(a, b)$. Gọi $f'(x)$ là
 %đạo hàm của hàm số $f(x)$ trên $(a, b)$. Khi đó điểm $x_0 \in (a, b)$ được gọi là
