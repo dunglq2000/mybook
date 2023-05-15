@@ -45,3 +45,122 @@ ta thực hiện đệ quy như sau:
 Điểm quan trọng ở thuật toán Euclid là thuật toán chắc chắn sẽ dừng
 sau một số hữu hạn bước, và kết quả sẽ là ước chung lớn nhất của 2
 số $a$ và $b$.
+
+\begin{proof}
+    Đặt $r_0 = a$ và $r_1 = b$. Theo thuật chia Euclid
+    ta có các số $q_0$ và $r_2$ sao cho $r_0 = r_1 q_0 + r_2$ với
+    $0 \leq r_2 < r_1$. Thuật toán Euclid hoạt động như sau:
+    \begin{align*}
+        r_0 & = r_1 q_0 + r_2 \\
+        r_1 & = r_2 q_1 + r_3 \\
+        r_2 & = r_3 q_2 + r_4 \\
+        \ldots & = \ldots \\
+        r_i & = r_{i+1} q_i + r_{i+2} \\
+        \ldots & = \ldots \\
+        r_k & = r_{k+1} q_k + 0 \\
+        r_{k+1} & = 0
+    \end{align*}
+    Ta thấy rằng ở mỗi bước, $r_{i+2}$ luôn nhỏ hơn $r_{i+1}$.
+    Do đó cuối cùng sẽ bằng 0, và khi đó ta có ước chung lớn nhất.
+\end{proof}
+
+\section{Thuật toán Euclid mở rộng}
+
+\begin{definition}[Phương trình Diophantos]
+    Cho trước các số nguyên $a$, $b$ và $c$. Phương trình 
+    Diophantus là phương trình có dạng
+    \[ax + by = c\]
+    với $x$, $y$ là các số nguyên.
+\end{definition}
+
+\begin{example}
+    Giải phương trình $5x+3y = 1$.
+
+    Ta có $y = \frac{1-5x}{3} = \frac{1-2x-3x}{3} = \frac{1-2x}{3} - x$.
+    Như vậy nếu $y \in \ZZ$ thì $\frac{1-2x}{3} \in \ZZ$, nghĩa là
+    $1-2x$ chia hết cho 3. Vậy $1-2x = 3k$ với $k \in \ZZ$.
+
+    Tiếp tục, $1-2x = 3k$, suy ra $x = \frac{1-3k}{2} 
+    = \frac{1-k-2k}{2} = \frac{1-k}{2} - k$. Do $x$ nguyên nên
+    tương tự $\frac{1-k}{2}$ cũng nguyên, hay $1-k = 2t$, tương
+    đương với $k = 1-2t$.
+
+    Thay ngược lại ta có $x = \frac{1-3k}{2} = \frac{1-3(1-2t)}{2}
+    = {-1+3t}$. Tiếp tục thay vào để tìm $y$ thì $y = \frac{1-5x}{3}
+    = \frac{1-5(-1+3t)}{3} = 2 - 5t$.
+
+    Như vậy nghiệm của phương trình là tất cả các nghiệm $(x, y)$
+    mà $x = -1+3t$, $y = 2-5t$ với $t \in \ZZ$.
+\end{example}
+
+Ở đây chúng ta đã thực hiện phép chia có dư liên tiếp để tìm
+nghiệm. Nói cách khác ta đã thực hiện thuật toán Euclid ở bên trên
+để làm giảm độ phức tạp ở mỗi bước giải. Tổng quát ta có thuật toán 
+Euclid mở rộng để tìm ước chung lớn nhất $\gcd(a, b)$ của hai 
+số $a$, $b$, và \textbf{một} nghiệm của phương trình $ax + by = \gcd(a, b)$.
+
+Ở ví dụ trên, ta thấy rằng $(-1, 2)$ là một nghiệm của phương
+trình $5x + 3y = 1$. Khi đó ta có thể suy ra tất cả nghiệm
+(họ nghiệm) của phương trình có dạng $(-1+3t, 2-5t)$ với $t \in \ZZ$.
+
+\begin{algorithm}
+    \caption{Thuật toán Euclid mở rộng}
+    \begin{algorithmic}
+        \Require $a, b \in \ZZ$
+        \Ensure $\gcd(a, b)$, $x$, $y$ 
+        \State $r_0 \gets a$, $r_1 \gets b$, $r_2 \gets 0$
+        \State $x_0 \gets 1$, $x_1 \gets 0$, $x_2 \gets 0$
+        \State $y_0 \gets 0$, $y_1 \gets 1$, $y_2 \gets 0$
+        \While{$r_1 \neq 0$}
+            \State $q \gets r_0 \;\text{div}\; r_1$
+            \State $r_2 \gets r_0 - q * r_1$, $r_0 \gets r_1$, $r_1 \gets r_2$
+            \State $x_2 \gets x_0 - q * x_1$, $x_0 \gets x_1$, $x_1 \gets x_2$
+            \State $y_2 \gets y_0 - q * y_1$, $y_0 \gets y_1$, $y_1 \gets y_2$
+        \EndWhile
+        \State \Return $r_0$, $x_0$, $y_0$
+    \end{algorithmic}
+\end{algorithm}
+
+Ở thuật toán trên, $r_0$, $r_1$ và $r_2$ hoạt động
+như thuật toán Euclid chuẩn. Ở mỗi bước $q$ là thương của phép
+chia hai số nguyên và ta sử dụng $q$ đó để tính $x_0$ và $y_0$
+mới. Kết quả cuối cùng $(r_0, x_0, y_0)$ lần lượt là
+ước chung lớn nhất, và hai số $x$, $y$ thỏa mãn $a x_0 + y b_0 = r_0$.
+
+Tại sao chúng ta lại có $(x_0, x_1) = (1, 0)$ và
+$(y_0, y_1) = (0, 1)$? Nói cách khác, làm sao biết thuật toán 
+hoạt động đúng?
+
+Mục đích của chúng ta là tìm các số $(x, y)$ sao cho $ax + by = \gcd(a, b)$.
+Khi đó, dựa trên thuật toán Euclid cơ bản ở trên, ta xây dựng
+dãy số $\{x_n\}$ và $\{y_n\}$ sao cho ở mọi bước thứ $n$ ta đều có
+
+\begin{equation}\label{euclid:1}
+    a x_n + b y_n = r_n
+\end{equation}
+
+Ta có $r_i = r_{i+1} q_i + r_{i+2}$. Từ $q_i$ ở mỗi bước ta tính
+được
+
+\begin{equation}
+    x_i = x_{i+1} q_i + x_{i+2}, \quad y_i = y_{i+1} q_i y_{i+2}
+\end{equation}
+
+Thay vào \ref{euclid:1} ta được
+\begin{equation}
+    a (x_{i+1} q_i + x_{i+2}) + b (y_{i+1} q_i + y_{i+2}) = r_i
+\end{equation}
+
+Tương đương với
+\[(a x_{i+1} + b y_{i+1}) q_i + (a x_{i+2} + b x_{i+2}) = r_i\]
+
+Mà $a x_{i+1} + b y_{i+1} = r_{i+1}$ và $a x_{i+2} + b y_{i+2}
+= r_{i+2}$. Suy ra $r_{i+1} q_i + r_{i+2} = r_n$, đúng với thuật toán
+Euclid chuẩn ban đầu. Nghĩa là thuật toán hoạt động đúng.
+Bây giờ ta cần chọn $(x_0, x_1)$ và $(y_0, y_1)$ vì chúng ta
+đã đặt $r_0 = a$ và $r_1 = b$. Ở bước thứ 0,
+\[r_0 = a = a x_0 + b y_0\]
+và ở bước thứ 1,
+\[r_1 = b = a x_1 + b y_1\]
+
+Dễ thấy ở bước 0 ta chọn $(1, 0)$ và ở bước 1 ta chọn $(0, 1)$ là được.
