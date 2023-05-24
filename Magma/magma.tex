@@ -25,7 +25,7 @@ thì ta có các khóa con là
 Từ vòng 1 tới 24 sử dụng lần lượt các khóa $K_0$, $K_1$, ..., $K_7$
 rồi lặp lại thứ tự đó.
 
-Từ vòng 24 tới 32 sử dụng theo thứ tự ngược lại, từ $K_7$, $K_6$, ...,
+Từ vòng 25 tới 32 sử dụng theo thứ tự ngược lại, từ $K_7$, $K_6$, ...,
 $K_0$.
 
 \begin{figure}[ht]
@@ -40,7 +40,7 @@ Như ta đã biết, trong mô hình Feistel, mỗi khối plaintext
 được chia thành 2 nửa trái phải $(L_0, R_0)$. Sau đó ở mỗi vòng
 biến đổi thì
 
-\[L_{i+1} = R_i, \quad, R_{i+1} = L_i \oplus f(R_i, K_i)\]
+\[L_{i+1} = R_i, \quad R_{i+1} = L_i \oplus f(R_i, K_i)\]
 với $i=0, 1, \ldots$ và $K_i$ là khóa con ở vòng $i$.
 
 Hàm $f$ của Magma khá đơn giản, bao gồm 3 động tác là cộng modulo 
@@ -100,6 +100,6 @@ về cuối và đưa 21 bit cuối lên đầu.
 
 Để giải mã ta vẫn sử dụng round function như lúc mã hóa, 
 chỉ cần viết với thứ tự ngược lại là được. Như vậy
-\[R_i = L_{i+1}, \quad, L_i = R_{i+1} \oplus f(L_{i+1}, K_i)\]
+\[R_i = L_{i+1}, \quad L_i = R_{i+1} \oplus f(L_{i+1}, K_i)\]
 do $R_i = L_{i+1}$. Lưu ý rằng khóa con lúc này là 0 tới 7 cho 
 8 vòng đầu, và 7 về 0 (rồi lặp lại) cho 24 vòng sau.
