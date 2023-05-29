@@ -1,0 +1,129 @@
+\section{Không gian vector}
+
+\begin{frame}{Không gian vector (Vector space)}
+    \begin{block}{Định nghĩa}
+        Cho trường số thực $\mathbb{R}$. Một không gian vector trên $\mathbb{R}^m$ là tập hợp \[\mathcal{V}=\{\bm{v}=(x_1, x_2, \cdots, x_m) \text{ | } x_i \in \mathbb{R}\}\] với 2 toán tử:
+        \begin{itemize}
+            \item Phép cộng (+): $\mathcal{V} \times \mathcal{V} \mapsto \mathcal{V}$
+            \item Phép nhân vô hướng (x): $\mathbb{R} \times \mathcal{V} \mapsto \mathcal{V}$
+        \end{itemize}
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{Không gian vector (Vector Space)}
+    Không gian vector phải thỏa mãn 8 tiên đề:
+    \begin{enumerate}
+        \item Tính kết hợp của phép cộng: $\forall \bm{u}, \bm{v}, \bm{w} \in \mathcal{V}$, $\bm{u}+(\bm{v}+\bm{w})=(\bm{u}+\bm{v})+\bm{w}$
+        \item Tính giao hoán của phép cộng: $\forall \bm{u}, \bm{v} \in \mathcal{V}$, $\bm{u}+\bm{v}=\bm{v}+\bm{u}$
+        \item Tồn tại phần tử trung hòa của phép cộng: tồn tại phần tử $\bm{0} \in \mathcal{V}$ sao cho $\bm{v}+\bm{0}=\bm{v}$, $\forall \bm{v} \in \mathcal{V}$
+        \item Tồn tại phần tử đối của phép cộng: $\forall \bm{v} \in \mathcal{V}, \exists \bm{w} \in \mathcal{V}$: $\bm{v}+\bm{w}=\bm{0}$
+        \item Tính phân phối giữa phép cộng và nhân: $\forall a \in \mathbb{R}$ và $\bm{u}, \bm{v} \in \mathcal{V}$, $a \times (\bm{u} + \mathbf{v}) = a \times \bm{u} + a \times \bm{v}$
+        \item $\forall a, b \in \mathbb{R}$ và $\bm{v} \in \mathcal{V}$, $(a+b) \times \bm{v}=a \times \bm{v}+b \times \bm{v}$
+        \item $\forall a, b \in \mathbb{R}$ và $\bm{v} \in \mathcal{V}$, $a \times (b \times \bm{v})=(ab) \times \bm{v}$
+        \item Phần tử đơn vị trên $\mathbb{R}$: có phần tử $\bm{1} \in \mathbb{R}$ sao cho $\bm{1} \times \bm{v} = \bm{v} \, \forall \bm{v} \in \mathcal{V}$
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Tổ hợp tuyến tính (Linear combination)}
+    \begin{block}{Định nghĩa}
+        Cho tập $\{\bm{v_1}, \bm{v_2}, \cdots, \bm{v_n}\} \in \mathcal{V}$. Một tổ hợp tuyến tính của $\bm{v_1}$, $\bm{v_2}$, ..., $\bm{v_n}$ là mọi vector có dạng: \[\bm{w}=\alpha_1 \bm{v_1} + \alpha_2 \bm{v_2} + \cdots \alpha_n \bm{v_n}\] với $\alpha_i \in \mathbb{R}$.
+    
+    Tập hợp mọi tổ hợp tuyến tính $\{ \alpha_1 \bm{v_1} + \cdots + \alpha_n \bm{v_n} \text{ | } \alpha_i \in \mathbb{R}\}$ được ký hiệu là $span \{\bm{v_1}, \cdots, \bm{v_n}\}$. Tập hợp $\{\bm{v_1}, \cdots, \bm{v_n}\}$ được gọi là tập sinh.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Độc lập tuyến tính (Linear Independence)}
+    \begin{block}{Định nghĩa}
+        Tập hợp các vector $\{\bm{v_1}, \cdots, \bm{v_n} \}$ được gọi là \textbf{độc lập tuyến tính} nếu tổ hợp tuyến tính \[\alpha_1 \bm{v_1} + \cdots + \alpha_n \bm{v_n} = 0\] có tất cả hệ số bằng 0: $\alpha_1 = \alpha_2 = \cdots = \alpha_n = 0$.
+    
+        Nếu có ít nhất một $a_i$ khác 0 thì tập hợp các vector trên \textbf{phụ thuộc tuyến tính}.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Cơ sở (Basis)}
+    \begin{block}{Định nghĩa}
+        Một cơ sở của $\mathcal{V}$ là tập hợp các vector độc lập tuyến tính $\{\bm{v_1}, \cdots, \bm{v_n}\}$ mà $span \mathcal{V}$. Như vậy, mọi vector trong $\mathcal{V}$ đều biểu diễn được dưới dạng \[\bm{w} \in \mathcal{V} \text{: } \bm{w}=\alpha_1 \bm{v_1} + \cdots + \alpha_n \bm{v_n}\]
+    \end{block}
+    
+    Ví dụ, xét không gian vector $\mathbb{R}^2$. Một cơ sở của nó là $\{(1, 0), (0, 1)\}$.
+    
+    Chứng minh: mọi vector trong $\mathbb{R}^2$ có dạng $(a, b)$. Ta có $(a, b) = a \cdot (1, 0)+b \cdot (0,1)$. Như vậy $\{(1, 0), (0, 1)\}$ là một cơ sở của $\mathbb{R}^2$.
+    
+    \textbf{Note}: Cơ sở này còn gọi là cơ sở chính tắc của $\mathbb{}{R}^2$
+\end{frame}
+
+\begin{frame}{Cơ sở (Basis)}
+    Xét không gian vector $\mathcal{V}$. Khi đó:
+    \begin{enumerate}
+        \item Tồn tại một cơ sở của $\mathcal{V}$
+        \item Hai cơ sở bất kì của $\mathcal{V}$ có cùng số phần tử. Số này được gọi là \textbf{số chiều} của $\mathcal{V}$ và được ký hiệu là $dim \mathcal{V}$
+        \item Gọi $\bm{v_1}$, $\bm{v_2}$, ..., $\bm{v_n}$ là cơ sở của $\mathcal{V}$ và $\bm{w_1}$, $\bm{w_2}$, ..., $\bm{w_n}$ là một cơ sở khác của $\mathcal{V}$. Khi đó mỗi $\bm{w_i}$ được viết dưới dạng tổ hợp tuyến tính của các $v_i$:
+        \begin{align*}
+            \bm{w_1} & = \alpha_{11} \bm{v_1} + \alpha_{12} \bm{v_n} + \cdots + \alpha_{1n} \bm{v_n} \\ \bm{w_2} & = \alpha_{21} \bm{v_1} + \alpha_{22} \bm{v_2} + \cdots + \alpha_{2n} \bm{v_n} \\ \cdots \\ \bm{w_n} & = \alpha_{n1} \bm{v_1} + \alpha_{n2} \bm{v_2} + \cdots + \alpha_{nn} \bm{v_n}
+        \end{align*}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Cơ sở (Basis)}
+    Khi đó $\bm{w_1}$, $\bm{w_2}$, ..., $\bm{w_n}$ là cơ sở khi và chỉ khi ma trận sau khả nghịch (có định thức khác 0)
+    \[\begin{pmatrix}
+    \alpha_{11} & \alpha_{12} & \cdots & \alpha_{1n} \\ \alpha_{21} & \alpha_{22} & \cdots & \alpha_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\ \alpha_{n1} & \alpha_{n2} & \cdots & \alpha_{nn}
+    \end{pmatrix}\]
+\end{frame}
+
+\begin{frame}{Tích vô hướng (Dot product) - Chuẩn Euclid (Euclidean norm)}
+    \begin{block}{Định nghĩa}
+        Tích vô hướng (hay tích chấm - dot product) của 2 vector $\bm{u}=(x_1, x_2, \cdots, x_n)$ và $\bm{v}=(y_1, y_2, \cdots, y_n)$ là:
+        
+        \[\bm{u} \cdot \bm{v} = x_1 y_1 + x_2 y_2 + \cdots x_n y_n\]
+    
+        Độ dài (hay chuẩn Euclid) của vector $\bm{u}=(x_1, x_2, \cdots, x_n)$ là:
+    
+        \[\| \bm{u} \| = \sqrt{x_1^2 + x_2^2 + \cdots x_n^2}\]
+    \end{block}
+    
+    \begin{alertblock}{Note}
+        $\bm{u} \cdot \bm{u} = \|\bm{u}\|^2$
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Góc giữa 2 vector}
+    \begin{block}{Định nghĩa}
+         Với 2 vector $\bm{u}$ và $\bm{v}$ như trên, gọi $\theta$ là góc giữa 2 vector. Khi đó: \[\bm{u} \cdot \bm{v} = \|\bm{u}\| \cdot \|\bm{v}\| \cdot \cos \theta \]   
+    \end{block}
+    
+    \begin{alertblock}{Note}
+        Khi $\theta = \pi / 2$, tích vô hướng $\bm{u} \cdot \bm{v} = 0$. 2 vector lúc này \textbf{trực giao} (orthogonal), hoặc \textbf{vuông góc} với nhau.
+    
+        Bất đẳng thức Cauchy-Schwarz: \[\|\bm{u} \cdot \bm{v}\| \leq \|\bm{u}\| \cdot \|\bm{v}\|\]
+    \end{alertblock}
+    
+\end{frame}
+
+\begin{frame}{Trực giao hóa Gram-Schmidt (Gram-Schmidt orthogonalization)}
+    Giả sử ta có một cơ sở $\{\bm{v_1}, \cdots, \bm{v_n}\}$ của $\mathcal{V}$ mà các vector trực giao đôi một, nghĩa là $\bm{v_i} \cdot \bm{v_j} = 0$, $\forall i \neq j$.
+    
+    Ta đã biết mọi vector trong $\mathcal{V}$ đều biểu diễn được dưới dạng tổ hợp tuyến tính của các vector trong cơ sở: \[\bm{w} = \alpha_1 \bm{v_1} + \alpha_2 \bm{v_2} + \cdots + \alpha_n \bm{v_n}\]
+    
+    Chuẩn Euclid khi đó: \begin{align*}
+        \| \bm{w} \| ^2 & = (\alpha_1 \bm{v_1} + \alpha_2 \bm{v_2} + \cdots + \alpha_n \bm{v_n}) \cdot (\alpha_1 \bm{v_1} + \alpha_2 \bm{v_2} + \cdots + \alpha_n \bm{v_n}) \\ & = \sum_{i=1}^{n}\alpha_i^2 \| \bm{v_i} \|^2 
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Trực giao hóa Gram-Schmidt (Gram-Schmidt orthogonalization)}
+    Phương pháp trực giao hóa Gram-Schmidt dùng để tìm hệ cơ sở trực giao như trên nếu biết được một cơ sở bất kì của $\mathcal{V}$
+    
+    Thuật toán trực giao hóa Gram-Schmidt: \\ Giả sử ta đã biết một cơ sở của $\mathcal{V}$ là $\{\bm{v_1}, \bm{v_2}, \cdots, \bm{v_n}\}$. Ta thực hiện các bước:
+    \begin{enumerate}
+        \item Đặt $\bm{u_1} = \bm{v_1}$
+        \item Với $i=2, 3, \cdots, n$:
+        \begin{itemize}
+            \item Tính $\mu_{ij} = \bm{v_i} \cdot \bm{u_j} / \| \bm{u_j} \|^2$ với $1 \leq j < i$
+            \item $\bm{u_i} = \bm{v_i} - \sum_{j=1}^{i}\mu_{ij} \bm{u_i}$
+        \end{itemize}
+    \end{enumerate}
+    
+    Cơ sở trực giao thu được là $\{\mathbf{u_1}, \mathbf{u_2}, \cdots, \mathbf{u_n}\}$.
+\end{frame}
