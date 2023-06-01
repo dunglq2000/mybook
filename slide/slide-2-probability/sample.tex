@@ -1,0 +1,322 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames,serif]{beamer}
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath,bm}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[short title]{Xác suất thống kê} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{Probability}
+
+\author{Lê Quốc Dũng}
+
+\institute[MPEI] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+    Moscow Power Engineering Institute % Your institution for the title page
+}
+\date{\today} % Date, can be changed to a custom date
+
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Mục lục}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    \tableofcontents
+\end{frame}
+
+%------------------------------------------------
+\section{Xác suất cổ điển}
+
+\begin{frame}{Định nghĩa cổ điển của xác suất}
+    Định nghĩa thống kê của xác suất:
+    
+    Trong một phép thử có $n$ khả năng có thể xảy ra. Xét một biến cố $A$ xảy ra khi thực hiện phép thử có $k$ khả năng xảy ra. Khi đó xác suất của biến cố $A$ ký hiệu là $P(A)$ và được tính \[P(A) = \frac{k}{n}\]
+    
+    Dễ thấy, do biến cố $A$ là một trường hợp nhỏ trong tổng thể tất cả trường hợp khi thực hiện phép thử, do đó $0 \leq k \leq n$. Nghĩa là \[0 \leq P(A) \leq 1\] với mọi biến cố $A$ bất kì.
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \textbf{Ví dụ 1}. Xét phép thử tung 2 đồng xu. Gọi $A$ là biến cố 2 đồng xu cùng mặt.
+    
+    Ta ký hiệu $S$ là đồng xu sấp, $N$ là đồng xu ngửa. Khi đó các trường hợp có thể xảy ra của phép thử là $S-S$, $S-N$, $N-S$, $N-N$ (4 trường hợp). 
+    
+    Trong khi đó, các trường hợp có thể xảy ra của biến cố $A$ là $S-S$, $N-N$ (2 trường hợp).
+    
+    Kết luận: $P(A) = \frac{2}{4} = \frac{1}{2}$
+    
+    Chúng ta gọi tập hợp tất cả các trường hợp khi thực hiện phép thử là \textbf{không gian mẫu} và ký hiệu là $\Omega$. Mỗi phần tử trong không gian mẫu được gọi là \textbf{biến cố sơ cấp}. Trong bài này, $\Omega = \{S-S, S-N, N-S, N-N\}$.
+    
+    Tập hợp các trường hợp có thể xảy ra của biến cố gọi là \textbf{không gian biến cố} và ký hiệu là $\Omega_A$. Trong bài này $\Omega_A = \{S-S, N-N\}$.
+    
+    Như vậy, $P(A) = \frac{|\Omega_A|}{|\Omega|}$
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \textbf{Ví dụ 2}. Tung 2 con súc sắc cân đối và đồng chất. Tính xác suất tổng số nút của 2 con súc sắc bằng 4.
+    
+    Việc tung mỗi con súc sắc có 6 trường hợp. Do đó $|\Omega| = 6^2 = 36$
+    
+    Gọi $A$ là biến cố tổng số nút của 2 con súc sắc bằng 4. Ta có các trường hợp là $4=1+3=3+1=2+2$ (3 trường hợp).
+    
+    Như vậy $|\Omega_A| = 3$ và $P(A) = \frac{3}{36} = \frac{1}{12}$
+\end{frame}
+
+\begin{frame}{Cộng và nhân xác suất}
+    \textbf{Định nghĩa}: 2 biến cố được gọi là \textbf{xung khắc} nếu biến cố này xảy ra thì biến cố kia chắc chắn không xảy ra. Nói cách khác giao của chúng bằng rỗng.
+    
+    Khi đó, nếu $A$ và $B$ là 2 biến cố xung khắc, \[P(A + B) = P(A) + P(B)\]
+    
+    Ta còn có thể ký hiệu $P(A+B)$ là $P(A \cup B)$ (hợp 2 biến cố).
+    
+    \textbf{Định nghĩa}: 2 biến cố được gọi là \textbf{độc lập} nếu việc xảy ra của biến cố này không ảnh hưởng đến việc xảy ra của biến cố kia. 
+    
+    Khi đó, nếu $A$ và $B$ là 2 biến cố độc lập, \[P(AB) = P(A)P(B)\]
+    
+\end{frame}
+
+\begin{frame}{Phép cộng xác suất mở rộng}
+    Xét 2 tập hợp $A$ và $B$. Số phần tử của phép hợp 2 tập hợp trong trường hợp tổng quát được tính như sau: \[|A \cup B| = |A| + |B| - |A \cap B|\]
+    
+    Tương tự, xác suất của phép cộng xác suất đối với 2 biến cố có giao khác rỗng là: \[P(A + B) = P(A) + P(B) - P(A \cap B)\]
+\end{frame}
+
+\begin{frame}{Phép cộng xác suất mở rộng (Tổng quát)}
+    Xét các tập hợp $A_1$, $A_2$, ..., $A_n$. Khi đó, số phần tử khi hợp các tập hợp này là:
+    \begin{equation*}
+        \begin{split}
+            |A_1 \cup A_2 \cup \cdots \cup A_n| & = |A_1| + |A_2| + \cdots + |A_n| - \sum_{i, j}|A_i \cap A_j| \\ & + \sum_{i, j, k} |A_i \cap A_j \cap A_k| + \cdots \\ & = \sum_{i=1}^n (-1)^{i+1} \sum_{j_1, j_2, \cdots, j_i} |A_{j_1} \cap A_{j_2} \cap \cdots \cap A_{j_i} |
+        \end{split}
+    \end{equation*}
+    
+    Tương tự, đối với xác suất:
+    \begin{equation*}
+        P(A_1 \cup A_2 \cup \cdots \cup A_n) = \sum_{i=1}^n (-1)^{i+1} \sum_{j_1, j_2, \cdots, j_i} P(A_{j_1} \cap A_{j_2} \cap \cdots \cap A_{j_i})
+    \end{equation*}
+\end{frame}
+
+\begin{frame}{Phép nhân xác suất mở rộng. Xác suất có điều kiện}
+    Xét 2 biến cố $A$ và $B$. Khi đó xác suất xảy ra của biến cố $B$ với điều kiện biến cố $A$ xảy ra là: \[P(B | A) = \frac{P(AB)}{P(A)}\]
+    Lúc này, $A$ và $B$ không độc lập.
+    
+    Tổng quát, nếu $n$ biến cố $A_i$, $i=1, \cdots, n$ không độc lập thì: \[P(A_1 A_2 \cdots A_n) = P(A_1)P(A_2|A_1)P(A_3 | A_2A_1)\cdots P(A_n|A_1A_2 \cdots A_{n-1})\]
+\end{frame}
+
+\begin{frame}{Ví dụ}
+    \textbf{Ví dụ}. Xét 2 câu hỏi trắc nghiệm có 4 lựa chọn. Tính xác suất học sinh trả lời đúng câu thứ 2 với điều kiện câu đầu trả lời sai.
+    
+    \textbf{Giải}. Gọi $A$ là biến cố câu đầu tiên học sinh trả lời sai. $P(A) = \frac{3}{4}$
+    
+    Gọi $B$ là biến cố câu thứ 2 học sinh trả lời đúng. $P(B) = \frac{1}{4}$.
+    
+    Do $A$ và $B$ là 2 biến cố độc lập nên $P(AB) = P(A) P(B) = \frac{3}{16}$
+    
+    Như vậy, xác suất học sinh trả lời đúng câu 2 với điều kiện câu đầu trả lời đúng là: $P(B | A) = \frac{P(AB)}{P(A)} = \frac{3 / 16}{3 / 4} = \frac{1}{4}$
+\end{frame}
+
+\begin{frame}{Công thức xác suất đầy đủ}
+    \textbf{Định nghĩa}: Xét phép thử có không gian mẫu là $\Omega$. Một hệ các biến cố $A_1$, $A_2$, ..., $A_n$ được gọi là \textbf{đầy đủ} nếu chúng thỏa các điều kiện:
+    \begin{itemize}
+        \item $A_1 \cup A_2 \cup \cdots \cup A_n = \Omega$
+        \item $A_i \cap A_j = \emptyset$ với mọi $i \neq j$
+    \end{itemize}
+    
+    Công thức xác suất đầy đủ: với biến cố $B$ bất kì trong phép thử: \[P(B) = P(A_1) P(B | A_1) + P(A_2) P(B | A_2) + \cdots P(A_n) P(B | A_n)\]
+\end{frame}
+
+\begin{frame}{Ví dụ về hệ biến cố đầy đủ}
+    \textbf{Ví dụ}.
+\end{frame}
+
+\begin{frame}{Công thức Bayes}
+    Xét hệ biến cố đầy đủ $\{A_1, A_2, \cdots, A_n\}$. Với biến cố $B$ bất kì thì: \[P(A_i | B) = \frac{P(A_i) P(B | A_i)}{\displaystyle{\sum_{j=1}^n P(A_j) P(B | A_j)}}\] với $1 \leq i \leq n$.
+\end{frame}
+
+\section{Xác suất liên tục}
+
+\begin{frame}{Biến ngẫu nhiên}
+    Xét phép thử với không gian mẫu $\Omega$. Với mỗi biến cố sơ cấp $\omega \in \Omega$ ta liên kết với 1 số thức $X(\omega)\in\mathbb{R}$ thì $X$ được gọi là \textbf{biến ngẫu nhiên}.
+    
+    \textbf{Định nghĩa}. \textbf{Biến ngẫu nhiên} $X$ của một phép thử với không gian mẫu $\Omega$ là ánh xạ: 
+    \begin{equation*}
+        \begin{split}
+            X: & \Omega \mapsto \mathbb{R} \\ & \omega \mapsto X(\omega) = x
+        \end{split}
+    \end{equation*}
+    
+    Giá trị $x$ được gọi là một giá trị của biến ngẫu nhiên $X$.
+    
+    \begin{itemize}
+        \item Nếu $X(\Omega)$ là 1 tập hữu hạn $\{x_1, x_2, \cdots, x_n\}$ hay vô hạn đếm được thì $X$ được gọi là \textbf{biến ngẫu nhiên rời rạc}.
+        \item Nếu $X(\Omega)$ là 1 khoảng của $\mathbb{R}$ hay toàn bộ $\mathbb{R}$ thì $X$ được gọi là \textbf{biến ngẫu nhiên liên tục}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hàm mật độ của biến ngẫu nhiên rời rạc}
+    Cho BNN rời rạc $X: \Omega \mapsto \mathbb{R}$, $X = \{x_1, x_2, \cdots, x_n, \cdots\}$. Giả sử $x_1 < x_2 < \cdots < x_n < \cdots$ với xác suất tương ứng là $P(\{\omega: X(\omega)=x_i\}) \equiv P(X=x_i) = p_i$, $i = 1, 2, \cdots$
+    
+    \textbf{Bảng phân phối xác suất của $X$}.
+    
+    \begin{table}
+        \begin{tabular}{c|c c c c c}
+            $X$ & $x_1$ & $x_2$ & $\cdots$ & $x_n$ & $\cdots$ \\ \hline $P$ & $p_1$ & $p_2$ & $\cdots$ & $p_n$ & $\cdots$
+        \end{tabular}
+    \end{table}
+    
+    \textbf{Hàm mật độ của $X$ là} \[f(x) = \begin{cases}
+         p_i & \text{khi } x = x_i, \\
+         0 & \text{khi } x \neq x_i, \forall i
+    \end{cases}\]
+    
+    \textbf{Lưu ý}
+    
+    \begin{itemize}
+        \item $p_i \geq 0$, $\sum p_i = 1$, $i = 1, 2, \cdots$
+
+        \item $P(a < X \leq b) = \sum_{a < x_i \leq b}p_i$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hàm mật độ của biến ngẫu nhiên liên tục}
+    \textbf{Định nghĩa}. Hàm số $f: \mathbb{R} \mapsto \mathbb{R}$ được gọi là \textbf{hàm mật độ} của biến ngẫu nhiên liên tục $X$ nếu: \[P(a \leq X \leq b) = \displaystyle{\int_a^b f(x)\,dx}, \forall a, b \in \mathbb{R}\]
+    
+    \textbf{Nhận xét}. $\forall x \in \mathbb{R}$, $f(x) \geq 0$ và \begin{math}\int_{-\infty}^{+\infty}f(x)\,dx = 1\end{math}.
+    
+    \textbf{Ý nghĩa hình học}. Xác suất của biến ngẫu nhiên $X$ nhận giá trị trong $[a, b]$ bằng diện tích hình thang cong giới hạn bởi $x=a$, $x=b$, $y=f(x)$ và $Ox$.
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}{Bullet Points}
+    \begin{itemize}
+        \item Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        \item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+        \item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+        \item Nam cursus est eget velit posuere pellentesque
+        \item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+    \end{itemize}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}{Blocks of Highlighted Text}
+    In this slide, some important text will be \alert{highlighted} because it's important. Please, don't abuse it.
+
+    \begin{block}{Block}
+        Sample text
+    \end{block}
+
+    \begin{alertblock}{Alertblock}
+        Sample text in red box
+    \end{alertblock}
+
+    \begin{examples}
+        Sample text in green box. The title of the block is ``Examples".
+    \end{examples}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Multiple Columns}
+    \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+        \column{.45\textwidth} % Left column and width
+        \textbf{Heading}
+        \begin{enumerate}
+            \item Statement
+            \item Explanation
+            \item Example
+        \end{enumerate}
+
+        \column{.5\textwidth} % Right column and width
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+    \end{columns}
+\end{frame}
+
+%------------------------------------------------
+\section{Second Section}
+%------------------------------------------------
+
+\begin{frame}{Table}
+    \begin{table}
+        \begin{tabular}{l l l}
+            \toprule
+            \textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2} \\
+            \midrule
+            Treatment 1         & 0.0003262           & 0.562               \\
+            Treatment 2         & 0.0015681           & 0.910               \\
+            Treatment 3         & 0.0009271           & 0.296               \\
+            \bottomrule
+        \end{tabular}
+        \caption{Table caption}
+    \end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Theorem}
+    \begin{theorem}[Mass--energy equivalence]
+        $E = mc^2$
+    \end{theorem}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Figure}
+    Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
+    %\begin{figure}
+    %\includegraphics[width=0.8\linewidth]{test}
+    %\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+    \frametitle{Citation}
+    An example of the \verb|\cite| command to cite within the presentation:\\~
+
+    This statement requires citation \cite{p1}.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{References}
+    % Beamer does not support BibTeX so references must be inserted manually as below
+    \footnotesize{
+        \begin{thebibliography}{99}
+            \bibitem[Smith, 2012]{p1} John Smith (2012)
+            \newblock Title of the publication
+            \newblock \emph{Journal Name} 12(3), 45 -- 678.
+        \end{thebibliography}
+    }
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \Huge{\centerline{\textbf{The End}}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

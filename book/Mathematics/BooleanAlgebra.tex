@@ -6,13 +6,13 @@ Theo cách hiểu cơ bản, boolean gồm 2 giá trị 0 hoặc 1 (sai hoặc �
 \section{Hàm Boolean}
 
 Hàm boolean $f$ đối với các biến $x_1, x_2, \ldots, x_n$ là hàm số 
-nhận giá trị trong $\{0, 1\}^n$ và trả về giá trị thuộc $\{0, 1\}$.
+nhận giá trị trong $\FF_2^n$ và trả về giá trị thuộc $\FF_2$.
 
-Nghĩa là $f: \{0,1\}^n \mapsto \{0, 1\}$
+Nghĩa là $f: \FF_2^n \mapsto \FF$
 
 Ta ký hiệu hàm boolean $n$ biến là $f(x_1, x_2, \ldots, x_n)$.
 
-Do $x_i \in \{0, 1\}$ nên ta có $2^n$ vector (bộ số)
+Do $x_i \in \FF_2$ nên ta có $2^n$ vector (bộ số)
 $(x_1, x_2, \ldots, x_n)$. Giá trị của hàm $f$ lại nằm
 trong tập $\{0, 1\}$ nên ứng với mỗi vector có thể có 2 giá 
 trị của hàm boolean, và ta có $2^n$ vector nên số lượng hàm
@@ -116,12 +116,13 @@ chuẩn tắc đại số} (algebraic normal form).
     Cho hàm bool $f(x, y) = x \vee y$. Ta có bảng chân trị sau
     \begin{table}[ht]
         \centering
-        \begin{tabular}{c c c}
-            $x$ & $y$ & $f(x, y)$ \\
-            0 & 0 & 0 \\
-            0 & 1 & 1 \\
-            1 & 0 & 1 \\
-            1 & 1 & 1 \\
+        \begin{tabular}{|c|c|c|}
+            \hline
+            $x$ & $y$ & $f(x, y)$ \\ \hline
+            0 & 0 & 0 \\ \hline
+            0 & 1 & 1 \\ \hline
+            1 & 0 & 1 \\ \hline
+            1 & 1 & 1 \\ \hline
         \end{tabular}
     \end{table}
 
@@ -310,3 +311,94 @@ hàm boolean đơn điệu.
     Hàm boolean $f(x, y, z) = (1, 0, 1, 1, 1, 0, 0, 1)$ có
     trọng số $w(f) = 5$.
 \end{example}
+
+Một số tính chất của trọng số:
+
+\begin{enumerate}
+    \item $0 \leq w(f) \leq 2^n$
+    \item $w(f \oplus 1) = 2^n - w(f)$
+    \item Nếu $h$ cũng là một hàm boolean từ $\FF_2^n$ tới 
+        $\FF_2$ thì \[w(f \oplus h) = w(f) + w(h) - 2w(fh)\]
+    \item Giá trị $w(f)$ nhận giá trị lẻ khi và chỉ khi $deg(f) = n$
+\end{enumerate}
+
+\section{Biến đổi Fourier}
+
+Với mỗi vector $a = (a_1, \ldots, a_n) \in \FF_2^n$, ta ký
+hiệu $(a, x)$ là hàm sau:
+\begin{equation}
+    (a, x) = a_1 x_1 + a_2 x_2 + \ldots + a_n x_n
+\end{equation}
+
+Mỗi hàm boolean sẽ được biểu diễn dưới dạng duy nhất với
+
+\begin{equation}
+    f(x) = 2^{-n} \sum_{a \in \FF_2^n} C_a (-1)^{(a, x)}
+\end{equation}
+
+Trong đó
+\begin{equation}
+    C_a = C_a (f) = \sum_{x \in \FF_2^n} f(x) (-1)^{(a, x)}
+\end{equation}
+
+Khi đó, tập hợp $\{C_a (f), a \in \FF_2^n \}$ được gọi là 
+\textbf{phổ Fourier} (spectre) Fourier của hàm boolean $f(x)$.
+
+\begin{example}
+    Xét hàm boolean $f(x_1, x_2) = (1, 0, 0, 1)$.
+
+    Xét $a = (0, 0)$. Ta có:
+    \begin{itemize}
+        \item Với $x = (0, 0)$, $f(x) = 1$, $(a, x) =
+        0 \cdot 0 + 0 \cdot 0 = 0$.
+        \item Với $x = (0, 1)$, $f(x) = 0$, $(a, x) = 
+        0 \cdot 0 + 0 \cdot 1 = 0$
+        \item Với $x = (1, 0)$, $f(x) = 0$, $(a, x) = 
+        0 \cdot 1 + 0 \cdot 0 = 0$
+        \item Với $x = (1, 1)$, $f(x) = 1$, $(a, x) = 
+        0 \cdot 1 + 0 \cdot 1 = 0$
+    \end{itemize}
+    Suy ra $C_a = 1 \cdot (-1)^0 + 0 \cdot (-1)^0 + 0 \cdot (-1)^0
+        + 1 \cdot (-1)^0 = 2$ khi $a = (0, 0)$.
+
+    Tương tự, ta có các giá trị $C_a$ sau:
+    \begin{itemize}
+        \item Với $a = (0, 1)$, $C_a = 0$
+        \item Với $a = (1, 0)$, $C_a = -1$
+        \item Với $a = (1, 1)$, $C_a = 1$
+    \end{itemize}
+\end{example}
+
+\section{Biến đổi Walsh-Hadamard}
+
+Với mỗi hàm boolean $f(x)$ ta định nghĩa một hàm tương ứng như sau:
+\[f^*(x) = (-1)^{f(x)}\]
+
+Ta định nghĩa $(a, x)$ như trên, khi đó hàm $f^*(x)$ sẽ có dạng
+\begin{equation}
+    f^*(x) = 2^{-n} \sum_{a \in \FF_2^n} z_a (-1)^{(a, x)}
+\end{equation}
+
+Trong đó
+\begin{equation}
+    z_a = z_a (f) = \sum_{x \in \FF_2^n} (-1)^{f(x) + (a, x)}
+\end{equation}
+
+Tập hợp $\{z_a(f), a \in \FF_2^n\}$ được gọi là \textbf{phổ
+Walsh} (spectre) của hàm $f(x)$. Các giá trị $z_a$ được gọi là hệ số
+Walsh.
+
+Các hệ số Walsh liên hệ với nhau bởi công thức
+
+\begin{equation}
+    \sum_{a \in \FF_2^n} z_a(f) z_{a+d}(f) = 
+    \begin{cases}
+    2^{2n}, & d = 0 \\
+    0, & d \neq 0
+    \end{cases}
+\end{equation}
+
+Trường hợp $d = 0$ được gọi là \textit{đẳng thức Parcel}
+\begin{equation}
+    \sum_{a \in \FF_2^n} z_2^2 = 2^{2n}
+\end{equation}
