@@ -1,0 +1,79 @@
+\chapter{Nhóm hoán vị}
+
+Nhóm hoán vị đóng vai trò quan trọng trong lý thuyết nhóm cũng như nhiều hướng
+khác của toán học.
+
+\section{Nhóm hoán vị}
+
+Xét tập hợp $\{ 1, 2, \ldots, n \}$. Ta gọi $\mathcal{S}_n$ là tập tất cả hoán vị 
+của tập hợp trên. Như vậy $\mathcal{S}_n$ có $n!$ phần tử.
+
+Ta ký hiệu mỗi phần tử của $\mathcal{S}_n$ là $\sigma =
+(\sigma(1), \sigma(2), \ldots, \sigma(n))$. Như vậy, lấy hoán vị gốc là $(1, 2, 
+\ldots n)$, mỗi hoán vị đều có thể được biểu diễn bằng hai hàng như sau
+
+\begin{equation}
+    \sigma = \begin{pmatrix}
+        1 & 2 & \ldots & n \\
+        \sigma(1) & \sigma(2) & \ldots & \sigma(n)
+    \end{pmatrix}
+\end{equation}
+
+Điều đó có nghĩa là hai cách biểu diễn sau là tương đương
+
+\begin{equation}
+    \sigma = (\sigma(1), \sigma(2), \ldots, \sigma(n))
+    = \begin{pmatrix}
+        1 & 2 & \ldots & n \\
+        \sigma(1) & \sigma(2) & \ldots & \sigma(n)
+    \end{pmatrix}
+\end{equation}
+
+Ta định nghĩa toán tử trên $\mathcal{S}_n$. Với hai hoán vị $\sigma$ và $\tau$,
+hoán vị $\sigma \star \tau$ là vị trí của $\sigma$ theo $\tau$. Nói cách
+khác, nếu $\sigma = (\sigma_1, \sigma_2, \ldots, \sigma_n)$ và 
+$\tau = (\tau_1, \tau_2, \ldots, \tau_n)$ thì $\sigma \star \tau =
+(\sigma_{\tau_1}, \sigma_{\tau_2}, \ldots, \sigma_{\tau_n})$.
+
+Nhóm $\mathcal{S}_n$ và toán tử như trên tạo thành một nhóm và được gọi là
+\textbf{nhóm hoán vị}.
+
+\begin{example}
+    Xét nhóm hoán vị $\mathcal{S}_5$. 
+    
+    Gọi $x = (4, 3, 1, 2, 5)$ và
+    $y = (5, 1, 4, 3, 2)$. Khi đó, đặt $z = x \star y$ thì
+    \begin{align*}
+        & z_1 = x_{y_1} = x_5 = 5, \\
+        & z_2 = x_{y_2} = x_1 = 4, \\
+        & z_3 = x_{y_3} = x_4 = 2, \\
+        & z_4 = x_{y_4} = x_3 = 1, \\ 
+        & z_5 = x_{y_5} = x_2 = 3
+    \end{align*}
+
+    Như vậy $z = x \star y = (5, 4, 2, 1, 3)$.
+\end{example}
+
+\begin{remark}
+    Trong một hoán vị, khi biểu diễn trên hai hàng thì thứ tự viết không quan trọng,
+    miễn là đảm bảo $i$ tương ứng với $\sigma(i)$ trên từng cột.
+\end{remark}
+
+\begin{example}
+    Xét hoán vị $\sigma = (4, 3, 1, 2, 5)$ thuộc $\mathcal{S}_5$.
+
+    Ta có $\sigma(1) = 4$, $\sigma(2) = 3$, $\sigma(3) = 1$, $\sigma(4) = 2$
+    và $\sigma(5) = 5$. Như vậy
+
+    \begin{equation*}
+        \sigma = 
+        \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 \\
+            4 & 3 & 1 & 2 & 5
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            3 & 4 & 5 & 1 & 2 \\
+            1 & 2 & 5 & 4 & 3
+        \end{pmatrix}
+    \end{equation*}
+\end{example}

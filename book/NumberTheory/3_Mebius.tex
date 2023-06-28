@@ -1,0 +1,118 @@
+\chapter{Hàm \foreignlanguage{german}{Möbius}}
+
+\foreignlanguage{german}{August Ferdinand Möbius} là nhà toán học người Đức, đóng
+góp nổi tiếng của ông là dải \foreignlanguage{german}{Möbius}. Tuy nhiên ở
+đây chúng ta xem xét một hàm số học mang tên ông. Hàm \foreignlanguage{german}{Möbius}
+đóng vai trò quan trọng trong việc tính các đại lượng liên quan tới số học.
+
+\section{Hàm \foreignlanguage{german}{Möbius}}
+
+\begin{definition}
+    Hàm \foreignlanguage{german}{Möbius} của số nguyên dương $n$ được định nghĩa như sau:
+
+    \begin{equation}
+        \mu (n) = \begin{cases}
+            1, \quad & \text{nếu}\, n = 1 \\
+            (-1)^k, \quad & \text{nếu}\, n = p_1 p_2 \ldots p_k\,-\, p_i \text{ là số nguyên tố} \\
+            0, \quad & \text{trong các trường hợp còn lại}
+        \end{cases}
+    \end{equation}
+\end{definition}
+
+Điều này có nghĩa là, nếu $n$ là tích của các số nguyên tố bậc 1 thì $\mu (n) = (-1)^k$
+với $k$ là số lượng số nguyên tố trong tích. Như vậy, nếu tồn tại số nguyên tố
+$p$ sao cho $p^2 \vert n$ thì $\mu(n) = 0$.
+
+\section{Tính chất hàm \foreignlanguage{german}{Möbius}}
+
+\begin{enumerate}
+    \item Nếu $(n_1, n_2) = 1$ thì $\mu(n_1, n_2) = \mu(n_1) \mu(n_2)$
+    \item $\displaystyle{\sum_{d \vert n} \mu(d) = 0}$ với $n = p_1 p_2 \ldots p_k$
+\end{enumerate}
+
+\begin{proof}
+    Với tính chất 1, ta dễ thấy rằng do $n_1$ và $n_2$ nguyên tố cùng nhau nên trong
+    cách phân tích thừa số nguyên tố của chúng sẽ chứa các số nguyên tố khác nhau. 
+    Khi đó $\mu(n_1)$ và $\mu(n_2)$ không bị phụ thuộc nhau và có thể tách thành phép
+    nhân như trên.
+
+    Với tính chất 2, chúng ta lần lượt chọn $d$ là tổ hợp của 0, 1, 2, ..., $k$
+    số nguyên tố.
+
+    \begin{itemize}
+        \item Nếu $d = 1$ thì $\mu(d) = 1$
+        \item Nếu $d = p_i$ thì $\mu(d) = (-1)^1 = -1$ với $i = \overline{1, k}$
+        \item Nếu $d = p_i p_j$ với $i \neq j$ thì $\mu (d) = (-1)^2 = 1$
+        \item Tương tự như vậy, nếu $d$ là tích của $t$ số nguyên tố thì
+        $\mu (d) = (-1)^t$
+    \end{itemize}
+
+    Ở mỗi trường hợp trên, do $d$ là tổ hợp của $t$ số nguyên tố ($0 \leq t \leq k$)
+    nên số cách chọn số nguyên tố $p_i$ ở mỗi trường hợp là $C^t_k$. Cộng chúng lại
+
+    \[\sum_{d \vert n} \mu(d) = 1 - C^1_k + C^2_k - \ldots + (-1)^k C^k_k = 0\]
+    theo nhị thức Newton. Từ đó ta có điều phải chứng minh.
+\end{proof}
+
+\section{Công thức nghịch đảo \foreignlanguage{german}{Möbius}}
+
+Giả sử ta có hai hàm $f$ và $g$ từ $\NN \to \ZZ$. Khi đó hai cách biểu diễn sau
+là tương đương.
+
+\begin{equation}
+    f(n) = \sum_{d \vert n} g(d) \Leftrightarrow g(n) 
+    = \sum_{d \vert n} f(d) \mu(\frac{n}{d})
+\end{equation}
+
+Nghĩa là nếu chúng ta có hai hàm số $f$ và $g$ thỏa phương trình đầu (biểu diễn
+$f$ theo $g$) thì chúng ta cũng sẽ tìm được cách biểu diễn $g$ theo $f$.
+
+\begin{proof}
+    Với $d \vert n$, đặt $d' = \dfrac{n}{d} \Rightarrow d = \dfrac{n}{d'}$.
+
+    Suy ra $f(d) \cdot \mu\Bigl(\dfrac{n}{d}\Bigr) = 
+    f \Bigl(\dfrac{n}{d'}\Bigr) \cdot \mu(d')$.
+    Sau đó lấy tổng lại thì
+
+    \[\sum_{d \vert n} f(d) \cdot \mu \Bigl(\frac{n}{d}\Bigr) = 
+    \sum_{d \vert n} f\Bigl(\frac{n}{d'}\Bigr) \cdot  \mu(d') = 
+    \sum_{d \vert n} f\Bigl(\frac{n}{d}\Bigr) \cdot \mu(d)\]
+    
+    Ở đây lưu ý rằng nếu $d$ là ước của $n$ thì $d' = \dfrac{n}{d}$ cũng là
+    ước của $n$. Do đó ta hoàn toàn có thể thay thế $d'$ bởi $d$ trong tổng trên.
+
+    Vì $f(n) = \displaystyle{\sum_{d \vert n} g(d)}$ nên 
+    \begin{equation}
+        \label{eq:mebius1}
+        \sum_{d \vert n} f\Bigl(\frac{n}{d}\Bigr) \cdot \mu(d)
+    = \sum_{d \vert n} \mu(d) \sum_{d' \vert \frac{n}{d}} g(d')
+    \end{equation}
+
+    Dễ thấy rằng do $d \vert n$ và $d' \vert \dfrac{n}{d}$ nên tồn tại
+    $k$, $l$ sao cho $kd = n$ và $ld' = \dfrac{n}{d}$. Khi đó $n = ldd'$ và $kd = n$.
+    Suy ra $d' \vert n$ và $d \vert \dfrac{n}{d'}$.
+
+    Tương tự như trên, ta có thể thay thế $d$ bởi $d'$ và ngược lại
+    \[(\ref{eq:mebius1}) = \sum_{d' \vert n} g(d') \sum_{d \vert \frac{n}{d'}} \mu(d)\]
+    mà $\displaystyle{\sum_{a \vert p} \mu(a) = 0}$ nếu $p \neq 1$ và bằng 1 với $p = 1$.
+    (đã chứng minh ở trên), nên từ đây suy ra
+    \[
+        \sum_{d' \vert n} g(d') \sum_{d \vert \frac{n}{d'}} \mu(d)
+        = \sum_{d' \vert n} g(d') \cdot 1 \,(\text{khi } n = d') = g(n)    
+    \]
+\end{proof}
+
+Tương tự ta cũng có công thức nghịch đảo \foreignlanguage{german}{Möbius}
+đối với phép nhân
+
+\begin{equation}
+    f(n) = \prod_{d \vert n} g(d) \Leftrightarrow 
+    g(n) = \prod_{d \vert n} f(d)^{\mu\Bigl(\frac{n}{d}\Bigr)}
+\end{equation}
+
+\textbf{Liên hệ với hàm Euler}
+
+Nếu ta chọn $f(n) = n$ và $g(n) = \phi(n)$ thì theo công thức nghịch đảo
+\foreignlanguage{german}{Möbius} ta có
+$\displaystyle{\phi(n) = \sum_{d \vert n} d \cdot \mu\Bigl(\frac{n}{d}\Bigr)}$
+do ta đã biết $\displaystyle{\sum_{d \vert n} \phi(d) = n}$

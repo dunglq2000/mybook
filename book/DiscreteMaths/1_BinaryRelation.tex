@@ -1,0 +1,186 @@
+\chapter{Quan hệ hai ngôi}
+
+\section{Quan hệ hai ngôi}
+
+\begin{definition}[Quan hệ hai ngôi]
+    Xét hai tập hợp $A$ và $B$. Ta gọi $R$ là một quan hệ hai ngôi trên $A$
+    và $B$ nếu $R \subset A \times B$. Trong đó $A \times B$ là tích Descartes
+    của hai tập hợp.
+\end{definition}
+
+Nếu phần tử $(a, b) \in R$ với $a \in A$ và $b \in B$ thì ta nói
+\textbf{$a$ có quan hệ với $b$} và ký hiệu $a R b$.
+
+Khi $A \equiv B$ thì ta nói $R$ là quan hệ hai ngôi trên $A$. Đây cũng là
+yếu tố quan trọng cho các khái niệm về sau.
+
+\begin{example}
+    Xét hai tập hợp $A = \{1, 2, 3, 4\}$ và $B = \{a, b, c\}$. 
+    Khi đó tích Descartes 
+    \begin{align*}
+        A \times B = \{
+        & (1, a), (1, b), (1, c), (2, a), (2, b), (2, c), \\
+        & (3, a), (3, b), (3, c), (4, a), (4, b), (4, c)
+    \}
+    \end{align*}
+
+    Giả sử $R = \{(1, a), (3, b), (4, c)\}$ thì 1 quan hệ với $a$ do
+    $(1, a) \in R$, hay $1 R a$. Tuy nhiên 1 không có quan hệ với $b$
+    do $(1, b) \not\in R$.
+\end{example}
+
+Sau đây ta định nghĩa các loại quan hệ hai ngôi.
+
+\begin{definition}
+    Cho $R$ là quan hệ hai ngôi trên tập $A$. Ta nói
+    \begin{enumerate}
+        \item $R$ phản xạ (reflexive) nếu với mọi $x \in A$ thì $(x, x) \in R$
+        \item $R$ đối xứng (symmetric) nếu $(x, y) \in R$ thì $(y, x) \in R$
+        \item $R$ phản xứng (antisymmetric) nếu $(x, y) \in R$ thì $(y, x) \not\in R$.
+        Hay nói cách khác nếu $(x, y) \in R$ và $(y, x) \in R$ thì $x = y$
+        \item $R$ bắc cầu (transitive) nếu $(x, y) \in R$ và $(y, z) \in R$ thì $(x, z) \in R$
+    \end{enumerate}
+\end{definition}
+
+\section{Quan hệ tương đương}
+
+Quan hệ tương đương đóng vai trò quan trọng trong toán rời rạc, đặc biệt là lý
+thuyết nhóm. Nhờ quan hệ tương đương ta có thể chia (phân bố) một tập hợp rời
+rạc thành các tập con mà chỉ cần một phần tử đại diện cho tập con đó là đủ để
+tính toán.
+
+Sau đây ta định nghĩa quan hệ tương đương.
+
+\begin{definition}[Quan hệ tương đương]
+    Cho $R$ là quan hệ trên tập $A$. Khi đó $R$ được gọi là \textbf{quan hệ
+    tương đương} nếu $R$ phản xạ, đối xứng và bắc cầu.
+
+    Ta có thể ký hiệu $x R y$ với $R$ là quan hệ tương đương bằng cách viết
+    $x \sim y$ hoặc $x \widetilde{R} y$.
+\end{definition}
+
+Tiếp theo ta định nghĩa lớp tương đương chứa phần tử $x$ và tập thương.
+
+\begin{definition}[Lớp tương đương]
+    Cho $R$ là quan hệ tương đương trên tập $A$. Khi đó với $x \in A$, ta định
+    nghĩa lớp tương đương chứa phần tử $x$ là
+    \[C (x) = \{ y \in A, \, y R x \} = \bar{x}\]
+\end{definition}
+
+\begin{definition}[Tập thương]
+    Tập hợp các lớp tương đương như trên tạo thành tập thương.
+    \[A / R = \{ \bar{x}, \, x \in A \}\]
+\end{definition}
+
+\begin{example}
+    Xét số nguyên dương $n$. Với số nguyên $x$ và $y$, ta nói $x$ có quan
+    hệ với $y$ nếu $n \vert (x - y)$, hay $x \equiv y \bmod n$.
+
+    Quan hệ trên là quan hệ tương đương vì
+    \begin{enumerate}[a)]
+        \item $n \vert 0 = x - x$ (tính phản xạ)
+        \item $n \vert (x - y) \Rightarrow n \vert -(x-y) = y-x$ (tính đối xứng)
+        \item $n \vert (x - y)$ và $n \vert (y - z)$ thì $n \vert (x - y + y - z)
+        = (x - z)$ (tính bắc cầu)
+    \end{enumerate}
+    Từ đó ta có thể phân tập $\ZZ$ thành các lớp tương đương
+    \begin{align*}
+        \overline{0} & = \{ \ldots, -2n, -n, 0, n, 2n, \ldots \} \\
+        \overline{1} & = \{ \ldots, -2n+1, -n+1, 1, n+1, 2n+1, \ldots \} \\
+        \vdots \\
+        \overline{n-1} & = \{ \ldots, -n-1, -1, n-1, 2n-1, 3n-1, \ldots \}
+    \end{align*}
+
+    Ta ký hiệu quan hệ $x \equiv y \bmod n$ là $n \ZZ$. Như vậy tập thương
+    của chúng ta là $\ZZ / n\ZZ = \{ \overline{0}, \overline{1}, \ldots, 
+    \overline{n-1} \}$.
+\end{example}
+
+\section{Quan hệ thứ tự}
+
+\begin{definition}[Quan hệ thứ tự]
+    Xét quan hệ $R$ trên tập $A$. Ta nói $R$ là quan hệ thứ tự nếu $R$ phản xạ, 
+    phản xứng và bắc cầu.
+\end{definition}
+
+\begin{definition}
+    Cho tập hợp $A$ và quan hệ $R$ trên $A$ là quan hệ thứ tự. Nếu $x R y$ thì
+    ta ký hiệu $x \prec y$. Khi đó $(A, \prec)$ được gọi là \textbf{tập có 
+    thứ tự}.
+\end{definition}
+
+Tiếp theo là một số định nghĩa quan trọng về tập hợp có thứ tự.
+
+\begin{definition}
+    Với $(A, \prec)$ và $x, y \in A$, ta định nghĩa:
+    \begin{enumerate}
+        \item Nếu $x \prec y$, ta nói \textbf{$y$ là trội của $x$}, hay là
+        \textbf{$x$ được trội bởi $y$}
+        \item $y$ là \textbf{trội trực tiếp} của $x$ nếu không tồn tại $z$ sao
+        cho $x \prec z$ và $z \prec y$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Xét $(A, \prec)$. Ta gọi
+    \begin{enumerate}
+        \item $x$ và $y$ thuộc $A$ được gọi là \textbf{so sánh được} nếu
+        $x \prec y$ hoặc $y \prec x$
+        \item nếu với mọi $x, y \in A$, $x$ và $y$ so sánh được thì $(A, \prec)$
+        được gọi là \textbf{quan hệ thứ tự toàn phần}. Ngược lại thì gọi là
+        \textbf{quan hệ thứ tự bán phần}
+    \end{enumerate}
+\end{definition}
+
+Để biểu diễn sự so sánh trong một tập hợp, ta sử dụng biểu đồ Hasse.
+
+\begin{definition}
+    Biểu đồ Hasse của $(A, \prec)$ với $A$ là tập hữu hạn bao gồm
+    \begin{enumerate}
+        \item Tập điểm - mỗi điểm biểu diễn một phần tử của $A$
+        \item Tập cung - vẽ một cung từ $x$ tới $y$ nếu $y$ là trội trực tiếp
+        của $x$
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    Xét tập $U_{12} = \{ 1, 2, 3, 4, 6, 12 \}$ với quan hệ $x R y$ được định
+    nghĩa $x$ là ước của $y$.
+
+    Theo đó, biểu đồ Hasse của quan hệ trên là
+    \begin{figure}[ht]
+        \centering
+        \includegraphics{../pics/hasse/hasse1.pdf}
+        \caption{Biểu đồ Hasse của $U_{12}$}
+    \end{figure}
+\end{example}
+
+Trong một tập có thứ tự ta có các khái niệm quan trọng sau (và nhiều
+lý thuyết hay lĩnh vực khác cũng nhắc tới).
+
+\begin{definition}
+    Xét quan hệ thứ tự $(A, \prec)$.
+    \begin{enumerate}
+        \item Phần tử $M \in A$ được gọi là
+        \begin{enumerate}
+            \item Tối đại nếu $M \prec x$ thì $x = M$
+            \item Cực đại (lớn nhất) nếu với mọi $x \in A$ thì $x \prec M$
+        \end{enumerate}
+        \item Phần tử $m \in A$ được gọi là
+        \begin{enumerate}
+            \item Tối tiểu nếu $x \prec m$ thì $x = m$
+            \item Cực tiểu (nhỏ nhất) nếu với mọi $x \in A$ thì $m \prec x$
+        \end{enumerate}
+    \end{enumerate}
+\end{definition}
+
+Chúng ta có một số nhận xét sau
+
+\begin{enumerate}
+    \item Phần tử cực đại nếu có là duy nhất. Tương tự cho cực tiểu.
+    \item Nếu $n$ là phần tử tối đại duy nhất thì nó cũng là cực đại.
+    Tương tự cho tối tiểu.
+\end{enumerate}
+
+Trong ví dụ $U_{12}$ ở trên thì 1 là tối tiểu và cũng là cực tiểu, và
+12 là tối đại và cũng là cực đại.
