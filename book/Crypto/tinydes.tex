@@ -14,8 +14,8 @@ Mã TinyDES khá đơn giản. Theo mô hình Feistel, khối đầu vào 8 bit 
 hai nửa trái phải 4 bit. Nửa phải sẽ đi qua các hàm Expand, SBox và PBox, sau đó
 XOR với nửa trái để được nửa phải mới. Còn nửa trái mới là nửa phải cũ. Tóm lại 
 công thức mô hình Feistel là
-\[L_{i+1} = R_i, \quad R_{i+1} = F(R_i, K_i) \oplus L_i\]
-với $i = 0, 1, 2$ tương ứng 3 vòng.
+\[L_{i+1} = R_i, \quad R_{i+1} = L_i \oplus F(R_i, K_{i+1})\]
+với $i = 1, 2, 3$ tương ứng 3 vòng với đầu vào của khối là $(L_0, R_0)$.
 
 Chúng ta cần các động tác sau:
 
@@ -31,7 +31,7 @@ Chúng ta cần các động tác sau:
 \end{enumerate}
 
 Như vậy, hàm $F$ của mô hình Feistel đối với mã TinyDES là
-\[F(R_i, K_i) = PBox(SBox(Expand(R_i) \oplus K_i))\]
+\[F(R_i, K_i) = PBox(SBox(Expand(R_i) \oplus K_{i+1}))\]
 
 Để sinh khóa con cho 3 vòng, khóa ban đầu được chia
 thành hai nửa trái phải lần lượt là $KL_0$ và $KR_0$. 

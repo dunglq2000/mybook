@@ -5,19 +5,29 @@ sbox = [
     0xF, 0xC, 0x8, 0x2, 0x4, 0x9, 0x1, 0x7, 0x5, 0xB, 0x3, 0xE, 0xA, 0x0, 0x6, 0xD
 ]
 
+
 def Xor(a: list[int], b: list[int]) -> list[int]:
     return [x^y for x, y in zip(a, b)]
+
 
 def Expand(R: list[int]) -> list[int]:
     return [R[2], R[3], R[1], R[2], R[1], R[0]]
 
+
 def SBox(R: list[int]) -> list[int]:
     row = int("".join(map(str, [R[0], R[5]])), 2)
     col = int("".join(map(str, R[1:5])), 2)
-    return list(map(int, bin(sbox[row*16 + col])[2:].zfill(4)))
+    #eturn list(map(int, bin(sbox[row*16 + col])[2:].zfill(4)))
+    return list(map(int, format(sbox[row*16 + col], "04b")))
+
 
 def PBox(R: list[int]) -> list[int]:
     return [R[2], R[0], R[3], R[1]]
+
+
+def PBox_inv(R: list[int]) -> list[int]:
+    return [R[1], R[3], R[0], R[2]]
+
 
 def Compress(K: list[int], round: int) -> list[int]:
     left, right = K[:4], K[4:]
@@ -30,6 +40,7 @@ def Compress(K: list[int], round: int) -> list[int]:
 
     Ki = left + right
     return left, right, [Ki[5], Ki[1], Ki[3], Ki[2], Ki[7], Ki[0]]
+
 
 def encrypt_block(plaintext: list[int], key: list[int]) -> list[int]:
     keys = [key]
@@ -44,4 +55,4 @@ def encrypt_block(plaintext: list[int], key: list[int]) -> list[int]:
     
     return left + right
 
-print(encrypt_block([0, 1, 0, 1, 1, 1, 0, 0], [1, 0, 0, 1, 1, 0, 1, 0]))
+#print(encrypt_block([0, 1, 0, 1, 1, 1, 0, 0], [1, 0, 0, 1, 1, 0, 1, 0]))
