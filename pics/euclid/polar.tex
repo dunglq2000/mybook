@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{amsmath, amssymb}
+\usepackage{tkz-euclide}
+
+\begin{document}
+\begin{tikzpicture}
+    \tkzInit[xmax=5,ymax=5]
+    \tkzDrawX[>=latex]
+    \tkzDrawY[>=latex]
+    \tkzDefPoints{0/0/O,1/0/I,0/1/J}
+    %\tkzDefPoint(3,4){A}
+    %\tkzDrawPoints(O,A)
+    %\tkzLabelPoint[above](A){$A_1 (x_1, y_1)$}
+    %\tkzShowPointCoord[xlabel=$x_1$, ylabel=$y_1$](A)
+    \tkzLabelPoints(O,I)
+    \tkzLabelPoints[left](J)
+    \tkzDrawPoints[shape=cross](I,J)
+
+    \tkzDefPoint(40:4){P}
+    \tkzDrawSegment
+    %[dim={$d$,16pt,above=6pt}]
+    (O,P)
+    \tkzDrawPoints(O,P)
+    \tkzMarkAngle[mark=none,->](I,O,P)
+    \tkzFillAngle[opacity=.5](I,O,P)
+    \tkzLabelAngle[pos=1.25](I,O,P){$\alpha$}
+    \tkzLabelPoint[right](P){$P (\alpha : d)$ }
+\end{tikzpicture}
+\end{document}
