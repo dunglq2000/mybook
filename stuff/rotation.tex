@@ -1,0 +1,44 @@
+\documentclass{standalone}
+
+\usepackage{tkz-euclide}
+
+\begin{document}
+\begin{tikzpicture}
+    \tkzInit[xmin=-5, xmax=5, ymin=-5, ymax=5]
+    \tkzDrawX[>=latex]
+    \tkzDrawY[>=latex]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(2,1){A}
+    \tkzDefPointBy[rotation= center O angle 72](A) \tkzGetPoint{A_1}
+    \tkzDefPoint(1,4){B}
+    \tkzDefPointBy[rotation= center O angle 72](B) \tkzGetPoint{B_1}
+    \tkzDefPoint(4,4){C}
+    \tkzDefPointBy[rotation= center O angle 72](C) \tkzGetPoint{C_1}
+    \tkzDrawPoints(O, A, A_1, B, B_1, C, C_1)
+    \tkzDrawSegments[dashed,opacity=.25](O,A O,A_1)
+    \tkzDrawSegments[dashed,opacity=.25](O,B O,B_1)
+    \tkzDrawSegments[dashed,opacity=.25](O,C O,C_1)
+
+    \tkzMarkAngles[mark=none,->,opacity=.25](A,O,A_1)
+    \tkzFillAngles[opacity=.25](A,O,A_1)
+    \tkzLabelAngles[pos=1.5](A,O,A_1){$\alpha$}
+    \tkzLabelPoints[below left](O)
+    \tkzLabelPoints[below right](A)
+    \tkzLabelPoints[above](A_1)
+
+    %\tkzMarkAngles[mark=none,->](B,O,B_1)
+    %\tkzFillAngles[opacity=.5](B,O,B_1)
+    %\tkzLabelAngles[pos=1.5](B,O,B_1){$\alpha$}
+    \tkzLabelPoints[above](B)
+    \tkzLabelPoints[above left](B_1)
+
+    %\tkzMarkAngles[mark=none,->](C,O,C_1)
+    %\tkzFillAngles[opacity=.5](C,O,C_1)
+    %\tkzLabelAngles[pos=1.5](C,O,C_1){$\alpha$}
+    \tkzLabelPoints[above right](C)
+    \tkzLabelPoints[above](C_1)
+
+    \tkzDrawSegments(A,B B,C C,A)
+    \tkzDrawSegments(A_1,B_1 B_1,C_1 C_1,A_1)
+\end{tikzpicture}
+\end{document}
