@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\usepackage{tkz-euclide}
+
+\begin{document}
+\begin{tikzpicture}
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(2,0){R}
+    \tkzDefPoint(7,0){P}
+    \tkzDefMidPoint(O,P)
+    \tkzGetPoint{M}
+    \tkzDrawCircles(O,R)
+    \tkzInterCC(O,R)(M,O)
+    \tkzGetPoints{E}{D}
+    \tkzDrawSegments(O,P O,E P,E)  
+    \tkzDrawPoints(O,E,P)
+\end{tikzpicture}
+\end{document}

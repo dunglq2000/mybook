@@ -1,0 +1,62 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{calc, through}
+
+\begin{document}
+\begin{tikzpicture}
+    % Define points
+    \tkzDefPoints{0/6/A,-1/0/B,10/0/C}
+    \tkzDefCircle[circum](A,B,C)
+    \tkzGetPoint{O}
+    \tkzGetLength{radius}
+
+    \tkzDefMidPoint(B,C) \tkzGetPoint{M_A}
+    \tkzDefMidPoint(C,A) \tkzGetPoint{M_B}
+    \tkzDefMidPoint(A,B) \tkzGetPoint{M_C}
+
+    % Define intersection
+    %\tkzInterLC(A,O)(O,A) \tkzGetSecondPoint{I}
+    \tkzDefLine[orthogonal =through B](C,A) \tkzGetPoint{hb}
+    \tkzDefLine[orthogonal =through C](A,B) \tkzGetPoint{hc}
+    \tkzDefLine[orthogonal =through A](B,C) \tkzGetPoint{ha}
+
+    \tkzInterLL(A,ha)(B,C) \tkzGetPoint{H_A}
+    \tkzInterLL(B,hb)(C,A) \tkzGetPoint{H_B}
+    \tkzInterLL(C,hc)(A,B) \tkzGetPoint{H_C}
+
+    \tkzInterLL(B,H_B)(C,H_C) \tkzGetPoint{H}
+    \tkzInterLL(A,M_A)(B,M_B) \tkzGetPoint{G}
+
+    \tkzDefMidPoint(A,H) \tkzGetPoint{I_A}
+    \tkzDefMidPoint(B,H) \tkzGetPoint{I_B}
+    \tkzDefMidPoint(C,H) \tkzGetPoint{I_C}
+
+    \tkzDefCircle[circum](I_A,I_B,I_C) \tkzGetPoint{O_I}
+
+    % Drawing
+    \tkzDrawCircle(O_I,I_A)
+    %\tkzDrawPoints(H,M_A,G,I)
+    \tkzDrawPoints(A,B,C,H_A,H_B,H_C,M_A,M_B,M_C,I_A,I_B,I_C)
+    \tkzDrawSegments(A,B B,C C,A)
+    %\tkzDrawSegments(A,H A,M_A H,O A,I O,M_A)
+    %\tkzDrawSegments(H,I)
+    \tkzDrawSegments[opacity=.5](B,H H,C A,H)
+
+    % Marking
+
+    % Labeling
+    \tkzLabelPoints[above](A)
+    \tkzLabelPoints[below left](B)
+    \tkzLabelPoints[below right](C)
+
+    \tkzLabelPoints[below right](M_A)
+    \tkzLabelPoints[above right](M_B)
+    \tkzLabelPoints[left](M_C)
+    \tkzLabelPoints[below](H_A)
+    \tkzLabelPoints[above right](H_B)
+    \tkzLabelPoints[above left](H_C)
+    \tkzLabelPoints[right](I_A,I_B)
+    \tkzLabelPoints[below right](I_C)
+\end{tikzpicture}
+\end{document}
