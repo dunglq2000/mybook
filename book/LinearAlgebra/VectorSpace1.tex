@@ -1,4 +1,6 @@
-\chapter{Nhắc lại các khái niệm cơ bản}
+\chapter{Tổng quan về không gian vector}
+
+Ở chương này tên vector được in đậm chữ thường (ví dụ $\bm{x}$), tên ma trận được in đậm chữ hoa (ví dụ $\bm{M}$). Các số vô hướng (số thực) được viết không in đậm (ví dụ $x_1$, $x_2$).
 
 \section{Hạng của ma trận}
 
@@ -36,7 +38,7 @@ Bây giờ ta xét tổ hợp tuyến tính
 
 \begin{definition}[Phụ thuộc tuyến tính]
     Tập các vector là phụ thuộc tuyến tính nếu không độc lập tuyến tính.
-    Nói cách khác tồn tại ít nhất 1 phần tử $\alpha_i \neq 0$.
+    Nói cách khác tồn tại ít nhất một phần tử $\alpha_i \neq 0$.
 \end{definition}
 
 \section{Không gian vector}
@@ -50,7 +52,7 @@ Ta định nghĩa hai phép tính cộng và nhân trên các vector này sao ch
     \item Phân nhân vô hướng: Với mọi $\alpha \in \RR$ và $\bm{x} \in \mathcal{V}$ thì $\alpha \bm{x} \in \mathcal{V}$
 \end{itemize}
 
-Nói cách khác, phép cộng 2 vector và phép nhân vô hướng 1 số với vector cho kết quả vẫn nằm trong không gian vector đó.
+Nói cách khác, phép cộng hai vector và phép nhân vô hướng một số thực với vector cho kết quả vẫn nằm trong không gian vector đó.
 
 Đồng thời, phép cộng và phép nhân vô hướng phải thỏa mãn các tính chất sau
 
@@ -93,7 +95,7 @@ Từ đó ta có điều kiện cần và đủ để một tập hợp vector l
 
 Giả sử ta có $\bm{v}_1$, $\bm{v}_2$, ..., $\bm{v}_d$ là một cơ sở của không gian vector $\RR^n$.
 Khi đó nếu hệ vector $\bm{w}_1$, $\bm{w}_2$, ..., $\bm{w}_d$ cũng là một hệ cơ sở khi và chỉ khi tồn 
-tại ma trận khả nghịch $\bm{A}$ sao cho $\bm{W} = \bm{A} \cdot \bm{V}$.
+tại ma trận khả nghịch $\bm{A}$ sao cho $\bm{W} = \bm{A} \cdot \bm{V}$. Ở đây $\bm{W}$ là ma trận với các hàng là các vector $\bm{w}_i$. Tương tự $\bm{V}$ là ma trận với các hàng là các vector $\bm{v}_i$.
 
 \begin{proof}
     Ta viết các vector $\bm{v}_i$ dưới dạng $\RR^n$.
@@ -147,11 +149,13 @@ tại ma trận khả nghịch $\bm{A}$ sao cho $\bm{W} = \bm{A} \cdot \bm{V}$.
             v_{d1} & v_{d2} & \ldots & v_{dn}
         \end{pmatrix}
     \end{align*}
+    
+    Nếu $\bm{w}_i$ cũng là cơ sở của $\mathcal{V}$, thì các vector $\bm{v}_i$ cũng phải
+    biểu diễn được dưới dạng tổ hợp tuyến tính của $\bm{w}_i$.
+    Nói cách khác, ma trận $(\alpha_{ij})$ khả nghịch và ta có điều phải chứng minh.
 \end{proof}
 
-Nếu $\bm{w}_i$ cũng là cơ sở của $\mathcal{V}$, thì các vector $\bm{v}_i$ cũng phải
-biểu diễn được dưới dạng tổ hợp tuyến tính của $\bm{w}_i$.
-Nói cách khác, ma trận $(\alpha_{ij})$ khả nghịch.
+
 
 \section{Không gian vector con}
 
@@ -220,4 +224,104 @@ không gian vector con.
     hai vector $(-2, -1, 1, 0)$ và $(-1, -2, 0, 1)$. Suy ra hai vector
     này là cơ sở của không gian nghiệm, và $\dim \mathcal{V} = 2$.
 
+\end{example}
+
+\section{Không gian Euclide}
+
+Trên không gian vector $\mathcal{V}$ chúng ta bổ sung thêm một phép toán là tích vô hướng (dot product, tích chấm) của hai vector.
+
+Giả sử với hai vector $\bm{x} = (x_1, x_2, \ldots, x_n)$ và $\bm{y} = (y_1, y_2, \ldots, y_n)$. Khi đó tích vô hướng của $\bm{x}$ và $\bm{y}$ là
+
+\begin{equation}
+	\bm{x} \cdot \bm{y} = x_1 y_1 + x_2 y_2 + \ldots + x_n y_n
+\end{equation}
+
+Một số sách ký hiệu tích vô hướng của hai vector $\bm{x}$ và $\bm{y}$ là $\langle \bm{x}, \bm{y} \rangle$. Trong quyển sách này mình sẽ dùng ký hiệu $\bm{x} \cdot \bm{y}$ như trên.
+
+Không gian vector có phép toán tích vô hướng được gọi là không gian Euclide. Khi $\bm{x} = \bm{y}$ thì căn bậc hai của kết quả tích vô hướng được gọi là \textbf{chuẩn Euclide} (Euclidean norm) và được ký hiệu
+
+\begin{equation}
+	\lVert \bm{x} \rVert = \sqrt{\bm{x} \cdot \bm{x}} = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}
+\end{equation}
+
+Như vậy ta có thể viết $\lVert \bm{x} \rVert^2 = \bm{x}^2$.
+
+Nếu biểu diễn hai vector $\bm{x}$ và $\bm{y}$ biểu diễn điểm $A$ và $B$ trên hệ tọa độ $n$ chiều với tâm $O$, đặt $\varphi$ là góc giữa hai vector $\overrightarrow{OA}$ và $\overrightarrow{OB}$. Khi đó 
+
+\begin{equation}
+	\cos \varphi = \frac{\overrightarrow{OA} \cdot \overrightarrow{OB}}{\lVert OA \rVert \cdot \lVert OB \rVert} = \frac{\bm{x} \cdot \bm{y}}{\lVert \bm{x} \rVert \cdot \lVert \bm{y} \rVert}
+\end{equation}
+
+Ta có thể thấy định nghĩa này là trường hợp tổng quát của định lý hàm số cosin học ở phổ thông. Nếu ta có $\bm{x} \cdot \bm{y} = 0$ thì ta nói hai vector $\bm{x}$ và $\bm{y}$ vuông góc nhau, hay \textbf{trực giao} (orthogonal).
+
+\begin{theorem}[Bất đẳng thức Cauchy-Schwarz]
+	Với hai vector $\bm{x}$ và $\bm{y}$ bất kì ta luôn có
+	
+	\begin{equation}
+		\lVert \bm{x} \rVert \cdot \lVert \bm{y} \rVert \geq \lvert \bm{x} \cdot \bm{y} \rvert
+	\end{equation}
+	
+	Nghĩa là tích độ dài của hai vector bất kì trong cùng không gian Euclide lớn hơn hoặc bằng tích vô hướng giữa chúng. Dấu bằng xảy ra khi và chỉ khi $\dfrac{x_1}{y_1} = \dfrac{x_2}{y_2} = \ldots = \dfrac{x_n}{y_n}$. Nói cách khác là hai vector cùng phương.
+\end{theorem}
+
+\begin{proof}
+	Với mọi số thực $t$, ta luôn có 
+	
+	\[0 \leq \lVert \bm{x} - t \bm{y} \rVert^2 = \bm{x}^2 - 2 t \bm{x} \cdot \bm{y} + t^2 \bm{y}^2 = \lVert \bm{x} \rVert^2 - 2 t \bm{x} \cdot \bm{y} + t^2 \lVert \bm{y} \rVert^2 \]
+	
+	Nếu xem biểu thức trên là đa thức bậc 2 theo $t$, để đa thức lớn hơn hoặc bằng 0 với mọi $t \in \RR$ thì ta phải có $\Delta' \leq 0$ và $\lVert \bm{y} \rVert^2 > 0$ (luôn đúng). Ta có
+	\[\Delta' = (\bm{x} \cdot \bm{y})^2 - \lVert \bm{x} \rVert^2 \cdot \lVert \bm{y} \rVert^2 \leq 0 \]
+	Tương đương với $\lvert \bm{x} \cdot \bm{y} \rvert \leq \lVert \bm{x} \rVert \cdot \lVert \bm{y} \rVert$ (điều phải chứng minh).
+\end{proof}
+
+\section{Hệ cơ sở trực giao}
+
+Cho không gian Euclide $\mathcal{V}$ và một cơ sở của nó là $\bm{v}_1$, $\bm{v}_2$, ..., $\bm{v}_d$. Thuật toán trực giao Gram-Schmidt là thuật toán biến đổi cơ sở trên thành một cơ sở mới, trong đó các vector đều trực giao nhau.
+
+\begin{algorithm}
+	\caption{Thuật toán trực giao Gram-Schmidt}
+	\begin{algorithmic}
+		\Require $\bm{v}_1$, ..., $\bm{v}_d$ trong $\RR^n$
+		\Ensure $\bm{u}_1$, ..., $\bm{u}_d$ trong $\RR^n$ mà $\bm{u}_i \cdot \bm{u}_j = 0$ với mọi $i \neq j$
+		\State $\bm{u}_1 \gets \bm{v}_1$
+		\For{$i = 2 \to d$}
+			\State $\bm{w} = \bm{v}_i$
+			\For{$j = i-1 \to 1$}
+			\State $\mu_{i,j} = (\bm{v}_i \cdot \bm{u}_j) / (\bm{u}_i \cdot \bm{u}_j)$
+			\State $\bm{w} \gets \bm{w} - \mu_{i, j} \bm{u}_j$
+			\EndFor
+			\State $\bm{u}_i \gets \bm{w}$
+		\EndFor
+		\State \Return $\bm{u}_1$, ..., $\bm{u}_d$
+	\end{algorithmic}
+\end{algorithm}
+
+Nói cách khác, với $\bm{u}_1 = \bm{v}_1$, với mỗi $i = 2, 3, \ldots, d$ ta tính vector $\bm{u}_i$ với công thức
+
+\begin{equation}
+	\bm{u}_i = \bm{v}_i - \sum_{j=1}^{i-1} \mu_{i,j} \bm{u}_j
+\end{equation}
+
+Ở đây $\mu_{i,j} = \dfrac{\bm{v}_i \cdot \bm{u}_j}{\bm{u}_i \cdot \bm{u}_j}$ là hệ số trước $\bm{u}_j$.
+
+\begin{example}
+	Xét cơ sở $\bm{v}_1 = (2, -2, 4)$, $\bm{v}_2 = (1, -1, 0)$ và $\bm{v}_3 = (5, -3, 3)$ của $\RR^3$.
+	
+	Đặt $\bm{u}_1 = \bm{v}_1 = (2, -2, 4)$.
+	
+	Ta có $\mu_{2,1} = \dfrac{\bm{v}_2 \cdot \bm{u}_1}{\bm{u}_1 \cdot \bm{u}_1} = \dfrac{1 \cdot 2 + (-1) \cdot (-2) + 0 \cdot 4}{2^2 + (-2)^2 + 4^2} = \dfrac{4}{24} = \dfrac{1}{6}$.
+	
+	Suy ra \[\bm{u}_2 = \bm{v_2} - \mu_{2, 1} \bm{u}_1 = (1, -1, 0) - \dfrac{1}{6} \cdot (2, -2, 4) = \Bigl(\dfrac{2}{3}, \dfrac{-2}{3}, \dfrac{-2}{3}\Bigr)\]
+	
+	Tương tự $\mu_{3, 1} = \dfrac{\bm{v}_3 \cdot \bm{u}_1}{\bm{u}_1 \cdot \bm{u}_1} = \dfrac{5 \cdot 2 + (-3) \cdot (-2) + 3 \cdot 4}{2^2 + (-2)^2 + 4^2} = \dfrac{28}{24} = \dfrac{7}{6}$.
+	
+	Tiếp theo $\mu_{3,2} = \dfrac{\bm{v}_3 \cdot \bm{u}_2}{\bm{u}_2 \cdot \bm{u}_2} = \dfrac{5 \cdot \dfrac{2}{3} + (-3) \cdot \dfrac{-2}{3} + 3 \cdot \dfrac{-2}{3}}{\Bigl(\dfrac{2}{3}\Bigr)^2 + \Bigl(\dfrac{-2}{3}\Bigr)^2 + \Bigl(\dfrac{-2}{3}\Bigr)^2 } = \dfrac{5}{2}$.
+	
+	\begin{align*}
+		\Rightarrow \quad \bm{u}_3 = & \bm{v}_3 - \mu_{3,1} \bm{u}_1 - \mu_{3,2} \bm{u}_2 \\ = & (5, -3, 3) - \dfrac{7}{6} \cdot (2, -2, 4) - \dfrac{5}{2} \cdot \Big(\dfrac{2}{3}, \dfrac{-2}{3}, \dfrac{-2}{3}\Big) \\ = & (1, 1, 0)
+	\end{align*}
+	
+	Ta có thể kiếm chứng rằng $\bm{u}_1 \cdot \bm{u}_2 = 2 \cdot \dfrac{2}{3} + (-2) \cdot \dfrac{-2}{3} + 4 \cdot \dfrac{-2}{3} = 0$. Tương tự với $\bm{u}_1 \cdot \bm{u}_3 = 0$ và $\bm{u}_2 \cdot \bm{u}_3 = 0$. Thêm nữa các vector này cũng độc lập tuyến tính nên cũng là một hệ cơ sở của $\RR^3$.
+	
+	Như vậy các vector $\bm{u}_1$, $\bm{u}_2$, $\bm{u}_3$ là một cơ sở trực giao của $\RR^3$.
 \end{example}
